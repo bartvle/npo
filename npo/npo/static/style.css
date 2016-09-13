@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif:400);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:700);
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+html, body { margin: 0px; height: 100%; padding: 0px; color: #808080; }
+
+html { /* always show scrollbar */ overflow-y: scroll; }
+
+h1 { font-family: "Bree Serif", serif; font-weight: 400; }
+
+h2 { font-family: "PT Sans", sans-serif; font-weight: 700; }
+
+a:link, a:focus, a:visited, a:active { outline: 0; text-decoration: None; color: #97C00E; }
+
+a:hover { text-decoration: underline; color: #97C00E; }
+
+p + h2 { margin-top: 20px; }
+
+p { margin: 0px; }
+
+p + p { margin-top: 10px; }
+
+/* -------------------------------------------------------------------------- */
+p.justify { text-align: justify; }
+
+a.color1:link, a.color1:focus, a.color1:visited, a.color1:active { text-decoration: None; color: #97C00E; }
+
+a.color1:hover { text-decoration: underline; color: #97C00E; }
+
+a.color3:link, a.color3:focus, a.color3:visited, a.color3:active { text-decoration: None; color: #808080; }
+
+a.color3:hover { text-decoration: underline; color: #808080; }
+
+a.color4:link, a.color4:focus, a.color4:visited, a.color4:active { text-decoration: None; color: #FFFFFF; }
+
+a.color4:hover { text-decoration: underline; color: #FFFFFF; }
+
+a.button1 { display: inline-block; color: #97C00E; text-decoration: None; cursor: pointer; }
+
+a.button1:hover { color: #FFFFFF; text-decoration: None; background: #97C00E; }
+
+/* -------------------------------------------------------------------------- */
+.color4 { color: #FFFFFF; }
+
+.bg-color2 { background: #E8F2D9; }
+
+.box, a.button1 { padding: 10px; background-color: #E8F2D9; }
+
+.box-title { margin-top: -10px; margin-bottom: 10px; margin-left: -10px; margin-right: -10px; padding: 10px; font-family: "PT Sans", sans-serif; font-size: 15px; font-weight: bold; color: #FFFFFF; line-height: 20px; background: #97C00E; }
+
+.date1 { margin-bottom: 15px; font-family: Strada, Helvetica, sans-serif; font-size: 15px; line-height: 1; }
+
+/* -------------------------------------------------------------------------- */
+.row.row-grid [class*="col-"] + [class*="col-"] { margin-top: 15px; }
+
+@media (min-width: 1200px) { .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] { margin-top: 0; } }
+@media (min-width: 992px) { .row.row-grid [class*="col-md-"] + [class*="col-md-"] { margin-top: 0; } }
+@media (min-width: 768px) { .row.row-grid [class*="col-sm-"] + [class*="col-sm-"] { margin-top: 0; } }
+/* -------------------------------------------------------------------------- */
+#wrap { display: -webkit-flex; display: -ms-flex; display: -moz-flex; display: flex; -webkit-flex-direction: column; -ms-flex-direction: column; -moz-flex-direction: column; flex-direction: column; min-width: 350px; height: 100vh; }
+
+#header { flex-shrink: 0; }
+
+#embody { flex: 1 0 auto; margin-bottom: 50px; }
+
+#footer { flex-shrink: 0; }
+
+/* -------------------------------------------------------------------------- */
+#header #header1 { line-height: 50px; text-align: right; font-size: 12px; font-family: Strada, Helvetica, sans-serif; background: #E8F2D9; }
+#header #header1 ul { margin: 0px; padding: 0px; }
+#header #header1 li { display: inline; padding-left: 10px; }
+#header #header1 li:first-child { padding-left: 0px; }
+#header #header1 .raquo { font-size: 14px; }
+#header #header2 { margin-bottom: 0px; background: #97C00E; border: 0px; font-family: Strada, Helvetica, sans-serif; }
+@media (min-width: 992px) { #header #header2 .navbar-header { margin-right: 75px; } }
+#header #header2 a { font-size: 15px; font-weight: bold; }
+#header #header2 a:focus { color: #FFFFFF; background: #97C00E; }
+#header #header2 a:hover { color: #97C00E; background: #FFFFFF; }
+
+/* -------------------------------------------------------------------------- */
+#embody #start #image { margin-bottom: 25px; }
+#embody #start #intro { padding-top: 50px; padding-bottom: 50px; font-style: italic; }
+#embody #start #main_map { height: 500px; margin-bottom: 50px; }
+#embody #start #newsletter { padding: 50px 0; background-color: #97C00E; }
+#embody #start #newsletter h2 { margin-top: 0px; margin-bottom: 25px; }
+#embody #start #newsletter .btn:focus, #embody #start #newsletter .btn:active:focus { outline: none; }
+#embody #start #newsletter .input_mail { color: #808080; }
+#embody #start #wildcam { padding-top: 50px; }
+#embody #start #wildcam h1 { margin-top: 0px; }
+
+/* -- footer ---------------------------------------------------------------- */
+#footer #footer1 { background: #E8F2D9; line-height: 40px; color: #808080; padding-top: 25px; padding-bottom: 25px; }
+#footer #footer1 .text { margin-right: 10px; float: left; font-size: 14px; font-weight: bold; }
+#footer #footer1 .icon { display: block; width: 40px; height: 40px; border-radius: 100%; background: #808080; float: left; text-align: center; font-size: 16px; color: #FFFFFF; }
+#footer #footer1 .icon:first-of-type { margin-right: 5px; }
+#footer #footer1 .icon:hover { background: #97C00E; }
+#footer #footer1 #gototop { float: right; width: 40px; height: 40px; background: #808080; border-radius: 3px; text-align: center; color: #FFFFFF; cursor: pointer; }
+#footer #footer1 #gototop:hover { background: #97C00E; }
+#footer #footer2 { background: #97C00E; line-height: 50px; font-size: 12px; color: #FFFFFF; }
+
+/* -- Transitions ----------------------------------------------------------- */
+#header { animation: fadein 0.5s ease-in-out; -webkit-animation: fadein 0.5s ease-in-out; }
+
+#footer { animation: fadein 0.5s ease-in-out; -webkit-animation: fadein 0.5s ease-in-out; }
+
+[ui-view].ng-enter { -webkit-transition: all .5s ease-in-out; transition: all .5s ease-in-out; opacity: 0; }
+
+[ui-view].ng-enter-active { opacity: 1; }
+
+@keyframes fadein { from { opacity: 0; }
+  to { opacity: 1; } }
+@-webkit-keyframes fadein { from { opacity: 0; }
+  to { opacity: 1; } }

@@ -1,0 +1,11 @@
+__pycache__/
+
+npo/db.sqlite3
+npo/npo/deploy.py
+
+npo/static
+
+npo/npo/static/data
+npo/npo/static/images
+npo/npo/static/magazine
+npo/npo/static/dependencies
