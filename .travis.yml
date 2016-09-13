@@ -8,9 +8,7 @@ install:
  - conda create -y -n test-env python=3.4
  - source activate test-env
  - conda install -y django
-
-script:
- - nosetests
+ - pip install djangorestframework
 
 notifications:
     email: false
