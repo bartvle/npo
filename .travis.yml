@@ -1,0 +1,16 @@
+language: python
+
+install:
+ - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+ - bash miniconda.sh -b -p $HOME/miniconda
+ - export PATH="$HOME/miniconda/bin:$PATH"
+ - conda update -y conda
+ - conda create -y -n test-env python=3.4
+ - source activate test-env
+ - conda install -y django
+
+script:
+ - nosetests
+
+notifications:
+    email: false
