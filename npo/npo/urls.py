@@ -13,17 +13,19 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 
 from npo.views import index, api_magazine
 from newsletter.views import subscribe as api_newsletter_subscribe
+from api.urls import api_router
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/magazine/', api_magazine),
     url(r'^api/newsletter/subscribe', api_newsletter_subscribe),
+    url(r'^api/', include(api_router.urls)),
     url(r'^$', index),
     url(r'^overons', index),
     url(r'^beleid', index),
