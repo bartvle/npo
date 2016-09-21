@@ -26,7 +26,11 @@ app.controller("AppController", function($scope) {
 });
 
 
-app.controller("StartPageController", function($scope) {
+app.controller("StartPageController", function($scope, $http) {
+    $http.get("/api/activities").success(function(response) {
+        $scope.activities = response;
+        console.log($scope.activities);
+    });
 });
 
 
