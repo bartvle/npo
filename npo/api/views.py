@@ -14,5 +14,5 @@ class ActivitySerializer(serializers.ModelSerializer):
 
 
 class ActivityViewSet(viewsets.ModelViewSet):
-    queryset = Activity.objects.all().order_by('-date')
+    queryset = Activity.objects.all().order_by('date')
     serializer_class = ActivitySerializer
