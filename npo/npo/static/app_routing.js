@@ -47,6 +47,11 @@ app.config(function($urlRouterProvider, $stateProvider, $locationProvider) {
         templateUrl: '/static/pages/activiteiten.htm',
     })
 
+    .state('activiteit', {
+        url: '/activiteiten/:activity',
+        templateUrl: function ($stateParams){return 'static/pages/activiteit.htm?activity=' + $stateParams.activity},
+    })
+
     .state('404', {
         url: "/404",
         templateUrl: '/static/pages/404.htm',

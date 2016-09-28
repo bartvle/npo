@@ -17,8 +17,6 @@ a:hover { text-decoration: underline; color: #97C00E; }
 
 p + h2 { margin-top: 20px; }
 
-p { margin: 0px; }
-
 p + p { margin-top: 10px; }
 
 /* -------------------------------------------------------------------------- */
@@ -41,7 +39,15 @@ a.button1 { display: inline-block; color: #97C00E; text-decoration: None; cursor
 a.button1:hover { color: #FFFFFF; text-decoration: None; background: #97C00E; }
 
 /* -------------------------------------------------------------------------- */
+.color1 { color: #97C00E; }
+
+.color2 { color: #E8F2D9; }
+
+.color3 { color: #808080; }
+
 .color4 { color: #FFFFFF; }
+
+.color5 { color: #000000; }
 
 .bg-color2 { background: #E8F2D9; }
 
@@ -80,9 +86,9 @@ a.button1:hover { color: #FFFFFF; text-decoration: None; background: #97C00E; }
 
 /* -------------------------------------------------------------------------- */
 #embody #start #image { margin-bottom: 25px; }
-#embody #start #intro { padding-top: 50px; padding-bottom: 50px; font-style: italic; }
-#embody #start #main_map { height: 500px; margin-bottom: 50px; }
-#embody #start #newsletter { padding: 50px 0; background-color: #97C00E; }
+#embody #start #intro { font-style: italic; }
+#embody #start #main_map { height: 500px; }
+#embody #start #newsletter { margin-top: 50px; padding: 50px 0; background-color: #97C00E; }
 #embody #start #newsletter h2 { margin-top: 0px; margin-bottom: 25px; }
 #embody #start #newsletter .btn:focus, #embody #start #newsletter .btn:active:focus { outline: none; }
 #embody #start #newsletter .input_mail { color: #808080; }

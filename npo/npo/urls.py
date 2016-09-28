@@ -33,4 +33,5 @@ urlpatterns = [
     url(r'^soortbescherming', index),
     url(r'^nieuwsbrief', index),
     url(r'^lidworden', index),
+    url(r'^activiteiten', index),
 ]

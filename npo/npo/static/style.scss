@@ -8,6 +8,7 @@ $color1: #97C00E;
 $color2: #E8F2D9;
 $color3: #808080;
 $color4: #FFFFFF;
+$color5: #000000;
 
 /* -------------------------------------------------------------------------- */
 
@@ -59,10 +60,6 @@ a:hover {
 
 p+h2 {
     margin-top: 20px;
-}
-
-p {
-    margin: 0px;
 }
 
 p+p {
@@ -121,8 +118,24 @@ a.button1:hover {
 
 /* -------------------------------------------------------------------------- */
 
+.color1 {
+    color: $color1;
+}
+
+.color2 {
+    color: $color2;
+}
+
+.color3 {
+    color: $color3;
+}
+
 .color4 {
     color: $color4;
+}
+
+.color5 {
+    color: $color5;
 }
 
 .bg-color2 {
@@ -273,17 +286,17 @@ a.button1:hover {
         }
 
         #intro {
-            padding-top: 50px;
-            padding-bottom: 50px;
+            // padding-top: 50px;
+            // padding-bottom: 50px;
             font-style: italic;
         }
 
         #main_map {
             height: 500px;
-            margin-bottom: 50px;
         }
 
         #newsletter {
+            margin-top: 50px;
             padding: 50px 0;
             background-color: $color1;
 

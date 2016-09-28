@@ -8,4 +8,4 @@ from . import views
 
 
 api_router = routers.DefaultRouter()
-api_router.register(r'activities', views.ActivityViewSet)
+api_router.register(r'activities', views.ActivityViewSet, base_name='activities')

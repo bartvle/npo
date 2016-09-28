@@ -29,14 +29,6 @@ app.controller("AppController", function($scope) {
 app.controller("StartPageController", function($scope, $http) {
     $http.get("/api/activities").success(function(response) {
         $scope.activities = response;
-        console.log($scope.activities);
-    });
-});
-
-
-app.controller("MagazinePageController", function($scope, $http) {
-    $http.get("/api/magazine").success(function(response) {
-        $scope.newsletters = response;
     });
 });
 
@@ -53,6 +45,24 @@ app.controller("NewsletterController", function($scope, $http) {
 });
 
 
+app.controller("ActivityPageController", function($scope, $stateParams, $http) {
+    var $activity = $stateParams.activity;
+    var $date = $activity.substring(0, 10);
+    var $slug = $activity.substring(11);
+    $http.get("/api/activities", {params: {date: $date, slug: $slug}}).success(function(response) {
+        console.log(response[0]);
+        $scope.activity = response[0];
+    });
+});
+
+
+app.controller("MagazinePageController", function($scope, $http) {
+    $http.get("/api/magazine").success(function(response) {
+        $scope.newsletters = response;
+    });
+});
+
+
 
 
 
@@ -64,7 +74,6 @@ app.controller("NewsletterController", function($scope, $http) {
 app.factory('NewsItem', function ($resource) {
       return $resource('/api/news/:id');
   });
-
 
 app.factory('News', function ($resource) {
       return $resource('/api/news/:date/:link');

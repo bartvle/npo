@@ -1,0 +1,24 @@
+<div id="activiteit" ng-controller="ActivityPageController">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>[[ activity.name ]]</h1>
+                <h4>[[ activity.date | date: 'EEEE d MMMM yyyy' ]]</h4>
+            </div>
+        </div>
+        <div class="row row-grid">
+            <div class="col-md-8 col-lg-8">
+                <!--<img ng-if="activity.image != ''" ng-src="{{activity.image}}" class="img-responsive" style="width:100%; margin-bottom:10px;" title="{{activity.caption}}">-->
+                <p style="text-align: justify;" ng-bind-html="activity.intro"></p>
+            </div>
+        
+            <div class="col-md-4 col-lg-4">
+                <div class="box">
+                    <h4>Praktisch</h4>
+                    <p ng-if="activity.practical != ''" ng-bind-html="activity.practical"></p>
+                    <p ng-if="activity.practical == ''">Contacteer ons via <a href="mailto:info@natuurpuntoosterzele.be">info@natuurpuntoosterzele.be</a> voor vragen omtrent deze activiteit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
