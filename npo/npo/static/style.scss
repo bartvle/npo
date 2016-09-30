@@ -47,6 +47,10 @@ h2 {
     font-weight: 700;
 }
 
+h3 {
+    margin: 0px;
+}
+
 a:link, a:focus, a:visited, a:active {
     outline: 0;
     text-decoration: None;
@@ -172,24 +176,30 @@ a.button1:hover {
 /* -------------------------------------------------------------------------- */
 
 .row.row-grid [class*="col-"] + [class*="col-"] {
-    margin-top: 15px;
+    margin-top: 25px;
 }
 
-@media (min-width: 1200px) {
-    .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] {
-        margin-top: 0;
-    }
-}
+// @media (min-width: 1200px) {
+//     .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] {
+//         margin-top: 0px;
+//     }
+// }
+
 @media (min-width: 992px) {
+    .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] {
+        margin-top: 0px;
+    }
+
     .row.row-grid [class*="col-md-"] + [class*="col-md-"] {
-        margin-top: 0;
+        margin-top: 0px;
     }
 }
-@media (min-width: 768px) {
-    .row.row-grid [class*="col-sm-"] + [class*="col-sm-"] {
-        margin-top: 0;
-    }
-}
+
+// @media (min-width: 768px) {
+//     .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] {
+//         margin-top: 0px;
+//     }
+// }
 
 /* -------------------------------------------------------------------------- */
 
@@ -281,22 +291,12 @@ a.button1:hover {
 
     #start {
 
-        #image {
-            margin-bottom: 25px;
-        }
-
-        #intro {
-            // padding-top: 50px;
-            // padding-bottom: 50px;
-            font-style: italic;
-        }
-
-        #main_map {
-            height: 500px;
+        #activities {
+            margin-top: 50px;
+            margin-bottom: 50px;
         }
 
         #newsletter {
-            margin-top: 50px;
             padding: 50px 0;
             background-color: $color1;
 
@@ -315,7 +315,7 @@ a.button1:hover {
 
         }
 
-        #wildcam {
+        #picture_wildcam {
             padding-top: 50px;
 
             h1 {
