@@ -1,19 +1,19 @@
 
-var app = angular.module("App", ['ui.router', 'ngSanitize', 'ngAnimate', 'ngResource']).run(function($rootScope, $http, $httpProvider) {
+var app = angular.module("App", ['ui.router', 'ngSanitize', 'ngAnimate', 'ngResource']).run(function($rootScope, $http, ) {
 
     $http.get("/api/activities").success(function(response) {
     });
 
-    $httpProvider.defaults.xsrfCookieName = 'csrftoken';
-    $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
-
 });
 
 
-app.config(function($interpolateProvider) {
+app.config(function($interpolateProvider, $httpProvider) {
 
     $interpolateProvider.startSymbol('[[');
     $interpolateProvider.endSymbol(']]');
+
+    $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+    $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
 
 });
 
