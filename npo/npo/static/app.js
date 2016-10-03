@@ -8,6 +8,9 @@ app.config(function($interpolateProvider, $httpProvider) {
     $interpolateProvider.startSymbol('[[');
     $interpolateProvider.endSymbol(']]');
 
+    $http.get("/api/activities").success(function(response) {
+    });
+
     $httpProvider.defaults.xsrfCookieName = 'csrftoken';
     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
 
@@ -51,7 +54,6 @@ app.controller("ActivityPageController", function($scope, $stateParams, $http) {
     var $date = $activity.substring(0, 10);
     var $slug = $activity.substring(11);
     $http.get("/api/activities", {params: {date: $date, slug: $slug}}).success(function(response) {
-        console.log(response[0]);
         $scope.activity = response[0];
     });
 });
