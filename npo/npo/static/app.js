@@ -3,7 +3,7 @@ var app = angular.module("App", ['ui.router', 'ngSanitize', 'ngAnimate', 'ngReso
 });
 
 
-app.config(function($interpolateProvider, $httpProvider) {
+app.config(function($interpolateProvider, $http, $httpProvider) {
 
     $interpolateProvider.startSymbol('[[');
     $interpolateProvider.endSymbol(']]');
