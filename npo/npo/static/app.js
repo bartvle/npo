@@ -31,7 +31,7 @@ app.controller("AppController", function($scope) {
 
 
 app.controller("StartPageController", function($scope, $http) {
-    $http.get("/api/activities").success(function(response) {
+    $http.get("/api/activities", {params: {date: "future", limit: 3}}).success(function(response) {
         $scope.activities = response;
     });
 });
