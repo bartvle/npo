@@ -4,12 +4,14 @@
 
 import os
 
+from django.views.decorators.csrf import ensure_csrf_cookie
 from django.http import JsonResponse
 from django.shortcuts import render
 
 from npo.settings import BASE_DIR
 
 
+@ensure_csrf_cookie
 def index(request):
     """
     """
