@@ -1,8 +1,5 @@
 
 var app = angular.module("App", ['ui.router', 'ngSanitize', 'ngAnimate', 'ngResource']).run(function($rootScope, $http) {
-
-    $http.get("/api/activities").success(function(response) {});
-
 });
 
 
