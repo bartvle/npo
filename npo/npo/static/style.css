@@ -7,11 +7,13 @@ html, body { margin: 0px; height: 100%; padding: 0px; color: #808080; }
 
 html { /* always show scrollbar */ overflow-y: scroll; }
 
-h1 { font-family: "Bree Serif", serif; font-weight: 400; }
+h1 { font-family: "Bree Serif", serif; font-weight: 400; margin-top: 0px; }
 
-h2 { font-family: "PT Sans", sans-serif; font-weight: 700; }
+h2 { font-family: "PT Sans", sans-serif; font-weight: 700; margin-top: 0px; }
 
-h3 { margin: 0px; }
+h3 { margin-top: 0px; }
+
+h4 { margin-top: 0px; }
 
 a:link, a:focus, a:visited, a:active { outline: 0; text-decoration: None; color: #97C00E; }
 
@@ -69,7 +71,7 @@ a.button1:hover { color: #FFFFFF; text-decoration: None; background: #97C00E; }
 
 #header { flex-shrink: 0; }
 
-#embody { flex: 1 0 auto; margin-bottom: 50px; }
+#embody { flex: 1 0 auto; margin: 50px 0px; }
 
 #footer { flex-shrink: 0; }
 
@@ -86,6 +88,7 @@ a.button1:hover { color: #FFFFFF; text-decoration: None; background: #97C00E; }
 #header #header2 a:hover { color: #97C00E; background: #FFFFFF; }
 
 /* -------------------------------------------------------------------------- */
+#embody #start { margin-top: -50px; }
 #embody #start #activities { margin-top: 50px; margin-bottom: 50px; }
 #embody #start #newsletter { padding: 50px 0; background-color: #97C00E; }
 #embody #start #newsletter h2 { margin-top: 0px; margin-bottom: 25px; }
