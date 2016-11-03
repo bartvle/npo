@@ -46,12 +46,13 @@ app.controller("NewsletterController", function($scope, $http) {
 });
 
 
-app.controller("ActivityPageController", function($scope, $stateParams, $http) {
+app.controller("ActivityPageController", function($scope, $stateParams, $http, $sce) {
     var $activity = $stateParams.activity;
     var $date = $activity.substring(0, 10);
     var $slug = $activity.substring(11);
     $http.get("/api/activities", {params: {date: $date, slug: $slug}}).success(function(response) {
         $scope.activity = response[0];
+        $scope.activity.intro = $sce.trustAsHtml($scope.activity.intro);
     });
 });
 
