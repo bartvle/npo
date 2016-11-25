@@ -2,9 +2,9 @@
 """
 
 
-from django.contrib import admin
+from npo.admin import admin_site
 
 from .models import Activity
 
 
-admin.site.register(Activity)
+admin_site.register(Activity)
