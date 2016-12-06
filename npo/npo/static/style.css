@@ -38,6 +38,8 @@ a.color4:link, a.color4:focus, a.color4:visited, a.color4:active { text-decorati
 
 a.color4:hover { text-decoration: underline; color: #FFFFFF; }
 
+a.nothing:hover { text-decoration: None; }
+
 a.button1 { display: inline-block; color: #97C00E; text-decoration: None; cursor: pointer; }
 
 a.button1:hover { color: #FFFFFF; text-decoration: None; background: #97C00E; }

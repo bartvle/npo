@@ -7,7 +7,7 @@
     <div id="activities" class="container">
         <div class="row row-grid">
             <div ng-repeat="activity in activities" class="col-sm-12 col-md-4">
-                <h3 class="color1" ng-bind="activity.name"></h3>
+                <a href="/activiteiten/[[activity.date]]-[[activity.slug]]" class="nothing"><h3 class="color1" ng-bind="activity.name"></h3></a>
                 <p>[[ activity.date | date: 'EEEE d MMMM' ]]</p>
                 <p ng-bind="activity.short"></p>
                 <a class="btn btn-default" href="/activiteiten/[[activity.date]]-[[activity.slug]]" role="button">Meer info</a>
