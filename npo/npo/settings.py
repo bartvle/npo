@@ -31,8 +31,8 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'api',
-    'newsletter',
-    'activities',
+    'newsletter.apps.NewsletterConfig',
+    'activities.apps.ActivitiesConfig',
 ]
 
 MIDDLEWARE_CLASSES = [

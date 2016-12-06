@@ -112,6 +112,10 @@ a.color4:hover {
     color: $color4;
 }
 
+a.nothing:hover {
+    text-decoration: None;
+}
+
 a.button1 {
     @extend .box;
     display: inline-block;
