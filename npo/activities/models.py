@@ -17,7 +17,8 @@ class Activity(models.Model):
     practical = models.TextField()
 
     class Meta:
-        verbose_name_plural = 'Activities'
+        verbose_name = "activiteit"
+        verbose_name_plural = "activiteiten"
 
     def __str__(self):
         """
