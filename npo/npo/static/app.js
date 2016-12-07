@@ -34,6 +34,13 @@ app.controller("StartPageController", function($scope, $http) {
 });
 
 
+app.controller("ActivitiesPageController", function($scope, $http) {
+    $http.get("/api/activities", {params: {date: 'future'}}).success(function(response) {
+        $scope.activities = response;
+    });
+});
+
+
 app.controller("NewsletterController", function($scope, $http) {
     $scope.post = false;
     $scope.data = {}

@@ -99,6 +99,9 @@ a.button1:hover { color: #FFFFFF; text-decoration: None; background: #97C00E; }
 #embody #start #picture_wildcam { padding-top: 50px; }
 #embody #start #picture_wildcam h1 { margin-top: 0px; }
 
+@media (max-width: 991px) { #activities_page .not-first-row-sm { margin-top: 50px; } }
+@media (min-width: 992px) and (max-width: 1199px) { #activities_page .not-first-row-md { margin-top: 50px; } }
+@media (min-width: 1200px) { #activities_page .not-first-row-lg { margin-top: 50px; } }
 /* -- footer ---------------------------------------------------------------- */
 #footer #footer1 { background: #E8F2D9; line-height: 40px; color: #808080; padding-top: 25px; padding-bottom: 25px; }
 #footer #footer1 .text { margin-right: 10px; float: left; font-size: 14px; font-weight: bold; }
