@@ -32,7 +32,7 @@ urlpatterns = [
     url(r'^beleid', index),
     url(r'^natuurgebieden', index),
     url(r'^soortbescherming', index),
+    url(r'^activiteiten', index),
     url(r'^nieuwsbrief', index),
     url(r'^lidworden', index),
-    url(r'^activiteiten', index),
 ]
