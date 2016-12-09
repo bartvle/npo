@@ -31,6 +31,8 @@ class AdminSite(AdminSite):
     """
     """
     site_header = 'Natuurpunt Oosterzele Admin'
+    site_title = 'NPO Admin'
+    index_title = 'Sitebeheer'
 
     def get_urls(self):
         """
