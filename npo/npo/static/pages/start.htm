@@ -1,4 +1,7 @@
-<div id="start">
+{% extends "index.htm" %}
+
+{% block embody %}
+<div id="start" ng-controller="StartPageController">
 
     <!-- Image -->
     <div id="image" ><img src="/static/images/start.jpg" class="img-responsive" /></div>
@@ -53,3 +56,4 @@
     </div>
 
 </div>
+{% endblock %}

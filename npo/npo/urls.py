@@ -1,22 +1,11 @@
-"""npo URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.9/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.conf.urls import url, include
-    2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+"""
+
+
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from npo.views import index, api_magazine
+from . import views
 from newsletter.views import subscribe as api_newsletter_subscribe
 from api.urls import api_router
 from npo.admin import admin_site
@@ -24,15 +13,16 @@ from npo.admin import admin_site
 
 urlpatterns = [
     url(r'^admin/', admin_site.urls),
-    url(r'^api/magazine/', api_magazine),
+    url(r'^api/magazine/', views.api_magazine),
     url(r'^api/newsletter/subscribe', api_newsletter_subscribe),
     url(r'^api/', include(api_router.urls)),
-    url(r'^$', index),
-    url(r'^overons', index),
-    url(r'^beleid', index),
-    url(r'^natuurgebieden', index),
-    url(r'^soortbescherming', index),
-    url(r'^activiteiten', index),
-    url(r'^nieuwsbrief', index),
-    url(r'^lidworden', index),
+    url(r'^$', views.start),
+    url(r'^overons/$', views.overons),
+    url(r'^beleid/$', views.beleid),
+    url(r'^natuurgebieden/$', views.natuurgebieden),
+    url(r'^soortbescherming/$', views.soortbescherming),
+    url(r'^activiteiten/$', views.activiteiten),
+    url(r'^activiteiten/(?P<year>[0-9]{4})-(?P<month>[0-9]{2})-(?P<day>[0-9]{2})-(?P<slug>[\w-]+)/$', views.activiteit),
+    url(r'^nieuwsbrief/$', views.nieuwsbrief),
+    url(r'^lidworden/$', views.lidworden),
 ]
