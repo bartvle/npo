@@ -438,35 +438,3 @@ a.button1:hover {
     }
 
 }
-
-/* -- Transitions ----------------------------------------------------------- */
-
-#header {
-    animation: fadein 0.5s ease-in-out;
-    -webkit-animation: fadein 0.5s ease-in-out;
-}
-
-#footer {
-    animation: fadein 0.5s ease-in-out;
-    -webkit-animation: fadein 0.5s ease-in-out;
-}
-
-[ui-view].ng-enter {
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
-  opacity: 0;
-}
-
-[ui-view].ng-enter-active {
-  opacity: 1;
-}
-
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-@-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}

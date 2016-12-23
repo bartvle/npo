@@ -1,4 +1,7 @@
-<div id="nieuwsbrief" class="container">
+{% extends "index.htm" %}
+
+{% block embody %}
+<div id="nieuwsbrief" class="container" ng-controller="MagazinePageController">
     <h1>Nieuwsbrief</h1>
     <p class="text-justify">Herlees hier onze driemaandelijkse nieuwsbrief! De meest recente is pas beschikbaar een tweetal maanden na uitgave. Wil je onze nieuwsbrief meteen lezen? <a href="/lidworden">Word dan nu lid</a> en je krijgt deze thuis via de post! Voor ideeën, opmerkingen of vragen omtrent de nieuwsbrief kan je ons steeds contacteren via <a href="mailto:redactie@natuurpuntoosterzele.be">redactie@natuurpuntoosterzele.be</a>.</p>
     <div class="row" style="margin-top:35px;">
@@ -16,3 +19,4 @@
     </div>
     <p style="margin-top:20px;">Oudere nieuwsbrieven zijn niet digitaal beschikbaar.
 </div>
+{% endblock %}

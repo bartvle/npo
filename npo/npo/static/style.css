@@ -111,17 +111,3 @@ a.button1:hover { color: #FFFFFF; text-decoration: None; background: #97C00E; }
 #footer #footer1 #gototop { float: right; width: 40px; height: 40px; background: #808080; border-radius: 3px; text-align: center; color: #FFFFFF; cursor: pointer; }
 #footer #footer1 #gototop:hover { background: #97C00E; }
 #footer #footer2 { background: #97C00E; line-height: 50px; font-size: 12px; color: #FFFFFF; }
-
-/* -- Transitions ----------------------------------------------------------- */
-#header { animation: fadein 0.5s ease-in-out; -webkit-animation: fadein 0.5s ease-in-out; }
-
-#footer { animation: fadein 0.5s ease-in-out; -webkit-animation: fadein 0.5s ease-in-out; }
-
-[ui-view].ng-enter { -webkit-transition: all .5s ease-in-out; transition: all .5s ease-in-out; opacity: 0; }
-
-[ui-view].ng-enter-active { opacity: 1; }
-
-@keyframes fadein { from { opacity: 0; }
-  to { opacity: 1; } }
-@-webkit-keyframes fadein { from { opacity: 0; }
-  to { opacity: 1; } }

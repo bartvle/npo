@@ -1,5 +1,5 @@
 
-var app = angular.module("App", ['ui.router', 'ngSanitize', 'ngAnimate', 'ngResource']).run(function($rootScope, $http) {
+var app = angular.module("App", ['ngSanitize', 'ngAnimate', 'ngResource']).run(function($rootScope, $http) {
 });
 
 
@@ -41,6 +41,13 @@ app.controller("ActivitiesPageController", function($scope, $http) {
 });
 
 
+app.controller("MagazinePageController", function($scope, $http) {
+    $http.get("/api/magazine").success(function(response) {
+        $scope.newsletters = response;
+    });
+});
+
+
 app.controller("NewsletterController", function($scope, $http) {
     $scope.post = false;
     $scope.data = {}
@@ -50,24 +57,6 @@ app.controller("NewsletterController", function($scope, $http) {
             $scope.answer = response;
         });
     }
-});
-
-
-app.controller("ActivityPageController", function($scope, $stateParams, $http, $sce) {
-    var $activity = $stateParams.activity;
-    var $date = $activity.substring(0, 10);
-    var $slug = $activity.substring(11);
-    $http.get("/api/activities", {params: {date: $date, slug: $slug}}).success(function(response) {
-        $scope.activity = response[0];
-        $scope.activity.intro = $sce.trustAsHtml($scope.activity.intro);
-    });
-});
-
-
-app.controller("MagazinePageController", function($scope, $http) {
-    $http.get("/api/magazine").success(function(response) {
-        $scope.newsletters = response;
-    });
 });
 
 

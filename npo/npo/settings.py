@@ -118,10 +118,9 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'npo', 'static'), ]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'npo', 'static')]
 
-TEMPLATES[0]['DIRS'].append(STATICFILES_DIRS [0])
+TEMPLATES[0]['DIRS'].append(os.path.join(STATICFILES_DIRS[0], 'pages'))
 
 
 # REST framework
