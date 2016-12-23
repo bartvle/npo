@@ -18,6 +18,16 @@ def index(request):
     return render(request, 'index.htm')
 
 
+def api_carousel(request):
+    """
+    """
+    folder = os.path.join(BASE_DIR, 'npo', 'static', 'images', 'carousel')
+    data = []
+    for file in os.listdir(folder):
+        data.append({'name': file})
+    return JsonResponse(data, safe=False)
+
+
 def api_magazine(request):
     """
     """

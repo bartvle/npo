@@ -31,6 +31,16 @@ app.controller("StartPageController", function($scope, $http) {
     $http.get("/api/activities", {params: {date: "future", limit: 3}}).success(function(response) {
         $scope.activities = response;
     });
+
+    $http.get("/api/carousel").success(function(response) {
+        $scope.carousel = response;
+        $('.carousel').slick({
+            infinite: true,
+            centerMode: true,
+            variableWidth: true,
+        });
+    });
+
 });
 
 
@@ -38,18 +48,6 @@ app.controller("ActivitiesPageController", function($scope, $http) {
     $http.get("/api/activities", {params: {date: 'future'}}).success(function(response) {
         $scope.activities = response;
     });
-});
-
-
-app.controller("NewsletterController", function($scope, $http) {
-    $scope.post = false;
-    $scope.data = {}
-    $scope.send = function () {
-        $http.post("/api/newsletter/subscribe", $scope.data).success(function(response) {
-            $scope.post = true;
-            $scope.answer = response;
-        });
-    }
 });
 
 
@@ -68,6 +66,18 @@ app.controller("MagazinePageController", function($scope, $http) {
     $http.get("/api/magazine").success(function(response) {
         $scope.newsletters = response;
     });
+});
+
+
+app.controller("NewsletterController", function($scope, $http) {
+    $scope.post = false;
+    $scope.data = {}
+    $scope.send = function () {
+        $http.post("/api/newsletter/subscribe", $scope.data).success(function(response) {
+            $scope.post = true;
+            $scope.answer = response;
+        });
+    }
 });
 
 

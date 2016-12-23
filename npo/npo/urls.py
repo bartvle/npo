@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from npo.views import index, api_magazine
+from npo.views import index, api_carousel, api_magazine
 from newsletter.views import subscribe as api_newsletter_subscribe
 from api.urls import api_router
 from npo.admin import admin_site
@@ -25,6 +25,7 @@ from npo.admin import admin_site
 urlpatterns = [
     url(r'^admin/', admin_site.urls),
     url(r'^api/magazine/', api_magazine),
+    url(r'^api/carousel/', api_carousel),
     url(r'^api/newsletter/subscribe', api_newsletter_subscribe),
     url(r'^api/', include(api_router.urls)),
     url(r'^$', index),
