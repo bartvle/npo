@@ -1,21 +1,23 @@
 {% extends "index.htm" %}
 
 {% block embody %}
-<div id="nieuwsbrief" class="container" ng-controller="MagazinePageController">
+<div id="nieuwsbrief" class="container">
     <h1>Nieuwsbrief</h1>
     <p class="text-justify">Herlees hier onze driemaandelijkse nieuwsbrief! De meest recente is pas beschikbaar een tweetal maanden na uitgave. Wil je onze nieuwsbrief meteen lezen? <a href="/lidworden">Word dan nu lid</a> en je krijgt deze thuis via de post! Voor ideeën, opmerkingen of vragen omtrent de nieuwsbrief kan je ons steeds contacteren via <a href="mailto:redactie@natuurpuntoosterzele.be">redactie@natuurpuntoosterzele.be</a>.</p>
     <div class="row" style="margin-top:35px;">
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3" ng-repeat="year in newsletters">
+        {% for year in magazine %}
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
             <div class="box" style="padding:5px;">
-                <b>[[ year.folder ]]</b>
+                <b>{{ year.folder }}</b>
             </div>
             <ul>
-                <li ng-if="year.editions.indexOf('janmaart') > -1"><a class="nc" href="/static/magazine/[[year.folder]]/janmaart[[year.year]].pdf" target="_blank">jan-feb-mrt</a></li>
-                <li ng-if="year.editions.indexOf('apriljuni') > -1"><a class="nc" href="/static/magazine/[[year.folder]]/apriljuni[[year.year]].pdf" target="_blank">apr-mei-jun</a></li>
-                <li ng-if="year.editions.indexOf('julisept') > -1"><a class="nc" href="/static/magazine/[[year.folder]]/julisept[[year.year]].pdf" target="_blank">jul-aug-sep</a></li>
-                <li ng-if="year.editions.indexOf('oktdec') > -1"><a class="nc" href="/static/magazine/[[year.folder]]/oktdec[[year.year]].pdf" target="_blank">okt-nov-dec</a></li>
+                {% if 'janmaart' in year.editions %}<li><a class="nc" href="/static/magazine/{{year.folder}}/janmaart{{year.year}}.pdf" target="_blank">jan-feb-mrt</a></li>{% endif %}
+                {% if 'apriljuni' in year.editions %}<li><a class="nc" href="/static/magazine/{{year.folder}}/apriljuni{{year.year}}.pdf" target="_blank">apr-mei-jun</a></li>{% endif %}
+                {% if 'julisept' in year.editions %}<li><a class="nc" href="/static/magazine/{{year.folder}}/julisept{{year.year}}.pdf" target="_blank">jul-aug-sep</a></li>{% endif %}
+                {% if 'oktdec' in year.editions %}<li><a class="nc" href="/static/magazine/{{year.folder}}/oktdec{{year.year}}.pdf" target="_blank">okt-nov-dec</a></li>{% endif %}
             </ul>
         </div>
+        {% endfor %}
     </div>
     <p style="margin-top:20px;">Oudere nieuwsbrieven zijn niet digitaal beschikbaar.
 </div>

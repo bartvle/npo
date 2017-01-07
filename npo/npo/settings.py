@@ -30,7 +30,6 @@ INSTALLED_APPS = [
 
     'rest_framework',
 
-    'api',
     'newsletter.apps.NewsletterConfig',
     'activities.apps.ActivitiesConfig',
 ]

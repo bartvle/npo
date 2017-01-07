@@ -17,7 +17,9 @@ from activities.models import Activity
 def start(request):
     """
     """
-    return render(request, 'start.htm')
+    activities = Activity.objects.all().filter(date__gte=datetime.date.today()).order_by('date')[:3]
+    context = {'activities': activities}
+    return render(request, 'start.htm', context=context)
 
 
 @ensure_csrf_cookie
@@ -52,7 +54,9 @@ def soortbescherming(request):
 def activiteiten(request):
     """
     """
-    return render(request, 'activiteiten.htm')
+    activities = Activity.objects.all().filter(date__gte=datetime.date.today()).order_by('date')
+    context = {'activities': activities}
+    return render(request, 'activiteiten.htm', context=context)
 
 
 @ensure_csrf_cookie
@@ -68,19 +72,6 @@ def activiteit(request, year, month, day, slug):
 def nieuwsbrief(request):
     """
     """
-    return render(request, 'nieuwsbrief.htm')
-
-
-@ensure_csrf_cookie
-def lidworden(request):
-    """
-    """
-    return render(request, 'lidworden.htm')
-
-
-def api_magazine(request):
-    """
-    """
     folder = os.path.join(BASE_DIR, 'npo', 'static', 'magazine')
     data = []
     order = {'jan': 1, 'apr': 2, 'jul': 3, 'okt': 4}
@@ -92,4 +83,12 @@ def api_magazine(request):
         editions.sort(key=lambda x: order[x[:3]])
         data.append({'year': year[:4], 'folder': year, 'editions': editions})
     data.sort(key=lambda x: x['year'])
-    return JsonResponse(data[::-1], safe=False)
+    context = {'magazine': data[::-1]}
+    return render(request, 'nieuwsbrief.htm', context=context)
+
+
+@ensure_csrf_cookie
+def lidworden(request):
+    """
+    """
+    return render(request, 'lidworden.htm')

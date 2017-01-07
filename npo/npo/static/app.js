@@ -1,5 +1,5 @@
 
-var app = angular.module("App", ['ngSanitize', 'ngAnimate', 'ngResource']).run(function($rootScope, $http) {
+var app = angular.module("App", []).run(function($rootScope, $http) {
 });
 
 
@@ -24,27 +24,6 @@ app.controller("AppController", function($scope) {
         });
     });
 
-});
-
-
-app.controller("StartPageController", function($scope, $http) {
-    $http.get("/api/activities", {params: {date: "future", limit: 3}}).success(function(response) {
-        $scope.activities = response;
-    });
-});
-
-
-app.controller("ActivitiesPageController", function($scope, $http) {
-    $http.get("/api/activities", {params: {date: 'future'}}).success(function(response) {
-        $scope.activities = response;
-    });
-});
-
-
-app.controller("MagazinePageController", function($scope, $http) {
-    $http.get("/api/magazine").success(function(response) {
-        $scope.newsletters = response;
-    });
 });
 
 

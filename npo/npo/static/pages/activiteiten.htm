@@ -1,15 +1,17 @@
 {% extends "index.htm" %}
 
 {% block embody %}
-<div id="activities_page" ng-controller="ActivitiesPageController">
+<div id="activities_page">
     <div class="container">
         <div class="row">
-            <div ng-repeat="activity in activities" class="col-sm-12 col-md-6 col-lg-4 all" ng-class="{ 'not-first-row-sm': $index > 0, 'not-first-row-md': $index > 1, 'not-first-row-lg': $index > 2 }">
-                <a href="/activiteiten/[[activity.date]]-[[activity.slug]]" class="nothing"><h3 class="color1" ng-bind="activity.name"></h3></a>
-                <p>[[ activity.date | date: 'EEEE d MMMM' ]]</p>
-                <p ng-bind="activity.short"></p>
-                <a class="btn btn-default" href="/activiteiten/[[activity.date]]-[[activity.slug]]" role="button">Meer info</a>
-            </div>
+            {% for activity in activities %}
+                <div class="col-sm-12 col-md-6 col-lg-4 all {% if forloop.counter0 > 0 %}not-first-row-sm{% endif %} {% if forloop.counter0 > 1 %}not-first-row-md{% endif %} {% if forloop.counter0 > 2 %}not-first-row-lg{% endif %}">
+                    <a href="/activiteiten/{{activity.date | date:'Y-m-d'}}-{{activity.slug}}" class="nothing"><h3 class="color1">{{activity.name}}</h3></a>
+                    <p>{{activity.date}}</p>
+                    <p>{{ activity.short }}</p>
+                    <a class="btn btn-default" href="/activiteiten/{{activity.date | date:'Y-m-d'}}-{{activity.slug}}" role="button">Meer info</a>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </div>
