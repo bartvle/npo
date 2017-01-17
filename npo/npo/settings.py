@@ -28,8 +28,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'newsletter.apps.NewsletterConfig',
     'activities.apps.ActivitiesConfig',
+    'newsletter.apps.NewsletterConfig',
+    'magazine.apps.MagazineConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -116,3 +117,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'npo', 'static')]
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
