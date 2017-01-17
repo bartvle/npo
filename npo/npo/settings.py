@@ -28,10 +28,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'rest_framework',
-
-    'newsletter.apps.NewsletterConfig',
     'activities.apps.ActivitiesConfig',
+    'newsletter.apps.NewsletterConfig',
+    'magazine.apps.MagazineConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -50,7 +49,7 @@ ROOT_URLCONF = 'npo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'npo', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,15 +118,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'npo', 'static')]
 
-TEMPLATES[0]['DIRS'].append(os.path.join(STATICFILES_DIRS[0], 'pages'))
+MEDIA_URL = '/media/'
 
-
-# REST framework
-
-REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
-}
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

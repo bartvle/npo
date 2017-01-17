@@ -4,6 +4,7 @@ npo/db.sqlite3
 npo/npo/deploy.py
 
 npo/static
+npo/media
 
 npo/npo/static/data
 npo/npo/static/images
