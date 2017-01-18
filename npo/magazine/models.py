@@ -54,6 +54,11 @@ class Edition(models.Model):
     quarter = models.IntegerField(choices=QUARTERS, default=current_quarter)
     file = models.FileField(upload_to='magazine')
 
+    def __str__(self):
+        """
+        """
+        return '%s - %s' % (self.volume, self.QUARTERS[self.quarter][1])
+
     class Meta:
         verbose_name = "editie"
         verbose_name_plural = "edities"
