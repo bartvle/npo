@@ -2,6 +2,7 @@
 """
 
 
+from django.utils.translation import ugettext_lazy as _
 from django.db import models
 
 
@@ -9,11 +10,11 @@ class Subscription(models.Model):
     """
     """
 
-    email = models.EmailField(unique=True)
+    email = models.EmailField(verbose_name=_('email'), unique=True)
 
     class Meta:
-        verbose_name = "inschrijving"
-        verbose_name_plural = "inschrijvingen"
+        verbose_name = _('subscription')
+        verbose_name_plural = _('subscriptions')
         ordering = ['email']
 
     def __str__(self):

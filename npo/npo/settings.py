@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'news.apps.NewsConfig',
     'activities.apps.ActivitiesConfig',
     'newsletter.apps.NewsletterConfig',
     'magazine.apps.MagazineConfig',
@@ -36,6 +37,7 @@ INSTALLED_APPS = [
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -107,6 +109,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'npo', 'locale')]
 
 
 # Static files (CSS, JavaScript, Images)
