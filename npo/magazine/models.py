@@ -68,7 +68,7 @@ class Edition(models.Model):
     def __str__(self):
         """
         """
-        return '%s - %s' % (self.volume, self.QUARTERS[self.quarter][1])
+        return '%s - %s' % (self.volume, self.get_quarter_display())
 
     class Meta:
         verbose_name = _('edition')
