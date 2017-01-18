@@ -13,7 +13,7 @@ class Activity(models.Model):
     name = models.CharField(verbose_name=_('name'), max_length=50)
     date = models.DateField(verbose_name=_('date'))
     slug = models.SlugField(verbose_name=_('slug'))
-    short = models.TextField(verbose_name=_('short'), max_length=125)
+    short = models.TextField(verbose_name=_('short'), max_length=150)
     intro = models.TextField(verbose_name=_('intro'))
     practical = models.TextField(verbose_name=_('practical'))
 
