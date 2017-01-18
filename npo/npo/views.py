@@ -24,7 +24,7 @@ def start(request):
 
 
 @ensure_csrf_cookie
-def overons(request):
+def over_ons(request):
     """
     """
     return render(request, 'overons.htm')
@@ -70,7 +70,7 @@ def activiteit(request, year, month, day, slug):
 
 
 @ensure_csrf_cookie
-def articles(request):
+def nieuws(request):
     """
     """
     articles = Article.objects.all().order_by('-date')
@@ -79,7 +79,7 @@ def articles(request):
 
 
 @ensure_csrf_cookie
-def article(request, year, month, day, slug):
+def artikel(request, year, month, day, slug):
     """
     """
     date = datetime.date(int(year), int(month), int(day))
@@ -88,7 +88,7 @@ def article(request, year, month, day, slug):
 
 
 @ensure_csrf_cookie
-def nieuwsbrief(request):
+def e_nieuwsbrief(request):
     """
     """
     folder = os.path.join(BASE_DIR, 'npo', 'static', 'magazine')
@@ -107,7 +107,7 @@ def nieuwsbrief(request):
 
 
 @ensure_csrf_cookie
-def lidworden(request):
+def lid_worden(request):
     """
     """
     return render(request, 'lidworden.htm')

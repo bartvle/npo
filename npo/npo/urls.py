@@ -16,16 +16,16 @@ urlpatterns = [
     url(r'^admin/', admin_site.urls),
     url(r'^api/newsletter/subscribe', api_newsletter_subscribe),
     url(r'^$', views.start),
-    url(r'^overons/$', views.overons),
+    url(r'^overons/$', views.over_ons),
     url(r'^beleid/$', views.beleid),
     url(r'^natuurgebieden/$', views.natuurgebieden),
     url(r'^soortbescherming/$', views.soortbescherming),
     url(r'^activiteiten/$', views.activiteiten),
     url(r'^activiteiten/(?P<year>[0-9]{4})-(?P<month>[0-9]{2})-(?P<day>[0-9]{2})-(?P<slug>[\w-]+)/$', views.activiteit),
-    url(r'^nieuws/$', views.articles),
-    url(r'^nieuws/(?P<year>[0-9]{4})-(?P<month>[0-9]{2})-(?P<day>[0-9]{2})-(?P<slug>[\w-]+)/$', views.article),
-    url(r'^nieuwsbrief/$', views.nieuwsbrief),
-    url(r'^lidworden/$', views.lidworden),
+    url(r'^nieuws/$', views.nieuws),
+    url(r'^nieuws/(?P<year>[0-9]{4})-(?P<month>[0-9]{2})-(?P<day>[0-9]{2})-(?P<slug>[\w-]+)/$', views.artikel),
+    url(r'^nieuwsbrief/$', views.e_nieuwsbrief),
+    url(r'^lidworden/$', views.lid_worden),
 ]
 
 if settings.DEBUG is True:
