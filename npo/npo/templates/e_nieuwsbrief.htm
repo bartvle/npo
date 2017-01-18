@@ -1,0 +1,25 @@
+{% extends "index.htm" %}
+
+{% block embody %}
+<div id="nieuwsbrief" class="container">
+    <h1>Nieuwsbrief</h1>
+    <p class="text-justify">Herlees hier onze driemaandelijkse nieuwsbrief! De meest recente is pas beschikbaar een tweetal maanden na uitgave. Wil je onze nieuwsbrief meteen lezen? <a href="/lidworden">Word dan nu lid</a> en je krijgt deze thuis via de post! Voor ideeën, opmerkingen of vragen omtrent de nieuwsbrief kan je ons steeds contacteren via <a href="mailto:redactie@natuurpuntoosterzele.be">redactie@natuurpuntoosterzele.be</a>.</p>
+        <div class="row" style="margin-top:35px;">
+            {% for volume in volumes %}
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="box" style="padding:5px;">
+                    <b>{{ volume }}</b>
+                </div>
+                <ul>
+                    {% for edition in volume.editions.all reversed %}
+                    <li>
+                        <a class="nc" href="{{ edition.file.url }}" target="_blank">{{ edition.get_quarter_display }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    <p style="margin-top:20px;">Oudere nieuwsbrieven zijn niet digitaal beschikbaar.
+</div>
+{% endblock %}

@@ -12,6 +12,7 @@ from django.shortcuts import render
 from npo.settings import BASE_DIR
 from news.models import Article
 from activities.models import Activity
+from magazine.models import Volume
 
 
 @ensure_csrf_cookie
@@ -91,19 +92,9 @@ def artikel(request, year, month, day, slug):
 def e_nieuwsbrief(request):
     """
     """
-    folder = os.path.join(BASE_DIR, 'npo', 'static', 'magazine')
-    data = []
-    order = {'jan': 1, 'apr': 2, 'jul': 3, 'okt': 4}
-    for year in os.listdir(folder)[::-1]:
-        year_folder = os.path.join(folder, year)
-        editions = []
-        for edition in os.listdir(year_folder):
-            editions.append(edition[:-8])
-        editions.sort(key=lambda x: order[x[:3]])
-        data.append({'year': year[:4], 'folder': year, 'editions': editions})
-    data.sort(key=lambda x: x['year'])
-    context = {'magazine': data[::-1]}
-    return render(request, 'nieuwsbrief.htm', context=context)
+    volumes = Volume.objects.all()
+    context = {'volumes': volumes}
+    return render(request, 'e_nieuwsbrief.htm', context=context)
 
 
 @ensure_csrf_cookie
