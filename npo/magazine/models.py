@@ -4,6 +4,7 @@
 
 import datetime
 
+from django.utils.translation import ugettext_lazy as _
 from django.db import models
 
 
@@ -23,20 +24,21 @@ class Volume(models.Model):
     """
     """
 
-    year = models.IntegerField(default=current_year)
+    year = models.IntegerField(verbose_name=_('year'), default=current_year)
 
     def __str__(self):
         """
         """
         return '%s - %s' % (self.number, self.year)
 
-    @property
-    def number(self):
+    def _number(self):
         return self.year - 1993
+    _number.short_description = _('number')
+    number = property(_number)
 
     class Meta:
-        verbose_name = "jaargang"
-        verbose_name_plural = "jaargangen"
+        verbose_name = _('volume')
+        verbose_name_plural = _('volumes')
         ordering = ['-year']
 
 
@@ -50,9 +52,9 @@ class Edition(models.Model):
         (3, 'jul-aug-sep'),
         (4, 'okt-nov-dec'))
 
-    volume = models.ForeignKey(Volume, related_name='editions', on_delete=models.PROTECT)
-    quarter = models.IntegerField(choices=QUARTERS, default=current_quarter)
-    file = models.FileField(upload_to='magazine')
+    volume = models.ForeignKey(Volume, verbose_name=_('volume'), related_name='editions', on_delete=models.PROTECT)
+    quarter = models.IntegerField(verbose_name=_('quarter'), choices=QUARTERS, default=current_quarter)
+    file = models.FileField(verbose_name=_('file'), upload_to='magazine')
 
     def __str__(self):
         """
@@ -60,6 +62,6 @@ class Edition(models.Model):
         return '%s - %s' % (self.volume, self.QUARTERS[self.quarter][1])
 
     class Meta:
-        verbose_name = "editie"
-        verbose_name_plural = "edities"
+        verbose_name = _('edition')
+        verbose_name_plural = _('editions')
         ordering = ['volume', '-quarter']
