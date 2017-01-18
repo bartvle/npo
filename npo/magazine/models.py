@@ -20,6 +20,15 @@ def current_quarter():
     return (datetime.datetime.now().month // 4) + 1
 
 
+def upload_to(instance, filename):
+    """
+    """
+    quarter = instance.get_quarter_display().replace('-', '')
+    year = instance.volume.year
+    filename = '%s%s.pdf' % (quarter, year)
+    return '/'.join(['magazine', str(year), filename])
+
+
 class Volume(models.Model):
     """
     """
@@ -54,7 +63,7 @@ class Edition(models.Model):
 
     volume = models.ForeignKey(Volume, verbose_name=_('volume'), related_name='editions', on_delete=models.PROTECT)
     quarter = models.IntegerField(verbose_name=_('quarter'), choices=QUARTERS, default=current_quarter)
-    file = models.FileField(verbose_name=_('file'), upload_to='magazine')
+    file = models.FileField(verbose_name=_('file'), upload_to=upload_to)
 
     def __str__(self):
         """
