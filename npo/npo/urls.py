@@ -22,6 +22,8 @@ urlpatterns = [
     url(r'^soortbescherming/$', views.soortbescherming),
     url(r'^activiteiten/$', views.activiteiten),
     url(r'^activiteiten/(?P<year>[0-9]{4})-(?P<month>[0-9]{2})-(?P<day>[0-9]{2})-(?P<slug>[\w-]+)/$', views.activiteit),
+    url(r'^nieuws/$', views.articles),
+    url(r'^nieuws/(?P<year>[0-9]{4})-(?P<month>[0-9]{2})-(?P<day>[0-9]{2})-(?P<slug>[\w-]+)/$', views.article),
     url(r'^nieuwsbrief/$', views.nieuwsbrief),
     url(r'^lidworden/$', views.lidworden),
 ]
