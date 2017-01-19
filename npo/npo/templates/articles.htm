@@ -3,6 +3,7 @@
 {% block embody %}
 <div id="articles_page">
     <div class="container">
+        <h1 class="page_title">Nieuws</h1>
         <div class="row">
             {% for article in articles %}
                 <div class="col-sm-12 col-md-6 col-lg-4 all {% if forloop.counter0 > 0 %}not-first-row-sm{% endif %} {% if forloop.counter0 > 1 %}not-first-row-md{% endif %} {% if forloop.counter0 > 2 %}not-first-row-lg{% endif %}">

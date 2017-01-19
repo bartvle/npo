@@ -1,6 +1,5 @@
 
-@import url(https://fonts.googleapis.com/css?family=Bree+Serif:400);
-@import url(https://fonts.googleapis.com/css?family=PT+Sans:700);
+@import 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:300,300i,400,400i,700,700i';
 
 /* -------------------------------------------------------------------------- */
 
@@ -12,209 +11,15 @@ $color5: #000000;
 
 /* -------------------------------------------------------------------------- */
 
-@mixin flex-container($direction) {
+#wrap {
     display: -webkit-flex;
     display: -ms-flex;
     display: -moz-flex;
     display: flex;
-    -webkit-flex-direction: $direction;
-    -ms-flex-direction: $direction;
-    -moz-flex-direction: $direction;
-    flex-direction: $direction;
-}
-
-/* -------------------------------------------------------------------------- */
-
-html, body {
-    margin: 0px;
-    height: 100%;
-    padding: 0px;
-    color: $color3;
-}
-
-html {
-    /* always show scrollbar */
-    overflow-y: scroll;
-}
-
-h1 {
-    font-family: "Bree Serif", serif;
-    font-weight: 400;
-    margin-top: 0px;
-}
-
-h2 {
-    font-family: "PT Sans", sans-serif;
-    font-weight: 700;
-    margin-top: 0px;
-}
-
-h3 {
-    margin-top: 0px;
-}
-
-h4 {
-    margin-top: 0px;
-}
-
-a:link, a:focus, a:visited, a:active {
-    outline: 0;
-    text-decoration: None;
-    color: $color1;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: $color1;
-}
-
-p+h2 {
-    margin-top: 20px;
-}
-
-p+p {
-    margin-top: 10px;
-}
-
-/* -------------------------------------------------------------------------- */
-
-p.justify {
-    text-align: justify;
-}
-
-a.color1:link, a.color1:focus, a.color1:visited, a.color1:active {
-    text-decoration: None;
-    color: $color1;
-}
-
-a.color1:hover {
-    text-decoration: underline;
-    color: $color1;
-}
-
-a.color3:link, a.color3:focus, a.color3:visited, a.color3:active {
-    text-decoration: None;
-    color: $color3;
-}
-
-a.color3:hover {
-    text-decoration: underline;
-    color: $color3;
-}
-
-a.color4:link, a.color4:focus, a.color4:visited, a.color4:active {
-    text-decoration: None;
-    color: $color4;
-}
-
-a.color4:hover {
-    text-decoration: underline;
-    color: $color4;
-}
-
-a.nothing:hover {
-    text-decoration: None;
-}
-
-a.button1 {
-    @extend .box;
-    display: inline-block;
-    color: $color1;
-    text-decoration: None;
-    cursor: pointer;
-}
-
-a.button1:hover {
-    color: $color4;
-    text-decoration: None;
-    background: $color1;
-}
-
-/* -------------------------------------------------------------------------- */
-
-.color1 {
-    color: $color1;
-}
-
-.color2 {
-    color: $color2;
-}
-
-.color3 {
-    color: $color3;
-}
-
-.color4 {
-    color: $color4;
-}
-
-.color5 {
-    color: $color5;
-}
-
-.bg-color2 {
-    background: $color2;
-}
-
-.box {
-    padding: 10px;
-    background-color: $color2;
-}
-
-.box-title {
-    margin-top: -10px;
-    margin-bottom: 10px;
-    margin-left: -10px;
-    margin-right: -10px;
-    padding: 10px;
-    font-family: "PT Sans", sans-serif;
-    font-size: 15px;
-    font-weight: bold;
-    color: $color4;
-    line-height: 20px;
-    background: $color1;
-}
-
-.date1 {
-    margin-bottom: 15px;
-    font-family: Strada, Helvetica, sans-serif;
-    font-size: 15px;
-    line-height: 1;
-}
-
-
-/* -------------------------------------------------------------------------- */
-
-.row.row-grid [class*="col-"] + [class*="col-"] {
-    margin-top: 25px;
-}
-
-// @media (min-width: 1200px) {
-//     .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] {
-//         margin-top: 0px;
-//     }
-// }
-
-@media (min-width: 992px) {
-    .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] {
-        margin-top: 0px;
-    }
-
-    .row.row-grid [class*="col-md-"] + [class*="col-md-"] {
-        margin-top: 0px;
-    }
-}
-
-// @media (min-width: 768px) {
-//     .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] {
-//         margin-top: 0px;
-//     }
-// }
-
-/* -------------------------------------------------------------------------- */
-
-#wrap {
-    @include flex-container(column);
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
     min-width: 350px;
     height: 100vh;
 }
@@ -239,8 +44,7 @@ a.button1:hover {
     #header1 {
         line-height: 50px;
         text-align: right;
-        font-size: 12px;
-        font-family: Strada, Helvetica, sans-serif;
+        font-size: 13px;
         background: $color2;
 
         ul {
@@ -267,7 +71,7 @@ a.button1:hover {
         margin-bottom: 0px;
         background: $color1;
         border: 0px;
-        font-family: Strada, Helvetica, sans-serif;
+        font-weight: 600;
 
         @media (min-width: 992px) {
             .navbar-header{
@@ -350,8 +154,6 @@ a.button1:hover {
 
 }
 
-
-
 @media (max-width: 991px) {
 
     #activities_page {
@@ -361,7 +163,6 @@ a.button1:hover {
     }
 
 }
-
 
 @media (min-width: 992px) and (max-width: 1199px) {
 
@@ -446,3 +247,208 @@ a.button1:hover {
     }
 
 }
+
+/* -------------------------------------------------------------------------- */
+
+html, body {
+    margin: 0px;
+    height: 100%;
+    padding: 0px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    color: $color3;
+}
+
+html {
+    /* always show scrollbar */
+    overflow-y: scroll;
+}
+
+h1 {
+    margin: 0px;
+    font-family: "Roboto Slab", serif;
+    font-weight: 300;
+}
+
+h2 {
+    margin: 0px;
+    font-family: "Roboto Slab", serif;
+    font-weight: 700;
+}
+
+h3 {
+    margin: 0px;
+}
+
+h4 {
+    margin: 0px;
+}
+
+a:link, a:focus, a:visited, a:active {
+    outline: 0;
+    text-decoration: None;
+    color: $color1;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: $color1;
+}
+
+p {
+    margin: 0px;
+    line-height: 1.5;
+}
+
+p+h2 {
+    margin-top: 20px;
+}
+
+p+p {
+    margin-top: 10px;
+}
+
+/* -------------------------------------------------------------------------- */
+
+h1.page_title {
+    margin-bottom: 25px;
+}
+
+h1.page_title_with_date {
+    margin-bottom: 15px;
+}
+
+h3.box_title {
+    margin-bottom: 10px;
+}
+
+a.color1:link, a.color1:focus, a.color1:visited, a.color1:active {
+    text-decoration: None;
+    color: $color1;
+}
+
+a.color1:hover {
+    text-decoration: underline;
+    color: $color1;
+}
+
+a.color3:link, a.color3:focus, a.color3:visited, a.color3:active {
+    text-decoration: None;
+    color: $color3;
+}
+
+a.color3:hover {
+    text-decoration: underline;
+    color: $color3;
+}
+
+a.color4:link, a.color4:focus, a.color4:visited, a.color4:active {
+    text-decoration: None;
+    color: $color4;
+}
+
+a.color4:hover {
+    text-decoration: underline;
+    color: $color4;
+}
+
+a.nothing:hover {
+    text-decoration: None;
+}
+
+a.button1 {
+    padding: 10px;
+    background-color: $color2;
+    display: inline-block;
+    color: $color1;
+    text-decoration: None;
+    cursor: pointer;
+}
+
+a.button1:hover {
+    color: $color4;
+    text-decoration: None;
+    background: $color1;
+}
+
+p.justify {
+    text-align: justify;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.color1 {
+    color: $color1;
+}
+
+.color2 {
+    color: $color2;
+}
+
+.color3 {
+    color: $color3;
+}
+
+.color4 {
+    color: $color4;
+}
+
+.color5 {
+    color: $color5;
+}
+
+.bg-color2 {
+    background: $color2;
+}
+
+.box {
+    padding: 25px;
+    background-color: $color2;
+}
+
+.box-title {
+    margin-top: -25px;
+    margin-bottom: 10px;
+    margin-left: -25px;
+    margin-right: -25px;
+    padding: 15px 25px;
+    font-size: 15px;
+    font-weight: bold;
+    color: $color4;
+    line-height: 20px;
+    background: $color1;
+}
+
+.date1 {
+    margin-bottom: 15px;
+    font-size: 15px;
+    line-height: 1;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.row.row-grid [class*="col-"] + [class*="col-"] {
+    margin-top: 25px;
+}
+
+// @media (min-width: 1200px) {
+//     .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] {
+//         margin-top: 0px;
+//     }
+// }
+
+@media (min-width: 992px) {
+    .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] {
+        margin-top: 0px;
+    }
+
+    .row.row-grid [class*="col-md-"] + [class*="col-md-"] {
+        margin-top: 0px;
+    }
+}
+
+// @media (min-width: 768px) {
+//     .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] {
+//         margin-top: 0px;
+//     }
+// }

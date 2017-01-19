@@ -3,9 +3,10 @@
 {% block embody %}
 <div id="activity_page">
     <div class="container">
+        <h1 class="page_title_with_date">{{ activity.name }}</h1>
         <div class="row">
             <div id="heading" class="col-xs-12">
-                <h1>{{ activity.name }}</h1>
+                
                 <h4>{{ activity.date }}</h4>
             </div>
         </div>
@@ -14,7 +15,7 @@
                 <!--<img ng-if="activity.image != ''" ng-src="{{activity.image}}" class="img-responsive" style="width:100%; margin-bottom:10px;" title="{{activity.caption}}">-->
                 <div id="content" style="text-align: justify;">{{ activity.intro | safe }}</div>
                 <div class="box">
-                    <h4>Praktisch</h4>
+                    <h3 class="box_title">Praktisch</h3>
                     {% if activity.practical %}
                         {{ activity.practical | safe }}
                     {% else %}
@@ -23,10 +24,10 @@
                 </div>
             </div>
             <div class="col-md-4 col-lg-4">
-                <h3>Komende activiteiten</h3>
+                <h3 style="margin-bottom: 15px">Komende activiteiten</h3>
                 {% for recent_activity in recent_activities %}
-                    <div>
-                        <p><b>{{ recent_activity.name }}, {{ recent_activity.date }}</b></p>
+                    <div style="margin-bottom: 10px">
+                        <a href="/activiteiten/{{recent_activity.date | date:'Y-m-d'}}-{{recent_activity.slug}}"><b>{{ recent_activity.name }}, {{ recent_activity.date }}</b></a>
                         <p>{{ recent_activity.short }}</p>
                     </div>
                 {% endfor %}
