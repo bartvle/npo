@@ -1,10 +1,10 @@
 {% extends "index.htm" %}
 
 {% block embody %}
-<div id="activiteit">
+<div id="activity_page">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12">
+            <div id="heading" class="col-xs-12">
                 <h1>{{ activity.name }}</h1>
                 <h4>{{ activity.date }}</h4>
             </div>
@@ -12,10 +12,7 @@
         <div class="row row-grid">
             <div class="col-md-8 col-lg-8">
                 <!--<img ng-if="activity.image != ''" ng-src="{{activity.image}}" class="img-responsive" style="width:100%; margin-bottom:10px;" title="{{activity.caption}}">-->
-                <div style="text-align: justify;">{{ activity.intro | safe }}</div>
-            </div>
-        
-            <div class="col-md-4 col-lg-4">
+                <div id="content" style="text-align: justify;">{{ activity.intro | safe }}</div>
                 <div class="box">
                     <h4>Praktisch</h4>
                     {% if activity.practical %}
@@ -24,6 +21,15 @@
                         <p>Contacteer ons via <a href="mailto:info@natuurpuntoosterzele.be">info@natuurpuntoosterzele.be</a> voor vragen omtrent deze activiteit.</p>
                     {% endif %}
                 </div>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <h3>Komende activiteiten</h3>
+                {% for recent_activity in recent_activities %}
+                    <div>
+                        <p><b>{{ recent_activity.name }}, {{ recent_activity.date }}</b></p>
+                        <p>{{ recent_activity.short }}</p>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>

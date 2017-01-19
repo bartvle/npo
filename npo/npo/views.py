@@ -67,7 +67,8 @@ def activiteit(request, year, month, day, slug):
     """
     date = datetime.date(int(year), int(month), int(day))
     activity = Activity.objects.get(date=date, slug=slug)
-    return render(request, 'activiteit.htm', context={'activity': activity})
+    recent_activities = Activity.objects.all().filter(date__gte=datetime.date.today()).exclude(id=activity.id).order_by('date')[:3]
+    return render(request, 'activiteit.htm', context={'activity': activity, 'recent_activities': recent_activities})
 
 
 @ensure_csrf_cookie
