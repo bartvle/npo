@@ -28,10 +28,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'analytical',
+
     'news.apps.NewsConfig',
     'activities.apps.ActivitiesConfig',
     'newsletter.apps.NewsletterConfig',
     'magazine.apps.MagazineConfig',
+    # 'amphi.apps.AmphiConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -125,3 +128,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'npo', 'static')]
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# Django-analytical
+
+GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-90933793-1'
