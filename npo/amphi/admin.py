@@ -20,6 +20,7 @@ from .models import Input
 class InputAdmin(ModelAdmin):
     list_display = ('date', 'full_name', 'location', 'toads', 'frogs', 'salamanders', 'toads_death', 'frogs_death', 'salamanders_death', 'remark')
     list_display_links = ('date', 'full_name', 'location',)
+    list_filter = ('date', 'location')
 
     def get_form(self, request, obj=None, **kwargs):
         """

@@ -29,7 +29,4 @@ class Input(models.Model):
     class Meta:
         verbose_name = _('input')
         verbose_name_plural = _('inputs')
-        # ordering = ['-date']
-        permissions = (
-            ('view_input', 'Can view inputs'),
-        )
+        ordering = ['-date']
