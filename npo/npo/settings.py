@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'activities.apps.ActivitiesConfig',
     'newsletter.apps.NewsletterConfig',
     'magazine.apps.MagazineConfig',
-    # 'amphi.apps.AmphiConfig',
+    'amphi.apps.AmphiConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
