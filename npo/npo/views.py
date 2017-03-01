@@ -6,13 +6,14 @@ import datetime
 import os
 
 from django.views.decorators.csrf import ensure_csrf_cookie
-from django.http import JsonResponse
 from django.shortcuts import render
+from django.db.models import Sum
 
 from npo.settings import BASE_DIR
 from news.models import Article
 from activities.models import Activity
 from magazine.models import Volume
+from amphi.models import Input
 
 
 @ensure_csrf_cookie
@@ -20,7 +21,11 @@ def start(request):
     """
     """
     activities = Activity.objects.all().filter(date__gte=datetime.date.today()).order_by('date')[:3]
-    context = {'activities': activities}
+    transfer = {}
+    transfer['toads'] = Input.objects.filter(date__year=2017).aggregate(Sum('toads'))['toads__sum']
+    transfer['frogs'] = Input.objects.filter(date__year=2017).aggregate(Sum('frogs'))['frogs__sum']
+    transfer['salamanders'] = Input.objects.filter(date__year=2017).aggregate(Sum('salamanders'))['salamanders__sum']
+    context = {'activities': activities, 'transfer': transfer}
     return render(request, 'start.htm', context=context)
 
 

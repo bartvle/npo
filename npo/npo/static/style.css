@@ -24,6 +24,7 @@
 /* -------------------------------------------------------------------------- */
 #embody #start { margin-top: -50px; }
 #embody #start #activities { margin-top: 50px; margin-bottom: 50px; }
+#embody #start #transfer { margin-bottom: 50px; }
 #embody #start #newsletter { padding: 50px 0; background-color: #97C00E; }
 #embody #start #newsletter h2 { margin-top: 0px; margin-bottom: 25px; }
 #embody #start #newsletter .btn:focus, #embody #start #newsletter .btn:active:focus { outline: none; }

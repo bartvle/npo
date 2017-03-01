@@ -24,7 +24,7 @@ class InputAdmin(ModelAdmin):
 
     def get_form(self, request, obj=None, **kwargs):
         """
-        Limit choices for 'by' to corresponding group and set logged-in user as default.
+        Limit choices for 'by' to corresponding group and set logged-in user as default (not if admin).
         """
         form = super(InputAdmin, self).get_form(request, obj, **kwargs)
         users = User.objects.filter(groups__pk=2)

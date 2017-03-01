@@ -11,12 +11,34 @@
         <div class="row row-grid">
             {% for activity in activities %}
                 <div class="col-sm-12 col-md-4">
-                    <a href="/activiteiten/{{activity.date | date:'Y-m-d'}}-{{activity.slug}}" class="nothing"><h3 class="color1">{{activity.name}}</h3></a>
-                    <p>{{activity.date}}</p>
+                    <a href="/activiteiten/{{activity.date | date:'Y-m-d'}}-{{activity.slug}}" class="nothing"><h3 class="color1">{{ activity.name }}</h3></a>
+                    <p>{{ activity.date }}</p>
                     <p>{{ activity.short }}</p>
                     <a class="btn btn-default" href="/activiteiten/{{activity.date | date:'Y-m-d'}}-{{activity.slug}}" role="button">Meer info</a>
                 </div>
             {% endfor %}
+        </div>
+    </div>
+
+    <!-- Transfer -->
+    <div id="transfer" class="container">
+        <div class="row">
+            <div class="col-md-3 col-lg-12">
+            </div>
+            <div class="col-md-6 col-lg-12 bg-color2">
+                <div class="row">
+                    <div class="col-md-12 col-lg-5" style="padding-left:0px; padding-right:0px;">
+                        <img src="/static/images/overzet.jpg" class="img-responsive" />
+                    </div>
+                    <div class="col-md-12 col-lg-7" style="padding: 30px; font-size: 14px;">
+                        <h2 class="color1" style="margin-bottom:15px;">Daar is de lente, daar is de amfibietrek!</h2>
+                        <p>Momenteel ontwaken padden, kikkers en salamanders massaal uit hun winterslaap en beginnen ze aan de jaarlijkse grote trek naar hun voortplantingspoel. Een indrukwekkend natuurfenomeen! Door het dichte Vlaamse wegennet moeten veel amfibieën tijdens die tocht een weg oversteken. Vaak eindigt dit in een jammerlijke platte dood. Langs de trekroutes worden daarom schermen geplaatst die de amfibieën naar ingegraven emmers leiden. Vrijwilligers controleren die ‘vallen’ dagelijks en zetten alle amfibieën veilig over naar de andere kant van de straat. In Oosterzele doen we dit aan de Lembergestraat en Hoek ter Hulst. Wil je graag eens meegaan op een avond? Contacteer ons dan via <a href="mailto:info@natuurpuntoosterzele.be">info@natuurpuntoosterzele.be</a>.</p>
+                        <p>Dit jaar hebben we al {{ transfer.toads }} padden, {{ transfer.frogs }} kikkers en {{ transfer.salamanders }} salamanders overgezet.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-12">
+            </div>
         </div>
     </div>
 
@@ -34,9 +56,6 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-if="post == true">
                     <div style="line-height:35px; text-align:center; font-size:16px; color: #FFFFFF;" >[[ answer ]]</div>
                 </div>
-                <!--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div style="line-height:35px; text-align:center; font-size:16px; color: #FFFFFF;" >Stuur hiervoor je emailadres door naar <a class="color4" href="mailto:info@natuurpuntoosterzele.be">info@natuurpuntoosterzele.be</a></div>
-                </div>-->
             </div>
         </div>
     </div>
