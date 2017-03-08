@@ -6,8 +6,7 @@
         <h1 class="page_title_with_date">{{ activity.name }}</h1>
         <div class="row">
             <div id="heading" class="col-xs-12">
-                
-                <h4>{{ activity.date }}</h4>
+                <h4>{{ activity.date | date:'l d F Y' }}</h4>
             </div>
         </div>
         <div class="row row-grid">
