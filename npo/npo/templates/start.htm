@@ -12,7 +12,7 @@
             {% for activity in activities %}
                 <div class="col-sm-12 col-md-4">
                     <a href="/activiteiten/{{activity.date | date:'Y-m-d'}}-{{activity.slug}}" class="nothing"><h3 class="color1">{{ activity.name }}</h3></a>
-                    <p>{{ activity.date }}</p>
+                    <p style="margin-top: 5px;">{{ activity.date }}</p>
                     <p>{{ activity.short }}</p>
                     <a class="btn btn-default" href="/activiteiten/{{activity.date | date:'Y-m-d'}}-{{activity.slug}}" role="button">Meer info</a>
                 </div>
