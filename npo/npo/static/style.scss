@@ -39,6 +39,137 @@ $color5: #000000;
 
 /* -------------------------------------------------------------------------- */
 
+html, body {
+    margin: 0px;
+    height: 100%;
+    padding: 0px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    color: $color3;
+}
+
+html {
+    /* always show scrollbar */
+    overflow-y: scroll;
+}
+
+h1 {
+    margin: 0px;
+    font-family: "Roboto Slab", serif;
+    font-weight: 300;
+}
+
+h2 {
+    margin: 0px;
+    font-family: "Roboto Slab", serif;
+    font-weight: 700;
+}
+
+h3 {
+    margin: 0px;
+}
+
+h4 {
+    margin: 0px;
+}
+
+a:link, a:focus, a:visited, a:active {
+    outline: 0;
+    text-decoration: None;
+    color: $color1;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: $color1;
+}
+
+p {
+    margin: 0px;
+    line-height: 1.5;
+}
+
+h2+p {
+    margin-top: 10px;
+}
+
+p+h2 {
+    margin-top: 20px;
+}
+
+p+p {
+    margin-top: 10px;
+}
+
+/* -------------------------------------------------------------------------- */
+
+h1.page_title {
+    margin-bottom: 25px;
+}
+
+h1.page_title_with_date {
+    margin-bottom: 15px;
+}
+
+h3.box_title {
+    margin-bottom: 10px;
+}
+
+a.color1:link, a.color1:focus, a.color1:visited, a.color1:active {
+    text-decoration: None;
+    color: $color1;
+}
+
+a.color1:hover {
+    text-decoration: underline;
+    color: $color1;
+}
+
+a.color3:link, a.color3:focus, a.color3:visited, a.color3:active {
+    text-decoration: None;
+    color: $color3;
+}
+
+a.color3:hover {
+    text-decoration: underline;
+    color: $color3;
+}
+
+a.color4:link, a.color4:focus, a.color4:visited, a.color4:active {
+    text-decoration: None;
+    color: $color4;
+}
+
+a.color4:hover {
+    text-decoration: underline;
+    color: $color4;
+}
+
+a.nothing:hover {
+    text-decoration: None;
+}
+
+a.button1 {
+    padding: 10px;
+    background-color: $color2;
+    display: inline-block;
+    color: $color1;
+    text-decoration: None;
+    cursor: pointer;
+}
+
+a.button1:hover {
+    color: $color4;
+    text-decoration: None;
+    background: $color1;
+}
+
+p.justify {
+    text-align: justify;
+}
+
+/* -------------------------------------------------------------------------- */
+
 #header {
 
     #header1 {
@@ -250,133 +381,6 @@ $color5: #000000;
         color: $color4;
     }
 
-}
-
-/* -------------------------------------------------------------------------- */
-
-html, body {
-    margin: 0px;
-    height: 100%;
-    padding: 0px;
-    font-family: "Roboto", sans-serif;
-    font-size: 16px;
-    color: $color3;
-}
-
-html {
-    /* always show scrollbar */
-    overflow-y: scroll;
-}
-
-h1 {
-    margin: 0px;
-    font-family: "Roboto Slab", serif;
-    font-weight: 300;
-}
-
-h2 {
-    margin: 0px;
-    font-family: "Roboto Slab", serif;
-    font-weight: 700;
-}
-
-h3 {
-    margin: 0px;
-}
-
-h4 {
-    margin: 0px;
-}
-
-a:link, a:focus, a:visited, a:active {
-    outline: 0;
-    text-decoration: None;
-    color: $color1;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: $color1;
-}
-
-p {
-    margin: 0px;
-    line-height: 1.5;
-}
-
-p+h2 {
-    margin-top: 20px;
-}
-
-p+p {
-    margin-top: 10px;
-}
-
-/* -------------------------------------------------------------------------- */
-
-h1.page_title {
-    margin-bottom: 25px;
-}
-
-h1.page_title_with_date {
-    margin-bottom: 15px;
-}
-
-h3.box_title {
-    margin-bottom: 10px;
-}
-
-a.color1:link, a.color1:focus, a.color1:visited, a.color1:active {
-    text-decoration: None;
-    color: $color1;
-}
-
-a.color1:hover {
-    text-decoration: underline;
-    color: $color1;
-}
-
-a.color3:link, a.color3:focus, a.color3:visited, a.color3:active {
-    text-decoration: None;
-    color: $color3;
-}
-
-a.color3:hover {
-    text-decoration: underline;
-    color: $color3;
-}
-
-a.color4:link, a.color4:focus, a.color4:visited, a.color4:active {
-    text-decoration: None;
-    color: $color4;
-}
-
-a.color4:hover {
-    text-decoration: underline;
-    color: $color4;
-}
-
-a.nothing:hover {
-    text-decoration: None;
-}
-
-a.button1 {
-    padding: 10px;
-    background-color: $color2;
-    display: inline-block;
-    color: $color1;
-    text-decoration: None;
-    cursor: pointer;
-}
-
-a.button1:hover {
-    color: $color4;
-    text-decoration: None;
-    background: $color1;
-}
-
-p.justify {
-    text-align: justify;
 }
 
 /* -------------------------------------------------------------------------- */
