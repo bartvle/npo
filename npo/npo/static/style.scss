@@ -278,15 +278,26 @@ p.justify {
     }
 
     #activity_page {
-        #heading {
-            margin-bottom: 25px;
-        }
 
         #content {
+            margin: 25px 0px;
+            text-align: justify;
+
+            .picture {
+                margin-bottom: 25px;
+            }
+
+            .movie {
+                margin: 25px 0px;
+            }
+
+        }
+
+        .box {
             margin-bottom: 25px;
         }
-    }
 
+    }
 }
 
 @media (max-width: 991px) {

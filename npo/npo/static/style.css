@@ -83,8 +83,10 @@ p.justify { text-align: justify; }
 #embody #start #newsletter .input_mail { color: #808080; }
 #embody #start #picture_wildcam { padding-top: 50px; }
 #embody #start #picture_wildcam h1 { margin-top: 0px; }
-#embody #activity_page #heading { margin-bottom: 25px; }
-#embody #activity_page #content { margin-bottom: 25px; }
+#embody #activity_page #content { margin: 25px 0px; text-align: justify; }
+#embody #activity_page #content .picture { margin-bottom: 25px; }
+#embody #activity_page #content .movie { margin: 25px 0px; }
+#embody #activity_page .box { margin-bottom: 25px; }
 
 @media (max-width: 991px) { #activities_page .not-first-row-sm { margin-top: 50px; } }
 @media (min-width: 992px) and (max-width: 1199px) { #activities_page .not-first-row-md { margin-top: 50px; } }
