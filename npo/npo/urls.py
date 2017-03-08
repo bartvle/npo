@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^activiteiten/(?P<year>[0-9]{4})-(?P<month>[0-9]{2})-(?P<day>[0-9]{2})-(?P<slug>[\w-]+)/$', views.activiteit),
     url(r'^nieuws/$', views.nieuws),
     url(r'^nieuws/(?P<year>[0-9]{4})-(?P<month>[0-9]{2})-(?P<day>[0-9]{2})-(?P<slug>[\w-]+)/$', views.artikel),
-    url(r'^nieuwsbrief/$', views.e_nieuwsbrief),
+    url(r'^nieuwsbrief/$', views.magazine),
     url(r'^lidworden/$', views.lid_worden),
 ]
 

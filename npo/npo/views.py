@@ -95,12 +95,12 @@ def artikel(request, year, month, day, slug):
 
 
 @ensure_csrf_cookie
-def e_nieuwsbrief(request):
+def magazine(request):
     """
     """
     volumes = Volume.objects.all()
     context = {'volumes': volumes}
-    return render(request, 'e_nieuwsbrief.htm', context=context)
+    return render(request, 'magazine.htm', context=context)
 
 
 @ensure_csrf_cookie
