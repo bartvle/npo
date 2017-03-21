@@ -16,6 +16,7 @@ class Activity(models.Model):
     short = models.TextField(verbose_name=_('short'), max_length=150)
     intro = models.TextField(verbose_name=_('intro'))
     practical = models.TextField(verbose_name=_('practical'))
+    published = models.BooleanField(verbose_name=_('published'), default=False)
 
     class Meta:
         verbose_name = _('activity')

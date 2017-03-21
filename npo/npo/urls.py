@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^nieuws/(?P<year>[0-9]{4})-(?P<month>[0-9]{2})-(?P<day>[0-9]{2})-(?P<slug>[\w-]+)/$', views.artikel),
     url(r'^nieuwsbrief/$', views.magazine),
     url(r'^lidworden/$', views.lid_worden),
+    url(r'^gluren-bij-de-buren/$', views.gluren_bij_de_buren),
 ]
 
 if settings.DEBUG is True:
