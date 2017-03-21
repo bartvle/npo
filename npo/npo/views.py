@@ -108,3 +108,9 @@ def lid_worden(request):
     """
     """
     return render(request, 'lidworden.htm')
+
+def gluren_bij_de_buren(request):
+    """
+    """
+    activities = Activity.objects.all().filter(date__gte=datetime.date.today())[:3]
+    return render(request, 'gluren_bij_de_buren.htm', context={'activities': activities})
