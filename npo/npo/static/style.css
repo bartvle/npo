@@ -87,6 +87,12 @@ p.justify { text-align: justify; }
 #embody #activity_page #content .picture { margin-bottom: 25px; }
 #embody #activity_page #content .movie { margin: 25px 0px; }
 #embody #activity_page .box { margin-bottom: 25px; }
+#embody #gluren_bij_de_buren_page .intro { margin-bottom: 25px; }
+#embody #gluren_bij_de_buren_page .activity .title { color: #97C00E; }
+#embody #gluren_bij_de_buren_page .activity .date { margin: 10px 0px; }
+#embody #gluren_bij_de_buren_page .activity .text { margin-bottom: 5px; }
+#embody #gluren_bij_de_buren_page .activity .link { font-size: 13px; font-style: italic; }
+#embody #gluren_bij_de_buren_page .activity + .activity { margin-top: 25px; }
 
 @media (max-width: 991px) { #activities_page .not-first-row-sm { margin-top: 50px; } }
 @media (min-width: 992px) and (max-width: 1199px) { #activities_page .not-first-row-md { margin-top: 50px; } }
