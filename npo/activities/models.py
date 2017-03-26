@@ -41,7 +41,7 @@ class NeighboringActivity(models.Model):
 
     name = models.CharField(verbose_name=_('name'), max_length=100)
     date = models.DateField(verbose_name=_('date'))
-    text = models.TextField(verbose_name=_('text'), max_length=200)
+    text = models.TextField(verbose_name=_('text'))
     link = models.URLField(verbose_name=_('link'))
     division = models.IntegerField(verbose_name=_('division'), choices=DIVISIONS)
 
