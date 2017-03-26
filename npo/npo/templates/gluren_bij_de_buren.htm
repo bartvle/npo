@@ -8,56 +8,27 @@
             <div class="intro">
                 Ook in de buurgemeenten van Oosterzele kan je meedoen aan allerlei leuke activiteiten van Natuurpunt. We lijsten er hier enkelen voor je op. Neem zeker ook eens een kijkje op <a href="http://www.natuurpunt.be/op-stap" target="_blank">www.natuurpunt.be/op-stap</a>. Hier vind je een overzicht van alle activiteiten van Natuurpunt over heel Vlaanderen.
             </div>
+            {% for activity in activities %}
             <div class="activity">
                 <div class="title">
-                    <h3><a href="http://www.natuurpuntzwalmvallei.be/zwa_kalender_2017.html" target="_blank">Voorjaarsbloeierswandeling in de Perlinkvallei</a></h3>
+                    <h3><a href="{{ activity.link }}" target="_blank">{{ activity.name }}</a></h3>
                 </div>
                 <div class="date">
-                    Maandag 17 april
+                    {{ activity.date | date:'l d F' | capfirst }}
                 </div>
                 <div class="text">
-                    In de Vlaamse Ardennen vind je de Perlinkvallei. Het natuurgebied ligt in een mooie vallei aan de rechteroever van de Perlink- of Boekelbeek in Sint-Blasius-Boekel.
-                    <a href="http://www.natuurpuntzwalmvallei.be/zwa_kalender_2017.html" target="_blank">Meer info</a>.
+                    {{ activity.text }} <a href="{{ activity.link }}" target="_blank">Meer info</a>.
                 </div>
                 <div class="link">
-                    Deze activiteit wordt georganiseerd door <a href="http://www.natuurpuntzwalmvallei.be/" target="_blank" class="color3">Natuurpunt Zwalmvallei</a>.
+                    Deze activiteit wordt georganiseerd door <a href="{{ activity.get_division_link }}" target="_blank" class="color3">{{ activity.get_division_display }}</a>.
                 </div>
             </div>
-            <div class="activity">
-                <div class="title">
-                    <h3><a href="https://www.natuurpunt.be/agenda/sfeer-en-gruttos-de-kalkense-meersen-21721" target="_blank">Sfeer en grutto's in de Kalkense Meersen</a></h3>
-                </div>
-                <div class="date">
-                    Woensdag 24 mei
-                </div>
-                <div class="text">
-                    Aan Kalkenkerk starten we deze avondwandeling om een sfeervolle activiteit te beleven in dit gruttogebied. Wie het nooit meemaakte, valt achterover van bewondering.
-                    <a href="https://www.natuurpunt.be/agenda/sfeer-en-gruttos-de-kalkense-meersen-21721" target="_blank">Meer info</a>.
-                </div>
-                <div class="link">
-                    Deze activiteit wordt georganiseerd door <a href="http://www.natuurpuntscheldeland.be/" target="_blank" class="color3">Natuurpunt Scheldeland</a>.
-                </div>
-            </div>
-            <div class="activity">
-                <div class="title">
-                    <h3><a href="https://www.natuurpunt.be/agenda/slechtvalkenspotting-op-de-markt-van-wetteren-22078" target="_blank">Slechtvalkenspotting op de Markt van Wetteren</a></h3>
-                </div>
-                <div class="date">
-                    Dinsdag 10 juni
-                </div>
-                <div class="text">
-                    Onze vogelkenners staan klaar op de Markt van Wetteren, gewapend met verrekijkers en telescopen. Je kunt er de slechtvalken komen bekijken en een woordje uitleg krijgen.
-                    <a href="https://www.natuurpunt.be/agenda/slechtvalkenspotting-op-de-markt-van-wetteren-22078" target="_blank">Meer info</a>.
-                </div>
-                <div class="link">
-                    Deze activiteit wordt georganiseerd door <a href="http://www.natuurpuntscheldeland.be/" target="_blank" class="color3">Natuurpunt Scheldeland</a>.
-                </div>
-            </div>
+            {% endfor %}
         </div>
         <div class="col-md-4 col-lg-4" id="activities">
             <div class="box">
                 <h3 style="margin-bottom: 25px">Onze activiteiten</h3>
-                {% for activity in activities %}
+                {% for activity in our_activities %}
                     <div class="activity">
                         <a href="/activiteiten/{{activity.date | date:'Y-m-d'}}-{{activity.slug}}"><b>{{ activity.date }} - {{ activity.name }}</b></a>
                         <p>{{ activity.short }}</p>

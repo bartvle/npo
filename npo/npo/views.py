@@ -11,7 +11,7 @@ from django.db.models import Sum
 
 from npo.settings import BASE_DIR
 from news.models import Article
-from activities.models import Activity
+from activities.models import Activity, NeighboringActivity
 from magazine.models import Volume
 from amphi.models import Input
 
@@ -112,5 +112,6 @@ def lid_worden(request):
 def gluren_bij_de_buren(request):
     """
     """
-    activities = Activity.objects.all().filter(date__gte=datetime.date.today())[:3]
-    return render(request, 'gluren_bij_de_buren.htm', context={'activities': activities})
+    activities = NeighboringActivity.objects.all().filter(date__gte=datetime.date.today())
+    our_activities = Activity.objects.all().filter(date__gte=datetime.date.today())[:3]
+    return render(request, 'gluren_bij_de_buren.htm', context={'activities': activities, 'our_activities': our_activities})
