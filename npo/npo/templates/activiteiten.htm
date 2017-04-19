@@ -6,12 +6,14 @@
         <h1 class="page_title">Activiteiten</h1>
         <div class="row">
             {% for activity in activities %}
-                <div class="col-sm-12 col-md-6 col-lg-4 all {% if forloop.counter0 > 0 %}not-first-row-sm{% endif %} {% if forloop.counter0 > 1 %}not-first-row-md{% endif %} {% if forloop.counter0 > 2 %}not-first-row-lg{% endif %}">
+                <div class="col-sm-12 col-md-6 col-lg-4" style="margin-bottom: 25px;">
                     <a href="/activiteiten/{{activity.date | date:'Y-m-d'}}-{{activity.slug}}" class="nothing"><h3 class="color1">{{activity.name}}</h3></a>
                     <p>{{activity.date}}</p>
                     <p>{{ activity.short }}</p>
                     <a class="btn btn-default" href="/activiteiten/{{activity.date | date:'Y-m-d'}}-{{activity.slug}}" role="button">Meer info</a>
                 </div>
+                {% if forloop.counter == 2 %}<div class="clearfix visible-md-block"></div>{% endif %}
+                {% if forloop.counter == 3 %}<div class="clearfix visible-lg-block"></div>{% endif %}
             {% endfor %}
         </div>
     </div>

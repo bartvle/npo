@@ -336,36 +336,6 @@ p.justify {
 
 }
 
-@media (max-width: 991px) {
-
-    #activities_page {
-        .not-first-row-sm {
-            margin-top: 50px;
-        }
-    }
-
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-
-    #activities_page {
-        .not-first-row-md {
-            margin-top: 50px;
-        }
-    }
-
-}
-
-@media (min-width: 1200px) {
-
-    #activities_page {
-        .not-first-row-lg {
-            margin-top: 50px;
-        }
-    }
-
-}
-
 /* -- footer ---------------------------------------------------------------- */
 
 #footer {
