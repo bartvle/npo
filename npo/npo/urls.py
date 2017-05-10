@@ -8,13 +8,11 @@ from django.conf.urls.static import static
 from django.contrib import admin
 
 from . import views
-from newsletter.views import subscribe as api_newsletter_subscribe
 from npo.admin import admin_site
 
 
 urlpatterns = [
     url(r'^admin/', admin_site.urls),
-    url(r'^api/newsletter/subscribe', api_newsletter_subscribe),
     url(r'^$', views.start),
     url(r'^overons/$', views.over_ons),
     url(r'^beleid/$', views.beleid),

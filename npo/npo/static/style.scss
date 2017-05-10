@@ -260,8 +260,12 @@ p.justify {
               outline: none;
             }
 
-            .input_mail {
+            #id_email {
+                width: 100%;
+                padding: 7px;
+                border: 1px solid #e5e5dc;
                 color: $color3;
+                background-color: #f3f2eb;
             }
 
         }

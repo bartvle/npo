@@ -27,18 +27,6 @@ app.controller("AppController", function($scope) {
 });
 
 
-app.controller("NewsletterController", function($scope, $http) {
-    $scope.post = false;
-    $scope.data = {}
-    $scope.send = function () {
-        $http.post("/api/newsletter/subscribe", $scope.data).success(function(response) {
-            $scope.post = true;
-            $scope.answer = response;
-        });
-    }
-});
-
-
 app.controller("MapController", function($scope, $http) {
     map = L.map('natuurgebieden_kaart').setView([50.937494, 3.798325], 11);
     

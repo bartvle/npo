@@ -15,49 +15,58 @@ from activities.models import Activity, NeighboringActivity
 from magazine.models import Volume
 from amphi.models import Input
 
+from newsletter.models import Subscription
+from newsletter.forms import NewsletterForm
 
-@ensure_csrf_cookie
+
 def start(request):
     """
     """
+    newsletter_message = None
+    if request.method == 'POST':
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            # newsletter_message = 'Je bent reeds ingeschreven!'
+            form.save()
+            newsletter_message = 'Bedankt, je bent ingeschreven!'
+    else:
+        form = NewsletterForm()
+
     activities = Activity.objects.all().filter(date__gte=datetime.date.today()).order_by('date')[:3]
     transfer = {}
     transfer['toads'] = Input.objects.filter(date__year=2017).aggregate(Sum('toads'))['toads__sum']
     transfer['frogs'] = Input.objects.filter(date__year=2017).aggregate(Sum('frogs'))['frogs__sum']
     transfer['salamanders'] = Input.objects.filter(date__year=2017).aggregate(Sum('salamanders'))['salamanders__sum']
     context = {'activities': activities, 'transfer': transfer}
+    context['form'] = form
+    context['newsletter_message'] = newsletter_message
     return render(request, 'start.htm', context=context)
 
 
-@ensure_csrf_cookie
 def over_ons(request):
     """
     """
     return render(request, 'overons.htm')
 
 
-@ensure_csrf_cookie
 def beleid(request):
     """
     """
     return render(request, 'beleid.htm')
 
 
-@ensure_csrf_cookie
 def natuurgebieden(request):
     """
     """
     return render(request, 'natuurgebieden.htm')
 
 
-@ensure_csrf_cookie
 def soortbescherming(request):
     """
     """
     return render(request, 'soortbescherming.htm')
 
 
-@ensure_csrf_cookie
 def activiteiten(request):
     """
     """
@@ -66,7 +75,6 @@ def activiteiten(request):
     return render(request, 'activiteiten.htm', context=context)
 
 
-@ensure_csrf_cookie
 def activiteit(request, year, month, day, slug):
     """
     """
@@ -76,7 +84,6 @@ def activiteit(request, year, month, day, slug):
     return render(request, 'activiteit.htm', context={'activity': activity, 'recent_activities': recent_activities})
 
 
-@ensure_csrf_cookie
 def nieuws(request):
     """
     """
@@ -85,7 +92,6 @@ def nieuws(request):
     return render(request, 'articles.htm', context=context)
 
 
-@ensure_csrf_cookie
 def artikel(request, year, month, day, slug):
     """
     """
@@ -94,7 +100,6 @@ def artikel(request, year, month, day, slug):
     return render(request, 'article.htm', context={'article': article})
 
 
-@ensure_csrf_cookie
 def magazine(request):
     """
     """
@@ -103,7 +108,6 @@ def magazine(request):
     return render(request, 'magazine.htm', context=context)
 
 
-@ensure_csrf_cookie
 def lid_worden(request):
     """
     """

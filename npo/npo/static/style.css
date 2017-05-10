@@ -80,7 +80,7 @@ p.justify { text-align: justify; }
 #embody #start #newsletter { padding: 50px 0; background-color: #97C00E; }
 #embody #start #newsletter h2 { margin-top: 0px; margin-bottom: 25px; }
 #embody #start #newsletter .btn:focus, #embody #start #newsletter .btn:active:focus { outline: none; }
-#embody #start #newsletter .input_mail { color: #808080; }
+#embody #start #newsletter #id_email { width: 100%; padding: 7px; border: 1px solid #e5e5dc; color: #808080; background-color: #f3f2eb; }
 #embody #start #picture_wildcam { padding-top: 50px; }
 #embody #start #picture_wildcam h1 { margin-top: 0px; }
 #embody #activity_page #content { margin: 25px 0px; text-align: justify; }
@@ -94,9 +94,6 @@ p.justify { text-align: justify; }
 #embody #gluren_bij_de_buren_page .activity .link { font-size: 13px; font-style: italic; }
 #embody #gluren_bij_de_buren_page .activity + .activity { margin-top: 25px; }
 
-@media (max-width: 991px) { #activities_page .not-first-row-sm { margin-top: 50px; } }
-@media (min-width: 992px) and (max-width: 1199px) { #activities_page .not-first-row-md { margin-top: 50px; } }
-@media (min-width: 1200px) { #activities_page .not-first-row-lg { margin-top: 50px; } }
 /* -- footer ---------------------------------------------------------------- */
 #footer #footer1 { background: #E8F2D9; line-height: 40px; color: #808080; padding-top: 25px; padding-bottom: 25px; }
 #footer #footer1 .text { margin-right: 10px; float: left; font-size: 14px; font-weight: bold; }

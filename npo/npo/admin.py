@@ -5,7 +5,7 @@
 from django.contrib.admin import AdminSite
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.admin import UserAdmin, GroupAdmin
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 from django.shortcuts import render
 from django.http import HttpResponse
 
