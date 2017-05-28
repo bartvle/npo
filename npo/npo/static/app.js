@@ -8,15 +8,13 @@ app.config(function($interpolateProvider, $httpProvider) {
     $interpolateProvider.startSymbol('[[');
     $interpolateProvider.endSymbol(']]');
 
-    $httpProvider.defaults.xsrfCookieName = 'csrftoken';
-    $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+    // $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+    // $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
 
 });
 
 
 app.controller("AppController", function($scope) {
-
-    $scope.date = new Date();
 
     $(document).ready(function () {
         $(".navbar-nav li a").click(function(event) {

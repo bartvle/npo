@@ -104,6 +104,7 @@ p.justify { text-align: justify; }
 #footer #footer1 #gototop:hover { background: #97C00E; }
 #footer #footer2 { background: #97C00E; line-height: 50px; font-size: 12px; color: #FFFFFF; }
 
+@media (min-width: 992px) { #footer #footer1 #footer_1_row { display: flex; align-items: center; } }
 /* -------------------------------------------------------------------------- */
 .color1 { color: #97C00E; }
 

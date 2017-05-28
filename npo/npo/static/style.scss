@@ -404,6 +404,26 @@ p.justify {
 
 }
 
+
+
+@media (min-width: 992px) {
+
+    #footer {
+
+        #footer1 {
+
+            #footer_1_row {
+                display: flex;
+                align-items: center;
+            }
+
+        }
+
+    }
+
+}
+
+
 /* -------------------------------------------------------------------------- */
 
 .color1 {
