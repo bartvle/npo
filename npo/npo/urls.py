@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^nieuwsbrief/$', views.magazine),
     url(r'^lidworden/$', views.lid_worden),
     url(r'^gluren-bij-de-buren/$', views.gluren_bij_de_buren),
+    url(r'^1Y3QgU7vcHqFNizeVjfFWg9U0V7Jb5eOXjjzBPldxXnhctUBdYRKvylsdioY85YU/$', views.kaart_regionaal_bos),
 ]
 
 if settings.DEBUG is True:

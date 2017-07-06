@@ -113,9 +113,16 @@ def lid_worden(request):
     """
     return render(request, 'lidworden.htm')
 
+
 def gluren_bij_de_buren(request):
     """
     """
     activities = NeighboringActivity.objects.all().filter(date__gte=datetime.date.today()).order_by('date')
     our_activities = Activity.objects.all().filter(date__gte=datetime.date.today()).order_by('date')[:3]
     return render(request, 'gluren_bij_de_buren.htm', context={'activities': activities, 'our_activities': our_activities})
+
+
+def kaart_regionaal_bos(request):
+    """
+    """
+    return render(request, 'kaart_regionaal_bos.htm')
