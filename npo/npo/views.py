@@ -32,7 +32,7 @@ def start(request):
     else:
         form = NewsletterForm()
 
-    activities = Activity.objects.all().filter(date__gte=datetime.date.today()).order_by('date')[:3]
+    activities = Activity.objects.all().filter(date__gte=datetime.date.today(), published=True).order_by('date')[:3]
     transfer = {}
     transfer['toads'] = Input.objects.filter(date__year=2017).aggregate(Sum('toads'))['toads__sum']
     transfer['frogs'] = Input.objects.filter(date__year=2017).aggregate(Sum('frogs'))['frogs__sum']
@@ -70,7 +70,7 @@ def soortbescherming(request):
 def activiteiten(request):
     """
     """
-    activities = Activity.objects.all().filter(date__gte=datetime.date.today()).order_by('date')
+    activities = Activity.objects.all().filter(date__gte=datetime.date.today(), published=True).order_by('date')
     context = {'activities': activities}
     return render(request, 'activiteiten.htm', context=context)
 

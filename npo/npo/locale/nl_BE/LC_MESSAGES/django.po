@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-08 12:14+0100\n"
+"POT-Creation-Date: 2017-07-30 13:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,12 @@ msgstr ""
 msgid "Activities"
 msgstr "Activiteiten"
 
-#: .\activities\models.py:13
+#: .\activities\models.py:13 .\activities\models.py:42
 msgid "name"
 msgstr "naam"
 
-#: .\activities\models.py:14 .\amphi\models.py:18 .\news\models.py:14
+#: .\activities\models.py:14 .\activities\models.py:43 .\amphi\models.py:18
+#: .\news\models.py:14
 msgid "date"
 msgstr "datum"
 
@@ -45,25 +46,47 @@ msgstr "inleiding"
 msgid "practical"
 msgstr "praktisch"
 
-#: .\activities\models.py:21
+#: .\activities\models.py:19
+msgid "published"
+msgstr "publiceer"
+
+#: .\activities\models.py:22
 msgid "activity"
 msgstr "activiteit"
 
-#: .\activities\models.py:22
+#: .\activities\models.py:23
 msgid "activities"
 msgstr "activiteiten"
 
-#: .\amphi\admin.py:28
-msgid "By"
-msgstr "Door"
+#: .\activities\models.py:44
+msgid "text"
+msgstr ""
+
+#: .\activities\models.py:45
+msgid "link"
+msgstr ""
+
+#: .\activities\models.py:46
+msgid "division"
+msgstr ""
+
+#: .\activities\models.py:49
+msgid "neighboring activity"
+msgstr ""
+
+#: .\activities\models.py:50
+#, fuzzy
+#| msgid "activities"
+msgid "neighboring activities"
+msgstr "activiteiten"
+
+#: .\amphi\admin.py:42 .\amphi\models.py:19
+msgid "by"
+msgstr "door"
 
 #: .\amphi\apps.py:11
 msgid "Amphibian Transfer"
 msgstr "Amfibieoverzet"
-
-#: .\amphi\models.py:19
-msgid "by"
-msgstr "door"
 
 #: .\amphi\models.py:20
 msgid "location"
@@ -180,3 +203,6 @@ msgstr "inschrijvingen"
 #: .\npo\messages.py:8
 msgid "Home"
 msgstr "Start"
+
+#~ msgid "By"
+#~ msgstr "Door"
