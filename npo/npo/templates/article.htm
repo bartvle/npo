@@ -1,20 +1,16 @@
 {% extends "index.htm" %}
 
 {% block embody %}
-<div id="article">
+<div id="article_page">
     <div class="container">
         <h1 class="page_title_with_date">{{ article.title }}</h1>
+        <h4>{{ article.date | date:'l d F Y' | capfirst }}</h4>
+        <!-- <div class="row row-grid"> -->
         <div class="row">
-            <div class="col-xs-12">
-                <h4>{{ article.date }}</h4>
-                <!-- <div class="gallery" style="margin-bottom: 15px;"><a ng-if="item.photo != ''" class="button1">Bekijk fotoalbum</a></div> -->
-            </div>
-        </div>
-        <div class="row row-grid">
             <div class="col-md-8">
                 <!-- <img ng-if="item.image_big != ''" ng-src="[[item.image_big]] class="img-responsive" style="width:100%; margin-bottom: 10px;"> -->
                 <!-- <div style="text-align: justify;" ng-bind-html="item.content"></div> -->
-                <div style="text-align: justify;">{{ article.content | safe }}</div>
+                <div id="page_content">{{ article.content | safe }}</div>
             </div>
             <div class="col-md-4">
                 <!-- <div class="box"> -->

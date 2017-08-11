@@ -9,7 +9,7 @@
             <div id="" class="col-md-8">
                 <h1 class="page_title_with_date">{{ activity.name }}</h1>
                 <h4>{{ activity.date | date:'l d F Y' | capfirst }}</h4>
-                <div id="content">{{ activity.intro | safe }}</div>
+                <div id="page_content">{{ activity.intro | safe }}</div>
                 <div class="box">
                     <h3 class="box_title">Praktisch</h3>
                     {% if activity.practical %}
