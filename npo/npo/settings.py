@@ -133,3 +133,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Django-analytical
 
 GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-90933793-1'
+
+
+LOGIN_URL = '/admin/login/'
