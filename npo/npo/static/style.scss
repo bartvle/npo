@@ -1,148 +1,155 @@
 
-@import 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:300,300i,400,400i,700,700i';
-
-/* -------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 
 $color1: #97C00E;
 $color2: #E8F2D9;
 $color3: #808080;
 $color4: #FFFFFF;
-$color5: #000000;
 
-/* -------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 
-#wrap {
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: -moz-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    -moz-flex-direction: column;
-    flex-direction: column;
-    min-width: 350px;
-    height: 100vh;
+html {
+    overflow-y: scroll; /* always show scrollbar */
 }
 
-#header {
-    flex-shrink: 0;
+html, body {
+    height: 100%;
+}
+
+/* ------------------------------------------------------------------------- */
+
+#wrap {
+    /* min-width: 350px; */
+    height: 100%;
 }
 
 #embody {
-    flex: 1 0 auto;
-    margin: 50px 0px;
+    /* margin: 50px 0px; */
 }
 
-#footer {
-    flex-shrink: 0;
-}
-
-/* -------------------------------------------------------------------------- */
-
-html, body {
-    margin: 0px;
-    height: 100%;
-    padding: 0px;
-    font-family: "Roboto", sans-serif;
-    font-size: 16px;
-    color: $color3;
-}
-
-html {
-    /* always show scrollbar */
-    overflow-y: scroll;
-}
-
-h1 {
-    margin: 0px;
-    font-family: "Roboto Slab", serif;
-    font-weight: 300;
-}
-
-h2 {
-    margin: 0px;
-    font-family: "Roboto Slab", serif;
-    font-weight: 700;
-}
-
-h3 {
-    margin: 0px;
-}
-
-h4 {
-    margin: 0px;
-}
+/* ------------------------------------------------------------------------- */
 
 a:link, a:focus, a:visited, a:active {
-    outline: 0;
-    text-decoration: None;
+    /* outline: 0; */
     color: $color1;
 }
 
 a:hover {
-    text-decoration: underline;
     color: $color1;
 }
 
 p {
-    margin: 0px;
-    line-height: 1.5;
+    /* margin: 0px; */
+    /* line-height: 1.5; */
 }
 
 h2+p {
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 
 p+h2 {
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 p+p {
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 
-/* -------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+
+.color1 {
+    color: $color1;
+}
+
+.color2 {
+    color: $color2;
+}
+
+.color3 {
+    color: $color3;
+}
+
+.color4 {
+    color: $color4;
+}
+
+.bg-color1 {
+    background: $color1;
+}
+
+.bg-color2 {
+    background: $color2;
+}
+
+.box {
+    background-color: $color2;
+}
+
+.box-heading {
+    padding: 0.5rem;
+    font-weight: bold;
+    color: $color4;
+    background: $color1;
+}
+
+.box-content {
+    padding: 0.5rem;
+}
+
+.date1 {
+    /* margin-bottom: 15px; */
+    /* line-height: 1; */
+}
+
+/* ------------------------------------------------------------------------- */
+
 
 h1.page_title {
-    margin-bottom: 25px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: $color3;
 }
 
 h1.page_title_with_date {
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
 }
 
-h3.box_title {
-    margin-bottom: 10px;
+h2.sub_title {
+    color: $color1;
+}
+
+h4.page_date {
+    color: $color1;
 }
 
 a.color1:link, a.color1:focus, a.color1:visited, a.color1:active {
-    text-decoration: None;
-    color: $color1;
+    /* text-decoration: None; */
+    /* color: $color1; */
 }
 
 a.color1:hover {
-    text-decoration: underline;
-    color: $color1;
+    /* text-decoration: underline; */
+    /* color: $color1; */
 }
 
 a.color3:link, a.color3:focus, a.color3:visited, a.color3:active {
-    text-decoration: None;
-    color: $color3;
+    /* text-decoration: None; */
+    /* color: $color3; */
 }
 
 a.color3:hover {
-    text-decoration: underline;
-    color: $color3;
+    /* text-decoration: underline; */
+    /* color: $color3; */
 }
 
 a.color4:link, a.color4:focus, a.color4:visited, a.color4:active {
-    text-decoration: None;
-    color: $color4;
+    /* text-decoration: None; */
+    /* color: $color4; */
 }
 
 a.color4:hover {
-    text-decoration: underline;
-    color: $color4;
+    /* text-decoration: underline; */
+    /* color: $color4; */
 }
 
 a.nothing:hover {
@@ -150,75 +157,51 @@ a.nothing:hover {
 }
 
 a.button1 {
-    padding: 10px;
-    background-color: $color2;
-    display: inline-block;
-    color: $color1;
-    text-decoration: None;
-    cursor: pointer;
+    /* background-color: $color2; */
+    /* display: inline-block; */
+    /* color: $color1; */
+    /* text-decoration: None; */
+    /* cursor: pointer; */
 }
 
 a.button1:hover {
-    color: $color4;
-    text-decoration: None;
-    background: $color1;
+    /* color: $color4; */
+    /* text-decoration: None; */
+    /* background: $color1; */
 }
 
-p.justify {
-    text-align: justify;
-}
-
-/* -------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 
 #header {
 
     #header1 {
-        line-height: 50px;
-        text-align: right;
-        font-size: 13px;
-        background: $color2;
 
-        ul {
-            margin: 0px;
-            padding: 0px;
-        }
-
-        li {
-            display: inline;
-            padding-left: 10px;
-        }
-
-        li:first-child {
-            padding-left: 0px;
-        }
-
-        .raquo {
-            font-size: 14px;
+        a {
+            color: $color3;
+            font-size: 0.95rem;
         }
 
     }
 
     #header2 {
-        margin-bottom: 0px;
-        background: $color1;
-        border: 0px;
-        font-weight: 600;
-        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.176);
+        /* box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.176); */
+        font-size: 1.05rem;
 
         @media (min-width: 992px) {
             .navbar-header{
-                margin-right: 75px;
+                /* margin-right: 75px; */
             }
         }
 
         a {
-            font-size: 17px;
             font-weight: bold;
+            color: $color4;
+            border-radius: 1rem!important;
         }
 
         a:focus {
-            color: $color4;
-            background: $color1;
+            /* color: $color4; */
+            /* background: $color1; */
         }
 
         a:hover {
@@ -226,56 +209,40 @@ p.justify {
             background: $color4;
         }
 
+        .my-icon {
+            border-color: $color4;
+        }
+
+        .my-icon-data {
+            background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+        }
 
     }
 
 }
 
-/* -------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 
 #embody {
 
     #start {
 
-        margin-top: -50px;
-
-        #activities {
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-
-        #transfer {
-             margin-bottom: 50px;
-        }
-
         #newsletter {
-            padding: 50px 0;
-            background-color: $color1;
 
-            h2 {
-                margin-top: 0px;
-                margin-bottom: 25px;
-            }
-
-            .btn:focus, .btn:active:focus {
-              outline: none;
+            .button {
+                width: 100%;
+                padding: 5px;
+                background-color: $color2;
+                border-radius: 0px;
+                color: $color1;
             }
 
             #id_email {
                 width: 100%;
-                padding: 7px;
+                padding: 5px;
                 border: 1px solid #e5e5dc;
                 color: $color3;
                 background-color: #f3f2eb;
-            }
-
-        }
-
-        #picture_wildcam {
-            padding-top: 50px;
-
-            h1 {
-                margin-top: 0px;
             }
 
         }
@@ -284,8 +251,13 @@ p.justify {
 
     #activity_page {
 
-        .box {
+        img {
+            margin-top: 25px;
             margin-bottom: 25px;
+        }
+
+        .other {
+            margin-top: 25px;
         }
 
     }
@@ -293,71 +265,60 @@ p.justify {
     #gluren_bij_de_buren_page {
 
         .intro {
-            margin-bottom: 25px;
+            /* margin-bottom: 25px; */
         }
 
         .activity {
 
             .title {
-                color: $color1;
+                /* color: $color1; */
             }
 
             .date {
-                margin: 10px 0px;
+                /* margin: 10px 0px; */
             }
 
             .text {
-                margin-bottom: 5px;
+                /* margin-bottom: 5px; */
             }
 
             .link {
-                font-size: 13px;
-                font-style: italic;
+                /* font-style: italic; */
             }
 
         }
 
         .activity + .activity {
-            margin-top: 25px;
+            /* margin-top: 25px; */
         }
 
     }
 
     #page_content {
 
-        margin: 25px 0px;
-        text-align: justify;
+        /* margin: 25px 0px; */
+        /* text-align: justify; */
 
         .picture {
-            margin-bottom: 25px;
+            /* margin-bottom: 25px; */
         }
 
         .movie {
-            margin: 25px 0px;
+            /* margin: 25px 0px; */
         }
 
     }
 
 }
 
-/* -- footer ---------------------------------------------------------------- */
+/* -- footer --------------------------------------------------------------- */
 
 #footer {
 
-    #footer1 {
-        background: $color2;
-        line-height: 40px;
-        color: $color3;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        font-size: 14px;
+    font-size: 0.95rem;
 
-        .text {
-            margin-right: 10px;
-            float: left;
-            font-size: 14px;
-            font-weight: bold;
-        }
+    #footer1 {
+        color: $color3;
 
         .icon {
             display: block;
@@ -367,8 +328,8 @@ p.justify {
             background: $color3;
             float: left;
             text-align: center;
-            font-size: 16px;
             color: $color4;
+            line-height: 40px;
         }
 
         .icon:first-of-type {
@@ -377,6 +338,11 @@ p.justify {
 
         .icon:hover {
             background: $color1;
+        }
+
+        #footer_1_row {
+            align-items: center;
+            line-height: 40px;
         }
 
         #gototop {
@@ -396,109 +362,4 @@ p.justify {
 
     }
 
-    #footer2 {
-        background: $color1;
-        line-height: 50px;
-        font-size: 12px;
-        color: $color4;
-    }
-
 }
-
-
-
-@media (min-width: 992px) {
-
-    #footer {
-
-        #footer1 {
-
-            #footer_1_row {
-                display: flex;
-                align-items: center;
-            }
-
-        }
-
-    }
-
-}
-
-
-/* -------------------------------------------------------------------------- */
-
-.color1 {
-    color: $color1;
-}
-
-.color2 {
-    color: $color2;
-}
-
-.color3 {
-    color: $color3;
-}
-
-.color4 {
-    color: $color4;
-}
-
-.color5 {
-    color: $color5;
-}
-
-.bg-color2 {
-    background: $color2;
-}
-
-.box {
-    padding: 25px;
-    background-color: $color2;
-}
-
-.box-title {
-    margin-top: -25px;
-    margin-bottom: 10px;
-    margin-left: -25px;
-    margin-right: -25px;
-    padding: 15px 25px;
-    font-size: 15px;
-    font-weight: bold;
-    color: $color4;
-    line-height: 20px;
-    background: $color1;
-}
-
-.date1 {
-    margin-bottom: 15px;
-    font-size: 15px;
-    line-height: 1;
-}
-
-/* -------------------------------------------------------------------------- */
-
-.row.row-grid [class*="col-"] + [class*="col-"] {
-    margin-top: 25px;
-}
-
-// @media (min-width: 1200px) {
-//     .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] {
-//         margin-top: 0px;
-//     }
-// }
-
-@media (min-width: 992px) {
-    .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] {
-        margin-top: 0px;
-    }
-
-    .row.row-grid [class*="col-md-"] + [class*="col-md-"] {
-        margin-top: 0px;
-    }
-}
-
-// @media (min-width: 768px) {
-//     .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] {
-//         margin-top: 0px;
-//     }
-// }

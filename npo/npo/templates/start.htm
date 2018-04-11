@@ -4,34 +4,32 @@
 <div id="start">
 
     <!-- Image -->
-    <div id="image" ><img src="/static/images/start.jpg" class="img-responsive" /></div>
+    <div class="d-none d-sm-block mb-5"><img src="/static/images/start.jpg" class="img-fluid" /></div>
 
     <!-- Activities -->
-    <div id="activities" class="container">
+    <div id="activities" class="container mb-5">
         <!--<div class="row">
             <div class="col-md-12 text-center" style="margin-bottom: 50px;">
                 <h1>Kom naar onze activiteiten!</h1>
             </div>
         </div>-->
-        <div class="row row-grid">
+        <div class="row">
             {% for activity in activities %}
-                <div class="col-sm-12 col-md-4">
-                    <a href="/activiteiten/{{activity.date | date:'Y-m-d'}}-{{activity.slug}}" class="nothing"><h3 class="color1">{{ activity.name }}</h3></a>
-                    <p style="margin-top: 5px;">{{ activity.date | date:'l d F' | capfirst }}</p>
-                    <p>{{ activity.short }}</p>
-                    <!-- <p style="margin-top: 0px;"><a href="/activiteiten/{{activity.date | date:'Y-m-d'}}-{{activity.slug}}">Meer info</a></p> -->
-                    <a class="btn btn-default" style="margin-top: 5px;" href="/activiteiten/{{activity.date | date:'Y-m-d'}}-{{activity.slug}}" role="button">Meer info</a>
-                </div>
+            <div class="col-sm-12 col-md-4">
+                <a href="/activiteiten/{{activity.date | date:'Y-m-d'}}-{{activity.slug}}" class="nothing" style="color: inherit;">
+                    <div>
+                        <h4 class="color1">{{ activity.name }}</h4>
+                        <p>{{ activity.date | date:'l d F' | capfirst }}</p>
+                        <p class="m-0">{{ activity.short }}</p>
+                    </div>
+                </a>
+            </div>
             {% endfor %}
         </div>
         <!--<div class="col-md-12 text-center" style="margin-top: 25px;">
             <p>Bekijk alle activiteiten</p>
         </div>-->
     </div>
-
-    <!-- <div> -->
-        <!-- <div style="background-image: url('/static/pictures/pages/Hettingen Oosterzele (1).jpg'); height:320px; background-size: cover; background-position: center center; box-shadow: inset 0 5px 5px rgba(0,0,0,0.25); background-attachment: fixed;"></div> -->
-    <!-- </div> -->
 
     <!-- Transfer -->
     <!--<div id="transfer" class="container">
@@ -56,31 +54,39 @@
     </div>-->
 
     <!-- Newsletter -->
-    <div id="newsletter">
-        <div id="newsletter_in" class="container text-center">
+    <div id="newsletter" class="mb-5 py-5 bg-color1">
+        <div id="newsletter_in" class="container">
             <div class="row">
-
-                <h2 class="color4">Schrijf je in op onze e-nieuwsbrief en blijf op de hoogte van alle nieuwtjes!</h2>
-
+                <div class="col-12 text-center pb-3">
+                    <h2 class="color4">Schrijf je in op onze e-nieuwsbrief en blijf op de hoogte van alle nieuwtjes!</h2>
+                </div>
+            </div>
+            <div class="row text-center">
                 {% if newsletter_message is not None %}
-                <div class="col-xs-12" style="color: #FFFFFF">
+                <div class="col-12 color4">
                     {{ newsletter_message }}
                 </div>
                 {% else %}
-                <form action="#newsletter" method="post" novalidate>{% csrf_token %}
-                {% if form.non_field_errors or form.email.errors %}
-                    <div class="col-xs-12" style="color: #FFFFFF; padding-bottom: 10px;">
+                <div class="col-12">
+                    <form action="#newsletter" method="post" novalidate>{% csrf_token %}
+                        {% if form.non_field_errors or form.email.errors %}
+                        <p class="color4">
                         {{ form.non_field_errors.as_text }}
                         {{ form.email.errors.as_text }}
-                    </div>
-                {% endif %}
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-                    {{ form.email }}
+                        </p>
+                        {% endif %}
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-6">
+                                {{ form.email }}
+                            </div>
+                            <div class="col-sm-2">
+                                <input class="button" type="submit" value="Schrijf nu in">
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                    </form>
                 </div>
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                    <input type="submit" value="Schrijf nu in" class="btn btn-primary--transition" style="background-color: #e8f2d9; border-radius: 0px; width: 100%; color:#97C00E;">
-                </div>
-                </form>
                 {% endif %}
             </div>
         </div>
@@ -91,13 +97,13 @@
         <div id="wildcam_row "class="row row-grid">
             <!-- Picture -->
             <div class="col-sm-12 col-md-6">
-                <h1>Sent-a-picture</h1>
-                <p>We zetten de Oosterzeelse natuur die we beschermen graag in de kijker. Stuur ons daarom jouw mooiste en leukste foto's door van dieren, planten, landschappen en favoriete plekjes in en rond Oosterzele. Wie weet komt jouw foto dan op onze website terecht! Stuur je foto door naar <a href="mailto:foto@natuurpuntoosterzele.be">foto@natuurpuntoosterzele.be</a> met vermelding van je naam en waar de foto genomen is.</p>
+                <h1 class="color3">Sent-a-picture</h1>
+                <p class="m-0">We zetten de Oosterzeelse natuur die we beschermen graag in de kijker. Stuur ons daarom jouw mooiste en leukste foto's door van dieren, planten, landschappen en favoriete plekjes in en rond Oosterzele. Wie weet komt jouw foto dan op onze website terecht! Stuur je foto door naar <a href="mailto:foto@natuurpuntoosterzele.be">foto@natuurpuntoosterzele.be</a> met vermelding van je naam en waar de foto genomen is.</p>
             </div>
             <!-- Wildcam -->
             <div class="col-sm-12 col-md-6">
-                <h1>Rent-a-wildcam</h1>
-                <p>Word je in je tuin geconfronteerd met een raar fenomeen en wil je weten welk dier hier achter zit? Heb je gestommel en gerommel onder je dak en vermoed je de aanwezigheid van bepaalde dieren? Neem dan contact met ons op en wij komen een wildcam bij jou thuis plaatsen! Zo'n wildcam begint automatisch op te nemen bij beweging en dat zowel overdag als 's nachts. Na een aantal dagen komen we de wildcam terug ophalen en bekijken we samen de beelden. Contacteer ons via <a href="mailto:wildcam@natuurpuntoosterzele.be">wildcam@natuurpuntoosterzele.be</a>.</p>
+                <h1 class="color3">Rent-a-wildcam</h1>
+                <p class="m-0">Word je in je tuin geconfronteerd met een raar fenomeen en wil je weten welk dier hier achter zit? Heb je gestommel en gerommel onder je dak en vermoed je de aanwezigheid van bepaalde dieren? Neem dan contact met ons op en wij komen een wildcam bij jou thuis plaatsen! Zo'n wildcam begint automatisch op te nemen bij beweging en dat zowel overdag als 's nachts. Na een aantal dagen komen we de wildcam terug ophalen en bekijken we samen de beelden. Contacteer ons via <a href="mailto:wildcam@natuurpuntoosterzele.be">wildcam@natuurpuntoosterzele.be</a>.</p>
             </div>
         </div>
     </div>
