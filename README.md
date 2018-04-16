@@ -1,6 +1,22 @@
 # Natuurpunt Oosterzele
 
-Runs ons Python 3.4 and Django 1.10!
+Runs on Python 3.5 and Django 2.0!
+
+
+## Migration
+
+First run locally
+
+```
+python manage.py makemigrations
+```
+
+then run on server
+
+```
+python manage.py migrate
+```
+
 
 ## Translation
 

@@ -16,7 +16,7 @@ class Input(models.Model):
         (2, 'Hoek ter Hulst'))
 
     date = models.DateField(verbose_name=_('date'))
-    by = models.ForeignKey(User, verbose_name=_('by'), related_name='+', blank=True, null=True)
+    by = models.ForeignKey(User, verbose_name=_('by'), related_name='+', on_delete=models.CASCADE, blank=True, null=True)
     location = models.IntegerField(verbose_name=_('location'), choices=LOCATIONS)
     toads = models.IntegerField(verbose_name=_('toads'), default=0)
     frogs = models.IntegerField(verbose_name=_('frogs'), default=0)
