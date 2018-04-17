@@ -3,6 +3,21 @@
 Runs on Python 3.5 and Django 2.0!
 
 
+## Installation
+
+With conda
+
+```
+conda install -c conda-forge gunicorn django
+```
+
+With pip
+
+```
+pip install django-analytical
+```
+
+
 ## Migration
 
 First run locally
