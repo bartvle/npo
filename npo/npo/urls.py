@@ -19,7 +19,7 @@ urlpatterns = [
     path('natuurgebieden/', views.natuurgebieden),
     path('soortbescherming/', views.soortbescherming),
     path('activiteiten/', views.activiteiten),
-    path('activiteiten/<int:year>-<int:month>-<int:day>-<slug:slug>', views.activiteit),
+    path('activiteiten/<int:year>-<int:month>-<int:day>-<slug:slug>/', views.activiteit),
     # path('nieuws/$', views.nieuws),
     # path('^nieuws/(?P<year>[0-9]{4})-(?P<month>[0-9]{2})-(?P<day>[0-9]{2})-(?P<slug>[\w-]+)/$', views.artikel),
     path('nieuwsbrief/', views.magazine),
