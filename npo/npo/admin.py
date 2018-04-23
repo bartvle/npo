@@ -28,8 +28,8 @@ def emails(request):
     """
     """
     emails = [s.email for s in Subscription.objects.all()]
-    s = '; '.join(emails)
-    return HttpResponse(s)
+    s = '\n'.join(emails)
+    return HttpResponse(s, content_type='text/plain')
 
 
 def overzet(request):
