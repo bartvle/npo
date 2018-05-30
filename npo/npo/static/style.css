@@ -60,9 +60,9 @@ a.color3:link, a.color3:focus, a.color3:visited, a.color3:active { /* text-decor
 
 a.color3:hover { /* text-decoration: underline; */ /* color: $color3; */ }
 
-a.color4:link, a.color4:focus, a.color4:visited, a.color4:active { /* text-decoration: None; */ /* color: $color4; */ }
+a.color4:link, a.color4:focus, a.color4:visited, a.color4:active { text-decoration: None; color: #FFFFFF; }
 
-a.color4:hover { /* text-decoration: underline; */ /* color: $color4; */ }
+a.color4:hover { text-decoration: underline; color: #FFFFFF; }
 
 a.nothing:hover { text-decoration: None; }
 

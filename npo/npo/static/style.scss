@@ -143,13 +143,13 @@ a.color3:hover {
 }
 
 a.color4:link, a.color4:focus, a.color4:visited, a.color4:active {
-    /* text-decoration: None; */
-    /* color: $color4; */
+    text-decoration: None;
+    color: $color4;
 }
 
 a.color4:hover {
-    /* text-decoration: underline; */
-    /* color: $color4; */
+    text-decoration: underline;
+    color: $color4;
 }
 
 a.nothing:hover {
