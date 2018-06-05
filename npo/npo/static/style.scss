@@ -333,7 +333,7 @@ a.button1:hover {
         }
 
         .icon:first-of-type {
-            margin-right: 5px;
+            margin-right: 10px;
         }
 
         .icon:hover {
@@ -341,16 +341,16 @@ a.button1:hover {
         }
 
         #footer_1_row {
-            align-items: center;
             line-height: 40px;
         }
 
         #gototop {
+            padding-top: 5px;
             float: right;
             width: 40px;
             height: 40px;
             background: $color3;
-            border-radius: 3px;
+            border-radius: 5px;
             text-align: center;
             color: $color4;
             cursor: pointer;
