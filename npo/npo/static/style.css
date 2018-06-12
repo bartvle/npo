@@ -98,8 +98,8 @@ a.button1:hover { /* color: $color4; */ /* text-decoration: None; */ /* backgrou
 /* -- footer --------------------------------------------------------------- */
 #footer { font-size: 0.95rem; }
 #footer #footer1 { color: #808080; }
-#footer #footer1 .icon { display: block; width: 40px; height: 40px; border-radius: 100%; background: #808080; float: left; text-align: center; color: #FFFFFF; line-height: 40px; }
-#footer #footer1 .icon:first-of-type { margin-right: 10px; }
+#footer #footer1 .icon { display: block; width: 40px; height: 40px; border-radius: 100%; background: #808080; float: left; text-align: center; color: #FFFFFF; line-height: 40px; margin-left: 10px; }
+#footer #footer1 .icon:first-of-type { margin-left: 0px; }
 #footer #footer1 .icon:hover { background: #97C00E; }
 #footer #footer1 #footer_1_row { line-height: 40px; }
 #footer #footer1 #gototop { padding-top: 5px; float: right; width: 40px; height: 40px; background: #808080; border-radius: 5px; text-align: center; color: #FFFFFF; cursor: pointer; }

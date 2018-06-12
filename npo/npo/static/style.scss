@@ -330,10 +330,11 @@ a.button1:hover {
             text-align: center;
             color: $color4;
             line-height: 40px;
+            margin-left: 10px;
         }
 
         .icon:first-of-type {
-            margin-right: 10px;
+            margin-left: 0px;
         }
 
         .icon:hover {
