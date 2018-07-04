@@ -3,6 +3,7 @@
 
 
 import datetime
+import json
 import os
 
 from django.views.decorators.csrf import ensure_csrf_cookie
@@ -46,7 +47,7 @@ def start(request):
 def over_ons(request):
     """
     """
-    return render(request, 'overons.htm')
+    return render(request, 'over_ons.htm')
 
 
 def beleid(request):
@@ -84,7 +85,7 @@ def activiteit(request, year, month, day, slug):
     return render(request, 'activiteit.htm', context={'activity': activity, 'recent_activities': recent_activities})
 
 
-def nieuws(request):
+def artikels(request):
     """
     """
     articles = Article.objects.all().order_by('-date')
@@ -111,7 +112,7 @@ def magazine(request):
 def lid_worden(request):
     """
     """
-    return render(request, 'lidworden.htm')
+    return render(request, 'lid_worden.htm')
 
 
 def gluren_bij_de_buren(request):
@@ -122,7 +123,22 @@ def gluren_bij_de_buren(request):
     return render(request, 'gluren_bij_de_buren.htm', context={'activities': activities, 'our_activities': our_activities})
 
 
-def kaart_regionaal_bos(request):
+def regionaal_bos(request):
     """
     """
-    return render(request, 'kaart_regionaal_bos.htm')
+    return render(request, 'regionaal_bos.htm')
+
+
+def regionaal_bos_app(request):
+    """
+    """
+    print()
+    with open(os.path.join(os.path.dirname(__file__), '.', 'static', 'data', 'Perimeter.geojson')) as f:
+        data = json.load(f)
+
+    # [feature] = data['features']
+
+    # context = {'perimeter': feature['geometry']['coordinates']}
+    context = {'perimeter': json.dumps(data)}
+
+    return render(request, 'regionaal_bos_app.htm', context=context)

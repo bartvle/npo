@@ -14,18 +14,24 @@ from npo.admin import admin_site
 urlpatterns = [
     path('admin/', admin_site.urls),
     path('', views.start),
-	path('overons/', views.over_ons),
+	path('over-ons/', views.over_ons),
 	path('beleid/', views.beleid),
     path('natuurgebieden/', views.natuurgebieden),
     path('soortbescherming/', views.soortbescherming),
     path('activiteiten/', views.activiteiten),
     path('activiteiten/<int:year>-<int:month>-<int:day>-<slug:slug>/', views.activiteit),
-    # path('nieuws/$', views.nieuws),
-    # path('^nieuws/(?P<year>[0-9]{4})-(?P<month>[0-9]{2})-(?P<day>[0-9]{2})-(?P<slug>[\w-]+)/$', views.artikel),
+    path('artikels/', views.artikels),
+    path('artikels/<int:year>-<int:month>-<int:day>-<slug:slug>/', views.artikel),
     path('nieuwsbrief/', views.magazine),
-    path('lidworden/', views.lid_worden),
+    path('lid-worden/', views.lid_worden),
     path('gluren-bij-de-buren/', views.gluren_bij_de_buren),
-    path('1Y3QgU7vcHqFNizeVjfFWg9U0V7Jb5eOXjjzBPldxXnhctUBdYRKvylsdioY85YU/', views.kaart_regionaal_bos),
+    path('naar-een-nieuw-regionaal-bos/', views.regionaal_bos),
+    path('naar-een-nieuw-regionaal-bos/app/', views.regionaal_bos_app),
+
+    ## Legacy
+    path('overons/', views.over_ons), ## from 2018-07-04
+    path('lidworden/', views.lid_worden), ## from 2018-07-04
+    path('1Y3QgU7vcHqFNizeVjfFWg9U0V7Jb5eOXjjzBPldxXnhctUBdYRKvylsdioY85YU/', views.regionaal_bos_app), ## from 2018-07-04
 ]
 
 if settings.DEBUG is True:
