@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-30 13:26+0200\n"
+"POT-Creation-Date: 2018-08-04 09:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,25 +60,23 @@ msgstr "activiteiten"
 
 #: .\activities\models.py:44
 msgid "text"
-msgstr ""
+msgstr "tekst"
 
 #: .\activities\models.py:45
 msgid "link"
-msgstr ""
+msgstr "link"
 
 #: .\activities\models.py:46
 msgid "division"
-msgstr ""
+msgstr "afdeling"
 
 #: .\activities\models.py:49
 msgid "neighboring activity"
-msgstr ""
+msgstr "gluren bij de buren"
 
 #: .\activities\models.py:50
-#, fuzzy
-#| msgid "activities"
 msgid "neighboring activities"
-msgstr "activiteiten"
+msgstr "gluren bij de buren"
 
 #: .\amphi\admin.py:42 .\amphi\models.py:19
 msgid "by"
@@ -192,11 +190,15 @@ msgstr "E-nieuwsbrief"
 msgid "email"
 msgstr "e-mail"
 
-#: .\newsletter\models.py:16
+#: .\newsletter\models.py:14
+msgid "created at"
+msgstr "gemaakt op"
+
+#: .\newsletter\models.py:17
 msgid "subscription"
 msgstr "inschrijving"
 
-#: .\newsletter\models.py:17
+#: .\newsletter\models.py:18
 msgid "subscriptions"
 msgstr "inschrijvingen"
 
