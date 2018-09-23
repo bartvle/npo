@@ -8,7 +8,7 @@ Runs on Python 3.5 and Django 2.0!
 With conda
 
 ```
-conda install -c conda-forge gunicorn django
+conda install -c conda-forge gunicorn django bokeh
 ```
 
 With pip

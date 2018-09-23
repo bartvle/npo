@@ -1,32 +1,59 @@
-<table border="1" cellpadding="5">
-    <tr><td colspan="4">Totaal</td></tr>
-    <tr>
-        <td>Jaar</td><td>Padden</td><td>Kikkers</td><td>Salamanders</td>
-    </tr>
-    {% for item in data %}
-    <tr>
-        <td>{{ item.year.year }}</td>
-        <td>{{ item.toads }}</td>
-        <td>{{ item.frogs }}</td>
-        <td>{{ item.salamanders }}</td>
-    </tr>
-    {% endfor %}
-</table>
+<html>
+	<head>
+		<link href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.15.min.css" rel="stylesheet" type="text/css">
+		<link href="https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.15.min.css" rel="stylesheet" type="text/css">
+		<link href="https://cdn.pydata.org/bokeh/release/bokeh-tables-0.12.15.min.css" rel="stylesheet" type="text/css">
 
-{% for location, l_data in locations.items %}
-</br>
-<table border="1" cellpadding="5">
-    <tr><td colspan="4">{{ location.1 }}</td></tr>
-    <tr>
-        <td>Jaar</td><td>Padden</td><td>Kikkers</td><td>Salamanders</td>
-    </tr>
-    {% for item in l_data %}
-    <tr>
-        <td>{{ item.year.year }}</td>
-        <td>{{ item.toads }}</td>
-        <td>{{ item.frogs }}</td>
-        <td>{{ item.salamanders }}</td>
-    </tr>
-    {% endfor %}
-</table>
-{% endfor %}
+		<script src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.15.min.js"></script>
+		<script src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.15.min.js"></script>
+		<script src="https://cdn.pydata.org/bokeh/release/bokeh-tables-0.12.15.min.js"></script>
+	</head>
+	<body>
+
+		<table>
+			<tr>
+
+				<td>
+					<table border="1" cellpadding="5">
+						<tr><td colspan="4">Totaal</td></tr>
+						<tr>
+							<td>Jaar</td><td>Padden</td><td>Kikkers</td><td>Salamanders</td>
+						</tr>
+						{% for item in data %}
+						<tr>
+							<td>{{ item.year.year }}</td>
+							<td>{{ item.toads }}</td>
+							<td>{{ item.frogs }}</td>
+							<td>{{ item.salamanders }}</td>
+						</tr>
+						{% endfor %}
+					</table>
+				</td>
+
+				{% for location, l_data in locations.items %}
+				<td>
+					<table border="1" cellpadding="5">
+						<tr><td colspan="4">{{ location.1 }}</td></tr>
+						<tr>
+							<td>Jaar</td><td>Padden</td><td>Kikkers</td><td>Salamanders</td>
+						</tr>
+						{% for item in l_data %}
+						<tr>
+							<td>{{ item.year.year }}</td>
+							<td>{{ item.toads }}</td>
+							<td>{{ item.frogs }}</td>
+							<td>{{ item.salamanders }}</td>
+						</tr>
+						{% endfor %}
+					</table>
+				</td>
+				{% endfor %}
+
+			</tr>
+		</table>
+		<div>
+		{{ div | safe }}
+		</div>
+	</body>
+	{{ script | safe }}
+</html>

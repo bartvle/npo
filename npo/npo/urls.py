@@ -27,6 +27,10 @@ urlpatterns = [
     path('gluren-bij-de-buren/', views.gluren_bij_de_buren),
     path('naar-een-nieuw-regionaal-bos/', views.regionaal_bos),
     path('naar-een-nieuw-regionaal-bos/app/', views.regionaal_bos_app),
+    path('memorandum/', views.memorandum),
+    path('memorandum/n-va/', views.memorandum_nva),
+    path('memorandum/groen/', views.memorandum_groen),
+
 
     ## Legacy
     path('overons/', views.over_ons), ## from 2018-07-04

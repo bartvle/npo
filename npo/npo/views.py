@@ -133,7 +133,7 @@ def regionaal_bos_app(request):
     """
     """
     print()
-    with open(os.path.join(os.path.dirname(__file__), '.', 'static', 'data', 'Perimeter.geojson')) as f:
+    with open(os.path.join(os.path.dirname(__file__), '.', 'data', 'perimeter.geojson')) as f:
         data = json.load(f)
 
     # [feature] = data['features']
@@ -142,3 +142,21 @@ def regionaal_bos_app(request):
     context = {'perimeter': json.dumps(data)}
 
     return render(request, 'regionaal_bos_app.htm', context=context)
+
+
+def memorandum(request):
+    """
+    """
+    return render(request, 'memorandum.htm')
+
+
+def memorandum_nva(request):
+    """
+    """
+    return render(request, 'memorandum_nva.htm')
+
+
+def memorandum_groen(request):
+    """
+    """
+    return render(request, 'memorandum_groen.htm')
