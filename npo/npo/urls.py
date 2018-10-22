@@ -25,8 +25,8 @@ urlpatterns = [
     path('nieuwsbrief/', views.magazine),
     path('lid-worden/', views.lid_worden),
     path('gluren-bij-de-buren/', views.gluren_bij_de_buren),
-    path('naar-een-nieuw-regionaal-bos/', views.regionaal_bos),
-    path('naar-een-nieuw-regionaal-bos/app/', views.regionaal_bos_app),
+    path('rodeland/', views.rodeland),
+    path('rodeland/app/', views.rodeland_app),
     path('memorandum/', views.memorandum),
     path('memorandum/n-va/', views.memorandum_nva),
     path('memorandum/groen/', views.memorandum_groen),
@@ -35,7 +35,7 @@ urlpatterns = [
     ## Legacy
     path('overons/', views.over_ons), ## from 2018-07-04
     path('lidworden/', views.lid_worden), ## from 2018-07-04
-    path('1Y3QgU7vcHqFNizeVjfFWg9U0V7Jb5eOXjjzBPldxXnhctUBdYRKvylsdioY85YU/', views.regionaal_bos_app), ## from 2018-07-04
+    path('1Y3QgU7vcHqFNizeVjfFWg9U0V7Jb5eOXjjzBPldxXnhctUBdYRKvylsdioY85YU/', views.rodeland_app), ## from 2018-07-04
 ]
 
 if settings.DEBUG is True:

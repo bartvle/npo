@@ -123,25 +123,23 @@ def gluren_bij_de_buren(request):
     return render(request, 'gluren_bij_de_buren.htm', context={'activities': activities, 'our_activities': our_activities})
 
 
-def regionaal_bos(request):
+def rodeland(request):
     """
     """
-    return render(request, 'regionaal_bos.htm')
+    return render(request, 'rodeland.htm')
 
 
-def regionaal_bos_app(request):
+def rodeland_app(request):
     """
     """
-    print()
-    with open(os.path.join(os.path.dirname(__file__), '.', 'data', 'perimeter.geojson')) as f:
-        data = json.load(f)
+    context = {}
+    for name in ['perimeter', 'natura_2000']:
+        with open(os.path.join(os.path.dirname(__file__), '.', 'data', '{}.geojson'.format(name))) as f:
+            data = json.load(f)
 
-    # [feature] = data['features']
+        context[name] = json.dumps(data)
 
-    # context = {'perimeter': feature['geometry']['coordinates']}
-    context = {'perimeter': json.dumps(data)}
-
-    return render(request, 'regionaal_bos_app.htm', context=context)
+    return render(request, 'rodeland_app.htm', context=context)
 
 
 def memorandum(request):

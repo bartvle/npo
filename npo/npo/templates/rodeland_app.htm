@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+        <link rel="stylesheet" type="text/css" href="/static/regionaal_bos/style.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="map"></div>
+        </div>
+        <script type="text/javascript">
+
+            map = L.map('map').setView([50.961886, 3.760017], 12);
+
+            baselayer1 = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 18, attribution: '<a href="https://www.openstreetmap.org" target="_blank">OpenStreetMap</a>'});
+            baselayer2 = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {maxZoom: 18, attribution: '<a href="http://www.esri.com" target="_blank">ESRI</a>'});
+            baselayer1.addTo(map);
+            var baselayers = {
+                'Kaart': baselayer1,
+                'Satelliet': baselayer2
+                };
+
+
+            style_perimeter = {
+                "weight": 2,
+                "opacity": 1,
+                "fill": false,
+                "color": 'blue',
+            };
+
+            style_natura_2000 = {
+                "weight": 2,
+                "opacity": 1,
+                "fill": false,
+                "color": 'green',
+            };
+
+            var overlays = {
+                "Perimeter": L.geoJson(
+                    JSON.parse('{{ perimeter | escapejs }}'), {style: style_perimeter}),
+                "Natura 2000": L.geoJson(
+                    JSON.parse('{{ natura_2000 | escapejs }}'), {style: style_natura_2000}),
+            };
+
+            layer_control = L.control.layers(baselayers, overlays, {collapsed: false});
+            layer_control.addTo(map);
+
+
+            // data = JSON.parse('{{ perimeter | escapejs }}');
+            // perimeter = L.geoJson(data, {style: style_perimeter});
+            // perimeter.addTo(map);
+        </script>
+    </body>
+</html>
