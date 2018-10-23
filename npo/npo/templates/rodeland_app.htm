@@ -11,11 +11,9 @@
         </div>
         <script type="text/javascript">
 
-            map = L.map('map').setView([50.961886, 3.760017], 12);
-
             baselayer1 = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 18, attribution: '<a href="https://www.openstreetmap.org" target="_blank">OpenStreetMap</a>'});
             baselayer2 = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {maxZoom: 18, attribution: '<a href="http://www.esri.com" target="_blank">ESRI</a>'});
-            baselayer1.addTo(map);
+
             var baselayers = {
                 'Kaart': baselayer1,
                 'Satelliet': baselayer2
@@ -36,20 +34,18 @@
                 "color": 'green',
             };
 
+            natura_2000 = L.geoJson(JSON.parse('{{ natura_2000 | escapejs }}'), {style: style_natura_2000});
+            perimeter = L.geoJson(JSON.parse('{{ perimeter | escapejs }}'), {style: style_perimeter});
+
             var overlays = {
-                "Perimeter": L.geoJson(
-                    JSON.parse('{{ perimeter | escapejs }}'), {style: style_perimeter}),
-                "Natura 2000": L.geoJson(
-                    JSON.parse('{{ natura_2000 | escapejs }}'), {style: style_natura_2000}),
+                "Natura 2000": natura_2000,
+                "Zoekzone": perimeter,
             };
+
+            map = L.map('map', {layers: [baselayer1, natura_2000]}).setView([50.961886, 3.760017], 12);
 
             layer_control = L.control.layers(baselayers, overlays, {collapsed: false});
             layer_control.addTo(map);
-
-
-            // data = JSON.parse('{{ perimeter | escapejs }}');
-            // perimeter = L.geoJson(data, {style: style_perimeter});
-            // perimeter.addTo(map);
         </script>
     </body>
 </html>
