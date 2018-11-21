@@ -39,7 +39,7 @@ p + p { /* margin-top: 10px; */ }
 
 .box-heading { padding: 0.5rem; font-weight: bold; color: #FFFFFF; background: #97C00E; }
 
-.box-content { padding: 0.5rem; }
+.box-content { padding: 1rem; }
 
 .date1 { /* margin-bottom: 15px; */ /* line-height: 1; */ }
 
