@@ -27,15 +27,18 @@ urlpatterns = [
     path('gluren-bij-de-buren/', views.gluren_bij_de_buren),
     path('rodeland/', views.rodeland),
     path('rodeland/app/', views.rodeland_app),
-    path('memorandum/', views.memorandum),
-    path('memorandum/n-va/', views.memorandum_nva),
-    path('memorandum/groen/', views.memorandum_groen),
+    path('beleid/memorandum/', views.memorandum),
+    path('beleid/memorandum/n-va/', views.memorandum_nva),
+    path('beleid/memorandum/groen/', views.memorandum_groen),
 
 
     ## Legacy
     path('overons/', views.over_ons), ## from 2018-07-04
     path('lidworden/', views.lid_worden), ## from 2018-07-04
     path('1Y3QgU7vcHqFNizeVjfFWg9U0V7Jb5eOXjjzBPldxXnhctUBdYRKvylsdioY85YU/', views.rodeland_app), ## from 2018-07-04
+    path('memorandum/', views.memorandum), ## from 2018-11-21
+    path('memorandum/n-va/', views.memorandum_nva), ## from 2018-11-21
+    path('memorandum/groen/', views.memorandum_groen), ## from 2018-11-21
 ]
 
 if settings.DEBUG is True:
