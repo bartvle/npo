@@ -14,7 +14,7 @@
                     <h3><a href="{{ activity.link }}" target="_blank">{{ activity.name }}</a></h3>
                 </div>
                 <div class="date">
-                    {{ activity.date | date:'l d F' | capfirst }}
+                    {{ activity.date | date:'l j F' | capfirst }}
                 </div>
                 <div class="text">
                     {{ activity.text }} <a href="{{ activity.link }}" target="_blank">Meer info</a>.
@@ -27,13 +27,17 @@
         </div>
         <div class="col-md-4 col-lg-4" id="activities">
             <div class="box">
-                <h3 style="margin-bottom: 25px">Onze activiteiten</h3>
+                <div class="box-heading">
+                    Onze activiteiten
+                </div>
+                <div class="box-content">
                 {% for activity in our_activities %}
                     <div class="activity">
                         <a href="/activiteiten/{{activity.date | date:'Y-m-d'}}-{{activity.slug}}"><b>{{ activity.date }} - {{ activity.name }}</b></a>
-                        <p>{{ activity.short }}</p>
+                        <p class="m-0">{{ activity.short }}</p>
                     </div>
                 {% endfor %}
+                </div>
             </div>
         </div>
     </div>

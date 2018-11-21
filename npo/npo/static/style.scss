@@ -265,31 +265,28 @@ a.button1:hover {
     #gluren_bij_de_buren_page {
 
         .intro {
-            /* margin-bottom: 25px; */
+            margin-bottom: 25px;
         }
 
         .activity {
 
-            .title {
-                /* color: $color1; */
-            }
-
             .date {
-                /* margin: 10px 0px; */
+                margin: 10px 0px;
+                font-weight: bold;
             }
 
             .text {
-                /* margin-bottom: 5px; */
+                margin-bottom: 5px;
             }
 
             .link {
-                /* font-style: italic; */
+                font-style: italic;
             }
 
         }
 
         .activity + .activity {
-            /* margin-top: 25px; */
+            margin-top: 25px;
         }
 
     }

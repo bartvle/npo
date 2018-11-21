@@ -85,12 +85,11 @@ a.button1:hover { /* color: $color4; */ /* text-decoration: None; */ /* backgrou
 #embody #start #newsletter #id_email { width: 100%; padding: 5px; border: 1px solid #e5e5dc; color: #808080; background-color: #f3f2eb; }
 #embody #activity_page img { margin-top: 25px; margin-bottom: 25px; }
 #embody #activity_page .other { margin-top: 25px; }
-#embody #gluren_bij_de_buren_page .intro { /* margin-bottom: 25px; */ }
-#embody #gluren_bij_de_buren_page .activity .title { /* color: $color1; */ }
-#embody #gluren_bij_de_buren_page .activity .date { /* margin: 10px 0px; */ }
-#embody #gluren_bij_de_buren_page .activity .text { /* margin-bottom: 5px; */ }
-#embody #gluren_bij_de_buren_page .activity .link { /* font-style: italic; */ }
-#embody #gluren_bij_de_buren_page .activity + .activity { /* margin-top: 25px; */ }
+#embody #gluren_bij_de_buren_page .intro { margin-bottom: 25px; }
+#embody #gluren_bij_de_buren_page .activity .date { margin: 10px 0px; font-weight: bold; }
+#embody #gluren_bij_de_buren_page .activity .text { margin-bottom: 5px; }
+#embody #gluren_bij_de_buren_page .activity .link { font-style: italic; }
+#embody #gluren_bij_de_buren_page .activity + .activity { margin-top: 25px; }
 #embody #page_content { /* margin: 25px 0px; */ /* text-align: justify; */ }
 #embody #page_content .picture { /* margin-bottom: 25px; */ }
 #embody #page_content .movie { /* margin: 25px 0px; */ }
