@@ -14,14 +14,6 @@ a:link, a:focus, a:visited, a:active { /* outline: 0; */ color: #97C00E; }
 
 a:hover { color: #97C00E; }
 
-p { /* margin: 0px; */ /* line-height: 1.5; */ }
-
-h2 + p { /* margin-top: 10px; */ }
-
-p + h2 { /* margin-top: 20px; */ }
-
-p + p { /* margin-top: 10px; */ }
-
 /* ------------------------------------------------------------------------- */
 .color1 { color: #97C00E; }
 
@@ -40,8 +32,6 @@ p + p { /* margin-top: 10px; */ }
 .box-heading { padding: 0.5rem; font-weight: bold; color: #FFFFFF; background: #97C00E; }
 
 .box-content { padding: 1rem; }
-
-.date1 { /* margin-bottom: 15px; */ /* line-height: 1; */ }
 
 /* ------------------------------------------------------------------------- */
 h1.page_title { margin-top: 2rem; margin-bottom: 1rem; color: #808080; }
@@ -65,10 +55,6 @@ a.color4:link, a.color4:focus, a.color4:visited, a.color4:active { text-decorati
 a.color4:hover { text-decoration: underline; color: #FFFFFF; }
 
 a.nothing:hover { text-decoration: None; }
-
-a.button1 { /* background-color: $color2; */ /* display: inline-block; */ /* color: $color1; */ /* text-decoration: None; */ /* cursor: pointer; */ }
-
-a.button1:hover { /* color: $color4; */ /* text-decoration: None; */ /* background: $color1; */ }
 
 /* ------------------------------------------------------------------------- */
 #header #header1 a { color: #808080; font-size: 0.95rem; }
