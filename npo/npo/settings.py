@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
-import raven
 
 from .deploy import SECRET_KEY, DEBUG, ALLOWED_HOSTS
 
@@ -30,7 +29,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'analytical',
-    'raven.contrib.django.raven_compat',
 
     'news.apps.NewsConfig',
     'activities.apps.ActivitiesConfig',
@@ -133,16 +131,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Django-analytical
 
 GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-90933793-1'
-
-
-# Sentry
-
-RAVEN_CONFIG = {
-    'dsn': 'https://7c6e2e263dc24d2990a55f32522b0c7a@sentry.io/1256000',
-    # If you are using git, you can also automatically configure the
-    # release based on the git info.
-    'release': raven.fetch_git_sha(os.path.abspath(os.pardir)),
-}
 
 
 # Other
