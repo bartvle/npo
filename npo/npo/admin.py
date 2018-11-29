@@ -2,6 +2,9 @@
 """
 
 
+import json
+import os
+
 from django.contrib.admin import AdminSite
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.admin import UserAdmin, GroupAdmin
@@ -17,10 +20,16 @@ from newsletter.models import Subscription
 from amphi.models import Input
 
 
-def kaart(request):
+@login_required
+def kadaster(request):
     """
     """
-    return render(request, 'admin/kaart.htm')
+    with open(os.path.join(os.path.dirname(__file__), '.', 'data', 'gondebeek_parcels.geojson')) as f:
+        gondebeek_parcels = json.load(f)
+
+    context = {'gondebeek_parcels': json.dumps(gondebeek_parcels)}
+
+    return render(request, 'admin/kadaster.htm', context=context)
 
 
 @login_required
@@ -44,7 +53,7 @@ def overzet(request):
     return render(request, 'admin/overzet.htm', context={'data': data, 'locations': data_locations})
 
 
-class AdminSite(AdminSite):
+class MyAdminSite(AdminSite):
     """
     """
     site_header = 'Natuurpunt Oosterzele Admin'
@@ -55,14 +64,14 @@ class AdminSite(AdminSite):
         """
         """
         urls = [
-            url(r'^kaart/$', kaart),
-            url(r'^emails/$', emails),
-            url(r'^overzet/$', overzet),
+            url('kadaster/', kadaster),
+            url('emails/', emails),
+            url('overzet/', overzet),
             ]
-        return super(AdminSite, self).get_urls() + urls
+        return super().get_urls() + urls
 
 
-admin_site = AdminSite()
+admin_site = MyAdminSite()
 
 admin_site.register(User, UserAdmin)
 admin_site.register(Group, GroupAdmin)
