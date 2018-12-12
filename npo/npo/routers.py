@@ -2,7 +2,7 @@
 """
 
 
-PSQL_APPS = []
+PSQL_APPS = ['register']
 
 
 class DatabaseRouter:

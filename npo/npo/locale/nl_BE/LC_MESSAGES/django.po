@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-04 09:44+0200\n"
+"POT-Creation-Date: 2018-12-12 17:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -134,7 +134,7 @@ msgstr "Tijdschrift"
 msgid "year"
 msgstr "jaar"
 
-#: .\magazine\models.py:45
+#: .\magazine\models.py:45 .\register\models.py:31
 msgid "number"
 msgstr "nummer"
 
@@ -186,7 +186,7 @@ msgstr "artikels"
 msgid "E-newsletter"
 msgstr "E-nieuwsbrief"
 
-#: .\newsletter\models.py:13
+#: .\newsletter\models.py:13 .\register\models.py:36
 msgid "email"
 msgstr "e-mail"
 
@@ -206,5 +206,50 @@ msgstr "inschrijvingen"
 msgid "Home"
 msgstr "Start"
 
-#~ msgid "By"
-#~ msgstr "Door"
+#: .\register\apps.py:11
+msgid "Register"
+msgstr "Kadaster"
+
+#: .\register\models.py:16 .\register\models.py:51
+msgid "parcel"
+msgstr "perceel"
+
+#: .\register\models.py:17
+msgid "parcels"
+msgstr "percelen"
+
+#: .\register\models.py:26
+msgid "f_name"
+msgstr "voornaam"
+
+#: .\register\models.py:27
+msgid "l_name"
+msgstr "achternaam"
+
+#: .\register\models.py:29
+msgid "street"
+msgstr "straat"
+
+#: .\register\models.py:33
+msgid "municipality"
+msgstr "gemeente"
+
+#: .\register\models.py:37
+msgid "phone"
+msgstr "telefoon"
+
+#: .\register\models.py:41 .\register\models.py:53
+msgid "owner"
+msgstr "eigenaar"
+
+#: .\register\models.py:42
+msgid "owners"
+msgstr "eigenaars"
+
+#: .\register\models.py:57
+msgid "ownership"
+msgstr "eigendom"
+
+#: .\register\models.py:58
+msgid "ownerships"
+msgstr "eigendommen"

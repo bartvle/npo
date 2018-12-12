@@ -9,15 +9,30 @@ from django.contrib.admin import AdminSite
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.admin import UserAdmin, GroupAdmin
 from django.contrib.auth.decorators import login_required
-from django.conf.urls import url
+from django.urls import path
 from django.db.models import Sum
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.db.models.functions import TruncYear
 
 
+from register.models import Parcel
 from newsletter.models import Subscription
 from amphi.models import Input
+
+
+@login_required
+def perceel(request, oidn):
+    """
+    """
+    try:
+        parcel = Parcel.objects.get(oidn=oidn)
+    except Parcel.DoesNotExist:
+        parcel = None
+
+    context = {'parcel': parcel}
+
+    return render(request, 'admin/perceel.htm', context=context)
 
 
 @login_required
@@ -64,9 +79,10 @@ class MyAdminSite(AdminSite):
         """
         """
         urls = [
-            url('kadaster/', kadaster),
-            url('emails/', emails),
-            url('overzet/', overzet),
+            path('perceel/<int:oidn>/', perceel),
+            path('kadaster/', kadaster),
+            path('emails/', emails),
+            path('overzet/', overzet),
             ]
         return super().get_urls() + urls
 

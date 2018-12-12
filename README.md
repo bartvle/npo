@@ -8,7 +8,7 @@ Runs on Python 3.5 and Django 2.0!
 With conda
 
 ```
-conda install -c conda-forge gunicorn django bokeh
+conda install -c conda-forge gunicorn django psycopg2 bokeh
 ```
 
 With pip
@@ -30,6 +30,7 @@ then run on server
 
 ```
 python manage.py migrate
+python manage.py migrate --database=postgres
 ```
 
 
