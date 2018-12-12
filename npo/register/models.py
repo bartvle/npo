@@ -6,20 +6,6 @@ from django.utils.translation import ugettext_lazy as _
 from django.db import models
 
 
-class Parcel(models.Model):
-    """
-    """
-
-    oidn = models.PositiveIntegerField(primary_key=True)
-
-    class Meta:
-        verbose_name = _('parcel')
-        verbose_name_plural = _('parcels')
-
-    def __str__(self):
-        return str(self.oidn)
-
-
 class Owner(models.Model):
     """
     """
@@ -43,6 +29,21 @@ class Owner(models.Model):
 
     def __str__(self):
         return self.f_name + ' ' + self.l_name
+
+
+class Parcel(models.Model):
+    """
+    """
+
+    oidn = models.PositiveIntegerField(primary_key=True)
+    owners = models.ManyToManyField(Owner, through='Ownership')
+
+    class Meta:
+        verbose_name = _('parcel')
+        verbose_name_plural = _('parcels')
+
+    def __str__(self):
+        return str(self.oidn)
 
 
 class Ownership(models.Model):

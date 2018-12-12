@@ -42,7 +42,6 @@
                 "fillOpacity": 0.,
             };
 
-
             function highlightFeature(e) {
                 var layer = e.target;
 
@@ -81,9 +80,12 @@
 
             var gondebeek = L.geoJson(JSON.parse('{{ gondebeek_parcels | escapejs }}'), {style: style_gondebeek, onEachFeature: onEachFeature});
 
-            var overlays = {'Gondebeek': gondebeek};
+            // var overlays = {'Gondebeek': gondebeek};
+            var overlays = {};
 
-            var map = L.map('map', {layers: [baselayer1]}).setView([50.961886, 3.760017], 12);
+            var map = L.map('map', {layers: [baselayer1]}).setView([50.97, 3.785], 15);
+
+            gondebeek.addTo(map);
 
             layer_control = L.control.layers(baselayers, overlays, {collapsed: false});
             layer_control.addTo(map);

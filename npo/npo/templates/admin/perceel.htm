@@ -1,6 +1,9 @@
 <div>
     {% if parcel %}
     <div>{{ parcel.oidn }}</div>
+    {% for owner in parcel.owners.all %}
+    <div>{{ owner }}</div>
+    {% endfor %}
     {% else %}
     Geen informatie!
     {% endif %}
