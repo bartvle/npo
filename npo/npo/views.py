@@ -115,6 +115,12 @@ def lid_worden(request):
     return render(request, 'lid_worden.htm')
 
 
+def steun_ons(request):
+    """
+    """
+    return render(request, 'steun_ons.htm')
+
+
 def gluren_bij_de_buren(request):
     """
     """

@@ -24,6 +24,7 @@ urlpatterns = [
     path('artikels/<int:year>-<int:month>-<int:day>-<slug:slug>/', views.artikel),
     path('nieuwsbrief/', views.magazine),
     path('lid-worden/', views.lid_worden),
+    path('steun-ons/', views.steun_ons),
     path('gluren-bij-de-buren/', views.gluren_bij_de_buren),
     path('rodeland/', views.rodeland),
     path('rodeland/app/', views.rodeland_app),
