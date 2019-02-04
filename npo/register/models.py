@@ -10,37 +10,25 @@ from django.core.validators import MinLengthValidator, MaxLengthValidator
 class Owner(models.Model):
     """
     """
-    f_name = models.CharField(verbose_name=_('f_name'), max_length=40)
-    l_name = models.CharField(verbose_name=_('l_name'), max_length=40)
-
-    name = models.CharField(verbose_name=_('name'), max_length=80, blank=True)
+    name = models.CharField(verbose_name=_('name'), max_length=80)
     address = models.CharField(verbose_name=_('address'), max_length=80, blank=True)
 
-    street = models.CharField(verbose_name=_('street'), max_length=40,
-        blank=True)
-    number = models.CharField(verbose_name=_('number'), max_length=40,
-        blank=True)
-    municipality = models.CharField(verbose_name=_('municipality'),
-        max_length=40, blank=True)
-
     email = models.EmailField(verbose_name=_('email'), blank=True)
-    phone = models.CharField(verbose_name=_('phone'), max_length=40,
-        blank=True)
+    phone = models.CharField(verbose_name=_('phone'), max_length=40, blank=True)
 
     class Meta:
         verbose_name = _('owner')
         verbose_name_plural = _('owners')
 
     def __str__(self):
-        return self.f_name + ' ' + self.l_name
+        return self.name
 
 
 class Parcel(models.Model):
     """
     """
 
-    key = models.CharField(verbose_name=_('key'), max_length=17, validators=[MinLengthValidator(17), MaxLengthValidator(17)], primary_key=True)
-    oidn = models.PositiveIntegerField(blank=True)
+    key = models.CharField(verbose_name=_('capakey'), max_length=20, validators=[MinLengthValidator(17), MaxLengthValidator(17)])
     owners = models.ManyToManyField(Owner, through='Ownership')
 
     class Meta:
@@ -48,7 +36,7 @@ class Parcel(models.Model):
         verbose_name_plural = _('parcels')
 
     def __str__(self):
-        return str(self.oidn)
+        return str(self.key)
 
 
 class Ownership(models.Model):

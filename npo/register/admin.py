@@ -12,15 +12,15 @@ from .models import Parcel, Owner, Ownership
 class OwnerAdmin(ModelAdmin):
     """
     """
-    list_display = ('f_name', 'l_name', 'street', 'number', 'municipality',
-        'phone', 'email')
-    list_display_links = ('f_name', 'l_name')
+    list_display = ('name', 'address', 'phone', 'email')
+    list_display_links = ('name',)
 
 
 class ParcelAdmin(ModelAdmin):
     """
     """
-    list_display = ('oidn',)
+    list_display = ('key',)
+    list_display_links = ('key',)
 
 
 class OwnershipAdmin(ModelAdmin):
