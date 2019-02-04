@@ -39,8 +39,8 @@ class Parcel(models.Model):
     """
     """
 
-    oidn = models.PositiveIntegerField(primary_key=True)
-    key = models.CharField(verbose_name=_('key'), max_length=17, validators=[MinLengthValidator(17), MaxLengthValidator(17)], blank=True)
+    key = models.CharField(verbose_name=_('key'), max_length=17, validators=[MinLengthValidator(17), MaxLengthValidator(17)], primary_key=True)
+    oidn = models.PositiveIntegerField(blank=True)
     owners = models.ManyToManyField(Owner, through='Ownership')
 
     class Meta:
