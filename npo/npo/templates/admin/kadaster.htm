@@ -64,7 +64,9 @@
                 e.target.bindPopup("Loading...").openPopup();
                 console.log(e.target.feature.properties);
                 var popup = e.target.getPopup();
-                var url = "/admin/perceel/" + e.target.feature.properties.OIDN;
+                var str = e.target.feature.properties.CAPAKEY;
+                var res = str.replace("/", "-");
+                var url = "/admin/perceel/" + str;
                 $.get(url, function(data) {
                     popup.setContent(data);
                     popup.update();
