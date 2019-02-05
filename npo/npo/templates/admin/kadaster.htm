@@ -62,6 +62,7 @@
 
             function showData(e) {
                 e.target.bindPopup("Loading...").openPopup();
+                console.log(e.target.feature.properties);
                 var popup = e.target.getPopup();
                 var url = "/admin/perceel/" + e.target.feature.properties.OIDN;
                 $.get(url, function(data) {
