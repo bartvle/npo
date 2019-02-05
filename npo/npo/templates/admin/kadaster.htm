@@ -66,7 +66,7 @@
                 var popup = e.target.getPopup();
                 var str = e.target.feature.properties.CAPAKEY;
                 var res = str.replace("/", "-");
-                var url = "/admin/perceel/" + str;
+                var url = "/admin/perceel/" + res;
                 $.get(url, function(data) {
                     popup.setContent(data);
                     popup.update();
