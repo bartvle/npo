@@ -79,7 +79,7 @@ class MyAdminSite(AdminSite):
         """
         """
         urls = [
-            path('perceel/<int:oidn>/', perceel),
+            path('perceel/<str:key>/', perceel),
             path('kadaster/', kadaster),
             path('emails/', emails),
             path('overzet/', overzet),
