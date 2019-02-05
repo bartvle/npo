@@ -22,11 +22,11 @@ from amphi.models import Input
 
 
 @login_required
-def perceel(request, oidn):
+def perceel(request, key):
     """
     """
     try:
-        parcel = Parcel.objects.get(oidn=oidn)
+        parcel = Parcel.objects.get(key=key.replace('-', '/'))
     except Parcel.DoesNotExist:
         parcel = None
 
