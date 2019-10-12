@@ -36,6 +36,12 @@
                 'Satelliet': baselayer2
                 };
 
+            style_npo = {
+                "weight": 1,
+                "color": '#b2df8a',
+                "fillOpacity": 50.,
+            };
+
             style_gondebeek = {
                 "weight": 1,
                 "color": '#000000',
@@ -74,6 +80,11 @@
             }
 
             function onEachFeature(feature, layer) {
+                if (feature.properties.Eigenaar == 'NPO') {
+                    layer.setStyle(style_npo);
+                } else {
+                    layer.setStyle(style_gondebeek);
+                };
                 layer.on({
                     mouseover: highlightFeature,
                     mouseout: resetHighlight,
@@ -81,7 +92,7 @@
                 });
             }
 
-            var gondebeek = L.geoJson(JSON.parse('{{ gondebeek_parcels | escapejs }}'), {style: style_gondebeek, onEachFeature: onEachFeature});
+            var gondebeek = L.geoJson(JSON.parse('{{ gondebeek_parcels | escapejs }}'), {onEachFeature: onEachFeature});
 
             // var overlays = {'Gondebeek': gondebeek};
             var overlays = {};
