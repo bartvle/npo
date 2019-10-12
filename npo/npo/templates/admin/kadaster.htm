@@ -63,7 +63,11 @@
             }
 
             function resetHighlight(e) {
-                gondebeek.resetStyle(e.target);
+                if (e.target.feature.properties.Eigenaar == 'NPO') {
+                    e.target.setStyle(style_npo);
+                } else {
+                    e.target.setStyle(style_gondebeek);
+                };
             }
 
             function showData(e) {
