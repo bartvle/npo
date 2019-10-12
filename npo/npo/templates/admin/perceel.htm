@@ -1,9 +1,12 @@
 <div>
     {% if parcel %}
-    <div>{{ parcel.key }}</div>
-    {% for owner in parcel.owners.all %}
-    <div>{{ owner }}</div>
-    {% endfor %}
+    <div><b>{{ parcel.key }}</b></div>
+    <div>
+        Eigenaar(s):
+        {% for owner in parcel.owners.all %}
+        <div>{{ owner }}</div>
+        {% endfor %}
+    </div>
     {% else %}
     Geen informatie!
     {% endif %}
