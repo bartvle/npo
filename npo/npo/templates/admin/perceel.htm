@@ -1,6 +1,6 @@
 <div>
     {% if parcel %}
-    <div>{{ parcel.oidn }}</div>
+    <div>{{ parcel.key }}</div>
     {% for owner in parcel.owners.all %}
     <div>{{ owner }}</div>
     {% endfor %}
