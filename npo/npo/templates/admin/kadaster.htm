@@ -96,7 +96,7 @@
 
             function showData(e) {
                 e.target.bindPopup("Loading...").openPopup();
-                console.log(e.target.feature.properties);
+                // console.log(e.target.feature.properties);
                 var popup = e.target.getPopup();
                 var str = e.target.feature.properties.CAPAKEY;
                 var res = str.replace("/", "-");
@@ -106,8 +106,7 @@
                     var n = e.target.feature.properties.OPPERVL.toString()
                     var s = '<div id="size">Oppervlakte: ' + n + '</div>'
                     var data = data.replace('<div id="size"></div>', s);
-                    console.log(data);
-                    // data.getElementById("size").value = "My value";
+                    // console.log(data);
                     popup.setContent(data);
                     popup.update();
                 });
