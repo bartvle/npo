@@ -103,6 +103,9 @@
                 var url = "/admin/perceel/" + res;
                 $.get(url, function(data) {
                     console.log(typeof (data));
+                    var n = e.target.feature.properties.OPPERVL.toString()
+                    var s = '<div id="size">Oppervlakte: ' + n + '</div>'
+                    var data = data.replace('<div id="size"></div>', '<div id="size"></div>');
                     // data.getElementById("size").value = "My value";
                     popup.setContent(data);
                     popup.update();
