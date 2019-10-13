@@ -1,6 +1,8 @@
 <div>
     {% if parcel %}
     <div><b>{{ parcel.key }}</b></div>
+    <br />
+    <div id="size"></div>
     <div>
         Eigenaar(s):
         {% for owner in parcel.owners.all %}

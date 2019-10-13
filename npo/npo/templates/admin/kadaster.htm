@@ -102,6 +102,7 @@
                 var res = str.replace("/", "-");
                 var url = "/admin/perceel/" + res;
                 $.get(url, function(data) {
+                    data.getElementById("size").value = "My value";
                     popup.setContent(data);
                     popup.update();
                 });
