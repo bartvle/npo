@@ -94,8 +94,8 @@
             function onEachFeature(feature, layer) {
                 if (feature.properties.Eigenaar == 'NPO') {
                     layer.setStyle(style_npo);
-                } else if (e.target.feature.properties.Eigenaar == 'ANB') {
-                    e.target.setStyle(style_anb);
+                } else if (feature.properties.Eigenaar == 'ANB') {
+                    layer.setStyle(style_anb);
                 } else {
                     layer.setStyle(style_gondebeek);
                 };
