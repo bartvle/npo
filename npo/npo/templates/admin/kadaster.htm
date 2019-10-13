@@ -42,6 +42,12 @@
                 "fillOpacity": 0.5,
             };
 
+            style_anb = {
+                "weight": 3,
+                "color": '#33a02c',
+                "fillOpacity": 0.5,
+            };
+
             style_gondebeek = {
                 "weight": 1,
                 "color": '#000000',
@@ -65,6 +71,8 @@
             function resetHighlight(e) {
                 if (e.target.feature.properties.Eigenaar == 'NPO') {
                     e.target.setStyle(style_npo);
+                } else if (e.target.feature.properties.Eigenaar == 'ANB') {
+                    e.target.setStyle(style_anb);
                 } else {
                     e.target.setStyle(style_gondebeek);
                 };
