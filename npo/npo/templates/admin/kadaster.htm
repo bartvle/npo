@@ -48,6 +48,18 @@
                 "fillOpacity": 0.5,
             };
 
+            style_ilvo = {
+                "weight": 3,
+                "color": '#ff7f00',
+                "fillOpacity": 0.5,
+            };
+
+            style_go = {
+                "weight": 3,
+                "color": '#fdbf6f',
+                "fillOpacity": 0.5,
+            };
+
             style_gondebeek = {
                 "weight": 1,
                 "color": '#000000',
@@ -73,6 +85,10 @@
                     e.target.setStyle(style_npo);
                 } else if (e.target.feature.properties.Eigenaar == 'ANB') {
                     e.target.setStyle(style_anb);
+                } else if (e.target.feature.properties.Eigenaar == 'ILVO') {
+                    e.target.setStyle(style_ilvo);
+                } else if (e.target.feature.properties.Eigenaar == 'GO!') {
+                    e.target.setStyle(style_go);
                 } else {
                     e.target.setStyle(style_gondebeek);
                 };
@@ -96,6 +112,10 @@
                     layer.setStyle(style_npo);
                 } else if (feature.properties.Eigenaar == 'ANB') {
                     layer.setStyle(style_anb);
+                } else if (feature.properties.Eigenaar == 'ILVO') {
+                    layer.setStyle(style_ilvo);
+                } else if (feature.properties.Eigenaar == 'GO!') {
+                    layer.setStyle(style_go);
                 } else {
                     layer.setStyle(style_gondebeek);
                 };
