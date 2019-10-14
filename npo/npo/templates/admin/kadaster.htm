@@ -102,7 +102,11 @@
                 var res = str.replace("/", "-");
                 var url = "/admin/perceel/" + res;
                 $.get(url, function(data) {
-                    
+
+                    var n = e.target.feature.properties.CAPAKEY
+                    var s = '<div id="key"><b>' + n + '</b></div>'
+                    var data = data.replace('<div id="key"></div>', s);
+
                     var n = e.target.feature.properties.OPPERVL.toString()
                     var s = '<div id="size">Oppervlakte: ' + n + '</div>'
                     var data = data.replace('<div id="size"></div>', s);
