@@ -135,14 +135,16 @@
                 });
             }
 
-            var gondebeek = L.geoJson(JSON.parse('{{ gondebeek_parcels | escapejs }}'), {onEachFeature: onEachFeature});
+            var gondebeek_parcels = L.geoJson(JSON.parse('{{ gondebeek_parcels | escapejs }}'), {onEachFeature: onEachFeature});
+            var gondebeek_perimeter = L.geoJson(JSON.parse('{{ gondebeek_perimeter | escapejs }}'));
 
             // var overlays = {'Gondebeek': gondebeek};
             var overlays = {};
 
             var map = L.map('map', {layers: [baselayer1]}).setView([50.97, 3.785], 15);
 
-            gondebeek.addTo(map);
+            gondebeek_parcels.addTo(map);
+            gondebeek_perimeter.addTo(map);
 
             layer_control = L.control.layers(baselayers, overlays, {collapsed: false});
             layer_control.addTo(map);
