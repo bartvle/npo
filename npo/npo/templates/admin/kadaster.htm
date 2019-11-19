@@ -66,6 +66,12 @@
                 "fillOpacity": 0.,
             };
 
+            style_gondebeek_perimeter = {
+                "weight": 1,
+                "color": '#ff0000',
+                "fillOpacity": 0.,
+            };
+
             function highlightFeature(e) {
                 var layer = e.target;
 
@@ -136,7 +142,7 @@
             }
 
             var gondebeek_parcels = L.geoJson(JSON.parse('{{ gondebeek_parcels | escapejs }}'), {onEachFeature: onEachFeature});
-            var gondebeek_perimeter = L.geoJson(JSON.parse('{{ gondebeek_perimeter | escapejs }}'));
+            var gondebeek_perimeter = L.geoJson(JSON.parse('{{ gondebeek_perimeter | escapejs }}'), {style: style_gondebeek_perimeter});
 
             // var overlays = {'Gondebeek': gondebeek};
             var overlays = {};
