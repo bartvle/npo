@@ -147,7 +147,7 @@
             var map = L.map('map', {layers: [baselayer1]}).setView([50.97, 3.785], 15);
             map.addLayer(gondebeek_parcels);
 
-            var overlays = {'Percelen': gondebeek_perimeter, 'Perimeter': gondebeek_perimeter};
+            var overlays = {'Percelen': gondebeek_parcels, 'Perimeter': gondebeek_perimeter};
 
             layer_control = L.control.layers(baselayers, overlays, {collapsed: false});
             layer_control.addTo(map);
