@@ -148,7 +148,7 @@
 
             var map = L.map('map', {layers: [baselayer1]}).setView([50.97, 3.785], 15);
 
-            gondebeek_parcels.addTo(map);
+            map.addLayer(gondebeek_parcels);
 
             layer_control = L.control.layers(baselayers, overlays, {collapsed: false});
             layer_control.addTo(map);
