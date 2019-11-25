@@ -1,6 +1,5 @@
 
-/* ------------------------------------------------------------------------- */
-
+$color0: #198134;
 $color1: #97C00E;
 $color2: #E8F2D9;
 $color3: #808080;
@@ -9,7 +8,8 @@ $color4: #FFFFFF;
 /* ------------------------------------------------------------------------- */
 
 html {
-    overflow-y: scroll; /* always show scrollbar */
+    overflow-y: scroll;
+    /* always show scrollbar */
 }
 
 html, body {
@@ -19,18 +19,12 @@ html, body {
 /* ------------------------------------------------------------------------- */
 
 #wrap {
-    /* min-width: 350px; */
     height: 100%;
-}
-
-#embody {
-    /* margin: 50px 0px; */
 }
 
 /* ------------------------------------------------------------------------- */
 
 a:link, a:focus, a:visited, a:active {
-    /* outline: 0; */
     color: $color1;
 }
 
@@ -82,13 +76,9 @@ a:hover {
 /* ------------------------------------------------------------------------- */
 
 h1.page_title {
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
     color: $color3;
-}
-
-h1.page_title_with_date {
-    /* margin-bottom: 15px; */
 }
 
 h2.sub_title {
@@ -97,26 +87,6 @@ h2.sub_title {
 
 h4.page_date {
     color: $color1;
-}
-
-a.color1:link, a.color1:focus, a.color1:visited, a.color1:active {
-    /* text-decoration: None; */
-    /* color: $color1; */
-}
-
-a.color1:hover {
-    /* text-decoration: underline; */
-    /* color: $color1; */
-}
-
-a.color3:link, a.color3:focus, a.color3:visited, a.color3:active {
-    /* text-decoration: None; */
-    /* color: $color3; */
-}
-
-a.color3:hover {
-    /* text-decoration: underline; */
-    /* color: $color3; */
 }
 
 a.color4:link, a.color4:focus, a.color4:visited, a.color4:active {
@@ -147,19 +117,11 @@ a.nothing:hover {
     }
 
     #header2 {
-        /* box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.176); */
         font-size: 1.05rem;
-
-        @media (min-width: 992px) {
-            .navbar-header{
-                /* margin-right: 75px; */
-            }
-        }
+        font-weight: bold;
 
         a {
-            font-weight: bold;
             color: $color4;
-            border-radius: 1rem!important;
         }
 
         a:focus {
@@ -168,8 +130,7 @@ a.nothing:hover {
         }
 
         a:hover {
-            color: $color1;
-            background: $color4;
+            background: $color0;
         }
 
         .my-icon {

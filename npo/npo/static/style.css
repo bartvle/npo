@@ -1,90 +1,207 @@
 /* ------------------------------------------------------------------------- */
-/* ------------------------------------------------------------------------- */
-html { overflow-y: scroll; /* always show scrollbar */ }
+html {
+  overflow-y: scroll;
+  /* always show scrollbar */
+}
 
-html, body { height: 100%; }
-
-/* ------------------------------------------------------------------------- */
-#wrap { /* min-width: 350px; */ height: 100%; }
-
-#embody { /* margin: 50px 0px; */ }
-
-/* ------------------------------------------------------------------------- */
-a:link, a:focus, a:visited, a:active { /* outline: 0; */ color: #97C00E; }
-
-a:hover { color: #97C00E; }
+html, body {
+  height: 100%;
+}
 
 /* ------------------------------------------------------------------------- */
-.color1 { color: #97C00E; }
-
-.color2 { color: #E8F2D9; }
-
-.color3 { color: #808080; }
-
-.color4 { color: #FFFFFF; }
-
-.bg-color1 { background: #97C00E; }
-
-.bg-color2 { background: #E8F2D9; }
-
-.box { background-color: #E8F2D9; }
-
-.box-heading { padding: 0.5rem; font-weight: bold; color: #FFFFFF; background: #97C00E; }
-
-.box-content { padding: 1rem; }
+#wrap {
+  height: 100%;
+}
 
 /* ------------------------------------------------------------------------- */
-h1.page_title { margin-top: 2rem; margin-bottom: 1rem; color: #808080; }
+a:link, a:focus, a:visited, a:active {
+  color: #97C00E;
+}
 
-h1.page_title_with_date { /* margin-bottom: 15px; */ }
-
-h2.sub_title { color: #97C00E; }
-
-h4.page_date { color: #97C00E; }
-
-a.color1:link, a.color1:focus, a.color1:visited, a.color1:active { /* text-decoration: None; */ /* color: $color1; */ }
-
-a.color1:hover { /* text-decoration: underline; */ /* color: $color1; */ }
-
-a.color3:link, a.color3:focus, a.color3:visited, a.color3:active { /* text-decoration: None; */ /* color: $color3; */ }
-
-a.color3:hover { /* text-decoration: underline; */ /* color: $color3; */ }
-
-a.color4:link, a.color4:focus, a.color4:visited, a.color4:active { text-decoration: None; color: #FFFFFF; }
-
-a.color4:hover { text-decoration: underline; color: #FFFFFF; }
-
-a.nothing:hover { text-decoration: None; }
+a:hover {
+  color: #97C00E;
+}
 
 /* ------------------------------------------------------------------------- */
-#header #header1 a { color: #808080; font-size: 0.95rem; }
-#header #header2 { /* box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.176); */ font-size: 1.05rem; }
-@media (min-width: 992px) { #header #header2 .navbar-header { /* margin-right: 75px; */ } }
-#header #header2 a { font-weight: bold; color: #FFFFFF; border-radius: 1rem !important; }
-#header #header2 a:focus { /* color: $color4; */ /* background: $color1; */ }
-#header #header2 a:hover { color: #97C00E; background: #FFFFFF; }
-#header #header2 .my-icon { border-color: #FFFFFF; }
-#header #header2 .my-icon-data { background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>"); }
+.color1 {
+  color: #97C00E;
+}
+
+.color2 {
+  color: #E8F2D9;
+}
+
+.color3 {
+  color: #808080;
+}
+
+.color4 {
+  color: #FFFFFF;
+}
+
+.bg-color1 {
+  background: #97C00E;
+}
+
+.bg-color2 {
+  background: #E8F2D9;
+}
+
+.box {
+  background-color: #E8F2D9;
+}
+
+.box-heading {
+  padding: 0.5rem;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #97C00E;
+}
+
+.box-content {
+  padding: 1rem;
+}
 
 /* ------------------------------------------------------------------------- */
-#embody #start #newsletter .button { width: 100%; padding: 5px; background-color: #E8F2D9; border-radius: 0px; color: #97C00E; }
-#embody #start #newsletter #id_email { width: 100%; padding: 5px; border: 1px solid #e5e5dc; color: #808080; background-color: #f3f2eb; }
-#embody #activity_page img { margin-top: 25px; margin-bottom: 25px; }
-#embody #activity_page .other { margin-top: 25px; }
-#embody #gluren_bij_de_buren_page .intro { margin-bottom: 25px; }
-#embody #gluren_bij_de_buren_page .activity .date { margin: 10px 0px; font-weight: bold; }
-#embody #gluren_bij_de_buren_page .activity .text { margin-bottom: 5px; }
-#embody #gluren_bij_de_buren_page .activity .link { font-style: italic; }
-#embody #gluren_bij_de_buren_page .activity + .activity { margin-top: 25px; }
-#embody #page_content { /* margin: 25px 0px; */ /* text-align: justify; */ }
-#embody #page_content .picture { /* margin-bottom: 25px; */ }
-#embody #page_content .movie { /* margin: 25px 0px; */ }
+h1.page_title {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #808080;
+}
+
+h2.sub_title {
+  color: #97C00E;
+}
+
+h4.page_date {
+  color: #97C00E;
+}
+
+a.color4:link, a.color4:focus, a.color4:visited, a.color4:active {
+  text-decoration: None;
+  color: #FFFFFF;
+}
+
+a.color4:hover {
+  text-decoration: underline;
+  color: #FFFFFF;
+}
+
+a.nothing:hover {
+  text-decoration: None;
+}
+
+/* ------------------------------------------------------------------------- */
+#header #header1 a {
+  color: #808080;
+  font-size: 0.95rem;
+}
+#header #header2 {
+  font-size: 1.05rem;
+  font-weight: bold;
+}
+#header #header2 a {
+  color: #FFFFFF;
+}
+#header #header2 a:focus {
+  /* color: $color4; */
+  /* background: $color1; */
+}
+#header #header2 a:hover {
+  background: #198134;
+}
+#header #header2 .my-icon {
+  border-color: #FFFFFF;
+}
+#header #header2 .my-icon-data {
+  background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+}
+
+/* ------------------------------------------------------------------------- */
+#embody #start #newsletter .button {
+  width: 100%;
+  padding: 5px;
+  background-color: #E8F2D9;
+  border-radius: 0px;
+  color: #97C00E;
+}
+#embody #start #newsletter #id_email {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #e5e5dc;
+  color: #808080;
+  background-color: #f3f2eb;
+}
+#embody #activity_page img {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+#embody #activity_page .other {
+  margin-top: 25px;
+}
+#embody #gluren_bij_de_buren_page .intro {
+  margin-bottom: 25px;
+}
+#embody #gluren_bij_de_buren_page .activity .date {
+  margin: 10px 0px;
+  font-weight: bold;
+}
+#embody #gluren_bij_de_buren_page .activity .text {
+  margin-bottom: 5px;
+}
+#embody #gluren_bij_de_buren_page .activity .link {
+  font-style: italic;
+}
+#embody #gluren_bij_de_buren_page .activity + .activity {
+  margin-top: 25px;
+}
+#embody #page_content {
+  /* margin: 25px 0px; */
+  /* text-align: justify; */
+}
+#embody #page_content .picture {
+  /* margin-bottom: 25px; */
+}
+#embody #page_content .movie {
+  /* margin: 25px 0px; */
+}
 
 /* -- footer --------------------------------------------------------------- */
-#footer { font-size: 0.95rem; }
-#footer #footer1 { color: #808080; }
-#footer #footer1 .icon { display: block; width: 40px; height: 40px; border-radius: 100%; background: #808080; float: left; text-align: center; color: #FFFFFF; line-height: 40px; margin-left: 10px; }
-#footer #footer1 .icon:first-of-type { margin-left: 0px; }
-#footer #footer1 .icon:hover { background: #97C00E; }
-#footer #footer1 #gototop { padding-top: 5px; float: right; width: 40px; height: 40px; background: #808080; border-radius: 5px; text-align: center; color: #FFFFFF; cursor: pointer; }
-#footer #footer1 #gototop:hover { background: #97C00E; }
+#footer {
+  font-size: 0.95rem;
+}
+#footer #footer1 {
+  color: #808080;
+}
+#footer #footer1 .icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background: #808080;
+  float: left;
+  text-align: center;
+  color: #FFFFFF;
+  line-height: 40px;
+  margin-left: 10px;
+}
+#footer #footer1 .icon:first-of-type {
+  margin-left: 0px;
+}
+#footer #footer1 .icon:hover {
+  background: #97C00E;
+}
+#footer #footer1 #gototop {
+  padding-top: 5px;
+  float: right;
+  width: 40px;
+  height: 40px;
+  background: #808080;
+  border-radius: 5px;
+  text-align: center;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+#footer #footer1 #gototop:hover {
+  background: #97C00E;
+}
