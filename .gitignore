@@ -1,5 +1,7 @@
 __pycache__/
 
+.vscode/
+
 npo/db.sqlite3
 npo/npo/deploy.py
 

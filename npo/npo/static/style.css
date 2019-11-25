@@ -23,6 +23,10 @@ a:hover {
 }
 
 /* ------------------------------------------------------------------------- */
+.color1 {
+  color: #198134;
+}
+
 .color2 {
   color: #97C00E;
 }
@@ -75,6 +79,16 @@ h2.sub_title {
 
 h4.page_date {
   color: #97C00E;
+}
+
+a.color4:link, a.color4:focus, a.color4:visited, a.color4:active {
+  text-decoration: None;
+  color: #808080;
+}
+
+a.color4:hover {
+  text-decoration: underline;
+  color: #808080;
 }
 
 a.color5:link, a.color5:focus, a.color5:visited, a.color5:active {

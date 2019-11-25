@@ -34,6 +34,10 @@ a:hover {
 
 /* ------------------------------------------------------------------------- */
 
+.color1 {
+    color: $color1;
+  }
+
 .color2 {
     color: $color2;
 }
@@ -87,6 +91,16 @@ h2.sub_title {
 
 h4.page_date {
     color: $color2;
+}
+
+a.color4:link, a.color4:focus, a.color4:visited, a.color4:active {
+    text-decoration: None;
+    color: $color4;
+  }
+
+a.color4:hover {
+    text-decoration: underline;
+    color: $color4;
 }
 
 a.color5:link, a.color5:focus, a.color5:visited, a.color5:active {
@@ -215,7 +229,6 @@ a.nothing:hover {
 /* -- footer --------------------------------------------------------------- */
 
 #footer {
-
     font-size: 0.95rem;
 
     #footer1 {
