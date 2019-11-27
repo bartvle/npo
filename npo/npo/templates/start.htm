@@ -3,24 +3,39 @@
 {% block embody %}
 <div id="start">
 
-    <!-- Carousel -->
-    <div class="mb-5">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="/static/images/start.jpg" alt="First slide">
+    <!-- News -->
+    <div id="news" class="container mb-5">
+        <div class="row">
+            <div class="col-8 pr-2">
+                <a href="/nieuws/{{articles.0.date | date:'Y-m-d'}}-{{articles.0.slug}}" class="nothing">
+                    <img src="/static/images/articles/plantactie2020.jpg" class="img-fluid">
+                    <div class="over_image">
+                        <h1>{{ articles.0.title }}</h1>
+                        <div>{{ articles.0.date }}</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4">
+                <div class="row h-100">
+                    <div class="col-12 align-self-start">
+                        <a href="/nieuws/{{articles.1.date | date:'Y-m-d'}}-{{articles.1.slug}}" class="nothing">
+                            <img src="/static/images/articles/rodeland.jpg" class="img-fluid">
+                            <div class="over_image">
+                                <h5>{{ articles.1.title }}</h5>
+                                <div class="small_date">{{ articles.1.date }}</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 align-self-end">
+                        <a href="/nieuws/{{articles.2.date | date:'Y-m-d'}}-{{articles.2.slug}}" class="nothing">
+                            <img src="/static/images/articles/expeditie_natuurpunt.jpg" class="img-fluid">
+                            <div class="over_image">
+                                <h5>{{ articles.2.title }}</h5>
+                                <div class="small_date">{{ articles.2.date }}</div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <!-- <div class="carousel-item">
-                    <img class="d-block w-100" src="/static/images/start.jpg" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="/static/images/start.jpg" alt="Third slide">
-                </div> -->
             </div>
         </div>
     </div>
@@ -30,9 +45,9 @@
         <div class="row">
             {% for activity in activities %}
             <div class="col-sm-12 col-md-4">
-                <a href="/activiteiten/{{activity.date | date:'Y-m-d'}}-{{activity.slug}}" class="nothing" style="color: inherit;">
-                    <div>
-                        <h4 class="color2">{{ activity.name }}</h4>
+                <a href="/activiteiten/{{activity.date | date:'Y-m-d'}}-{{activity.slug}}" class="nothing color4">
+                    <div class="activity">
+                        <h4 class="color1">{{ activity.name }}</h4>
                         <p>{{ activity.date | date:'l j F' | capfirst }}</p>
                         <p class="m-0">{{ activity.short }}</p>
                     </div>
@@ -43,8 +58,8 @@
     </div>
 
     <!-- Newsletter -->
-    <div id="newsletter" class="mb-5 py-5 bg-color2">
-        <div id="newsletter_in" class="container">
+    <div id="newsletter" class="mb-5 bg-color3">
+        <div id="newsletter_in" class="container bg-color2 py-5">
             <div class="row">
                 <div class="col-12 text-center pb-3">
                     <h2 class="color5">Schrijf je in op onze e-nieuwsbrief en blijf op de hoogte van alle nieuwtjes!</h2>
