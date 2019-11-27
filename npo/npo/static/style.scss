@@ -82,6 +82,7 @@ a:hover {
 h1.page_title {
     margin-top: 1rem;
     margin-bottom: 1rem;
+    font-size: 2rem;
     color: $color1;
 }
 
@@ -160,6 +161,19 @@ a.nothing:hover {
 
     #start {
 
+        .over_image {
+            position: absolute;
+            bottom: 10px;
+            left: 25px;
+            right: 25px;
+            color: $color5;
+            font-weight: bold;
+        }
+
+        .small_date {
+            font-size: 12px;
+        }
+
         #newsletter {
 
             .button {
@@ -195,6 +209,18 @@ a.nothing:hover {
 
     }
 
+    #article_page {
+
+        img {
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        .other {
+            margin-top: 25px;
+        }
+
+    }
     #gluren_bij_de_buren_page {
 
         .intro {

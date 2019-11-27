@@ -70,6 +70,7 @@ a:hover {
 h1.page_title {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  font-size: 2rem;
   color: #198134;
 }
 
@@ -128,6 +129,17 @@ a.nothing:hover {
 }
 
 /* ------------------------------------------------------------------------- */
+#embody #start .over_image {
+  position: absolute;
+  bottom: 10px;
+  left: 25px;
+  right: 25px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+#embody #start .small_date {
+  font-size: 12px;
+}
 #embody #start #newsletter .button {
   width: 100%;
   padding: 5px;
@@ -147,6 +159,13 @@ a.nothing:hover {
   margin-bottom: 25px;
 }
 #embody #activity_page .other {
+  margin-top: 25px;
+}
+#embody #article_page img {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+#embody #article_page .other {
   margin-top: 25px;
 }
 #embody #gluren_bij_de_buren_page .intro {

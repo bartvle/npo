@@ -4,12 +4,10 @@
 <div id="activity_page">
     <div class="container">
         <div class="row">
-            <div id="" class="col-md-2">
-            </div>
-            <div id="" class="col-md-8">
+            <div class="col-md-9">
                 <h1 class="page_title">{{ activity.name }}</h1>
                 <h4 class="page_date">{{ activity.date | date:'l j F Y' | capfirst }}</h4>
-                <div id="page_content">{{ activity.intro | safe }}</div>
+                <div>{{ activity.intro | safe }}</div>
                 <div class="box p-3">
                     <h3>Praktisch</h3>
                     {% if activity.practical %}
@@ -27,8 +25,6 @@
                         </div>
                     {% endfor %}
                 </div>
-            </div>
-            <div id="" class="col-md-2">
             </div>
         </div>
     </div>

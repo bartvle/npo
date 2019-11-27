@@ -6,11 +6,9 @@ import datetime
 import json
 import os
 
-from django.views.decorators.csrf import ensure_csrf_cookie
 from django.shortcuts import render
 from django.db.models import Sum
 
-from npo.settings import BASE_DIR
 from news.models import Article
 from activities.models import Activity, NeighboringActivity
 from magazine.models import Volume
@@ -34,13 +32,15 @@ def start(request):
         form = NewsletterForm()
 
     activities = Activity.objects.all().filter(date__gte=datetime.date.today(), published=True).order_by('date')[:3]
+    articles =  Article.objects.all().filter().order_by('date')[:3][::-1]
     transfer = {}
     transfer['toads'] = Input.objects.filter(date__year=2017).aggregate(Sum('toads'))['toads__sum']
     transfer['frogs'] = Input.objects.filter(date__year=2017).aggregate(Sum('frogs'))['frogs__sum']
     transfer['salamanders'] = Input.objects.filter(date__year=2017).aggregate(Sum('salamanders'))['salamanders__sum']
-    context = {'activities': activities, 'transfer': transfer}
+    context = {'activities': activities, 'articles': articles, 'transfer': transfer}
     context['form'] = form
     context['newsletter_message'] = newsletter_message
+
     return render(request, 'start.htm', context=context)
 
 
