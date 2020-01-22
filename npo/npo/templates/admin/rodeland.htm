@@ -103,7 +103,7 @@
             }
 
             function resetHighlight(e) {
-                if (e.target.feature.properties.Beheerder == 'NPO') {
+                if (e.target.feature.properties.Beheerder == 'Natuurpunt') {
                     e.target.setStyle(style_npo);
                 } else if (e.target.feature.properties.Beheerder == 'ANB') {
                     e.target.setStyle(style_anb);
@@ -134,7 +134,7 @@
             }
 
             function onEachFeature(feature, layer) {
-                if (feature.properties.Beheerder == 'NPO') {
+                if (feature.properties.Beheerder == 'Natuurpunt') {
                     layer.setStyle(style_npo);
                 } else if (feature.properties.Beheerder == 'ANB') {
                     layer.setStyle(style_anb);
