@@ -52,7 +52,6 @@ def kadaster(request):
     return render(request, 'admin/kadaster.htm', context=context)
 
 
-@login_required
 def rodeland(request):
     """
     """
