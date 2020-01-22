@@ -120,8 +120,9 @@
 
             function showData(e) {
                 data = s = '<div id="key"><b>' + n + '</b></div>';
-                var n = e.target.feature.properties.CAPAKEY
-                var data = '<div id="key"><b>' + n + '</b></div>'
+                var n1 = e.target.feature.properties.CAPAKEY
+                var n2 = e.target.feature.properties.OPPERVL.toString()
+                var data = '<div id="key"><b>' + n1 + '</b></div><div>Oppervlakte: ' + n2 + '</div>'
                 e.target.bindPopup(data).openPopup();
             //     // console.log(e.target.feature.properties);
             //     var popup = e.target.getPopup();
@@ -130,11 +131,9 @@
             //     var url = "/admin/perceel/" + res;
             //     $.get(url, function(data) {
 
-            //         var n = e.target.feature.properties.CAPAKEY
-            //         var s = '<div id="key"><b>' + n + '</b></div>'
             //         var data = data.replace('<div id="key"></div>', s);
 
-            //         var n = e.target.feature.properties.OPPERVL.toString()
+            //         
             //         var s = '<div id="size">Oppervlakte: ' + n + '</div>'
             //         var data = data.replace('<div id="size"></div>', s);
             //         // console.log(data);
@@ -172,7 +171,7 @@
 
             var parcels = L.geoJson(JSON.parse('{{ parcels | escapejs }}'), {onEachFeature: onEachFeature});
 
-            var map = L.map('map', {layers: [baselayer1]}).setView([50.963, 3.756], 13);
+            var map = L.map('map', {layers: [baselayer1]}).setView([50.963, 3.756], 14);
             map.addLayer(parcels);
 
             var overlays = {};
