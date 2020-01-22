@@ -82,6 +82,12 @@
                 "fillOpacity": 0.5,
             };
 
+            style_bosplus = {
+                "weight": 3,
+                "color": '#d5b43c',
+                "fillOpacity": 0.5,
+            };
+
             function highlightFeature(e) {
                 var layer = e.target;
 
@@ -113,8 +119,8 @@
                     e.target.setStyle(style_vmsw);
                 } else if (e.target.feature.properties.Beheerder == 'Agentschap Wegen en Verkeer') {
                     e.target.setStyle(style_awv);
-            //     } else {
-            //         e.target.setStyle(style_gondebeek);
+                } else if (e.target.feature.properties.Beheerder == 'BOS+') {
+                    e.target.setStyle(style_bosplus);
                 };
             }
 
@@ -144,8 +150,8 @@
                     layer.setStyle(style_vmsw);
                 } else if (feature.properties.Beheerder == 'Agentschap Wegen en Verkeer') {
                     layer.setStyle(style_awv);
-            //     } else {
-            //         layer.setStyle(style_gondebeek);
+                } else if (feature.properties.Beheerder == 'BOS+') {
+                    layer.setStyle(style_bosplus);
                 };
                 layer.on({
                     mouseover: highlightFeature,
