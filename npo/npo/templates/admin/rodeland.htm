@@ -52,23 +52,35 @@
                 "fillOpacity": 0.5,
             };
 
-            // style_go = {
-            //     "weight": 3,
-            //     "color": '#fdbf6f',
-            //     "fillOpacity": 0.5,
-            // };
+            style_provincie = {
+                "weight": 3,
+                "color": '#b2df8a',
+                "fillOpacity": 0.5,
+            };
 
-            // style_gondebeek = {
-            //     "weight": 1,
-            //     "color": '#000000',
-            //     "fillOpacity": 0.,
-            // };
+            style_proefhoeve = {
+                "weight": 3,
+                "color": '#fdbf6f',
+                "fillOpacity": 0.5,
+            };
 
-            // style_gondebeek_perimeter = {
-            //     "weight": 3,
-            //     "color": '#ff0000',
-            //     "fillOpacity": 0.,
-            // };
+            style_fornalab = {
+                "weight": 3,
+                "color": '#fb9a99',
+                "fillOpacity": 0.5,
+            };
+
+            style_vmsw = {
+                "weight": 3,
+                "color": '#8d5a99',
+                "fillOpacity": 0.5,
+            };
+
+            style_awv = {
+                "weight": 3,
+                "color": '#d5b43c',
+                "fillOpacity": 0.5,
+            };
 
             function highlightFeature(e) {
                 var layer = e.target;
@@ -91,14 +103,23 @@
                     e.target.setStyle(style_anb);
                 } else if (e.target.feature.properties.Beheerder == 'ILVO') {
                     e.target.setStyle(style_ilvo);
-            //     } else if (e.target.feature.properties.Eigenaar == 'GO!') {
-            //         e.target.setStyle(style_go);
+                } else if (e.target.feature.properties.Beheerder == 'Provincie') {
+                    e.target.setStyle(style_provincie);
+                } else if (e.target.feature.properties.Beheerder == 'Proefhoeve') {
+                    e.target.setStyle(style_proefhoeve);
+                } else if (e.target.feature.properties.Beheerder == 'Fornalab') {
+                    e.target.setStyle(style_fornalab);
+                } else if (e.target.feature.properties.Beheerder == 'Vlaamse Maatschappij voor Sociaal Wonen') {
+                    e.target.setStyle(style_vmsw);
+                } else if (e.target.feature.properties.Beheerder == 'Agentschap Wegen en Verkeer') {
+                    e.target.setStyle(style_awv);
             //     } else {
             //         e.target.setStyle(style_gondebeek);
                 };
             }
 
-            // function showData(e) {
+            function showData(e) {
+                data = s = '<div id="key"><b>' + n + '</b></div>';
             //     e.target.bindPopup("Loading...").openPopup();
             //     // console.log(e.target.feature.properties);
             //     var popup = e.target.getPopup();
@@ -118,7 +139,7 @@
             //         popup.setContent(data);
             //         popup.update();
             //     });
-            // }
+            }
 
             function onEachFeature(feature, layer) {
                 if (feature.properties.Beheerder == 'NPO') {
@@ -127,15 +148,23 @@
                     layer.setStyle(style_anb);
                 } else if (feature.properties.Beheerder == 'ILVO') {
                     layer.setStyle(style_ilvo);
-            //     } else if (feature.properties.Eigenaar == 'GO!') {
-            //         layer.setStyle(style_go);
+                } else if (feature.properties.Beheerder == 'Provincie') {
+                    layer.setStyle(style_provincie);
+                } else if (feature.properties.Beheerder == 'Proefhoeve') {
+                    layer.setStyle(style_proefhoeve);
+                } else if (feature.properties.Beheerder == 'Fornalab') {
+                    layer.setStyle(style_fornalab);
+                } else if (feature.properties.Beheerder == 'Vlaamse Maatschappij voor Sociaal Wonen') {
+                    layer.setStyle(style_vmsw);
+                } else if (feature.properties.Beheerder == 'Agentschap Wegen en Verkeer') {
+                    layer.setStyle(style_awv);
             //     } else {
             //         layer.setStyle(style_gondebeek);
                 };
                 layer.on({
                     mouseover: highlightFeature,
                     mouseout: resetHighlight,
-            //         click: showData,
+                    click: showData,
                 });
             }
 
