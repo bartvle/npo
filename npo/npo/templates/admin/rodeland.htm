@@ -107,7 +107,7 @@
                     e.target.setStyle(style_provincie);
                 } else if (e.target.feature.properties.Beheerder == 'Proefhoeve') {
                     e.target.setStyle(style_proefhoeve);
-                } else if (e.target.feature.properties.Beheerder == 'Fornalab') {
+                } else if (e.target.feature.properties.Beheerder == 'FORNALAB') {
                     e.target.setStyle(style_fornalab);
                 } else if (e.target.feature.properties.Beheerder == 'Vlaamse Maatschappij voor Sociaal Wonen') {
                     e.target.setStyle(style_vmsw);
@@ -120,7 +120,9 @@
 
             function showData(e) {
                 data = s = '<div id="key"><b>' + n + '</b></div>';
-            //     e.target.bindPopup("Loading...").openPopup();
+                var n = e.target.feature.properties.CAPAKEY
+                var data = '<div id="key"><b>' + n + '</b></div>'
+                e.target.bindPopup(data).openPopup();
             //     // console.log(e.target.feature.properties);
             //     var popup = e.target.getPopup();
             //     var str = e.target.feature.properties.CAPAKEY;
@@ -152,7 +154,7 @@
                     layer.setStyle(style_provincie);
                 } else if (feature.properties.Beheerder == 'Proefhoeve') {
                     layer.setStyle(style_proefhoeve);
-                } else if (feature.properties.Beheerder == 'Fornalab') {
+                } else if (feature.properties.Beheerder == 'FORNALAB') {
                     layer.setStyle(style_fornalab);
                 } else if (feature.properties.Beheerder == 'Vlaamse Maatschappij voor Sociaal Wonen') {
                     layer.setStyle(style_vmsw);
@@ -170,7 +172,7 @@
 
             var parcels = L.geoJson(JSON.parse('{{ parcels | escapejs }}'), {onEachFeature: onEachFeature});
 
-            var map = L.map('map', {layers: [baselayer1]}).setView([50.963, 3.756], 12);
+            var map = L.map('map', {layers: [baselayer1]}).setView([50.963, 3.756], 13);
             map.addLayer(parcels);
 
             var overlays = {};
