@@ -120,9 +120,9 @@
 
             function showData(e) {
                 data = s = '<div id="key"><b>' + n + '</b></div>';
-                var n1 = e.target.feature.properties.CAPAKEY
-                var n2 = e.target.feature.properties.OPPERVL.toString()
-                var data = '<div id="key"><b>' + n1 + '</b></div><div>Oppervlakte: ' + n2 + '</div>'
+                var n1 = e.target.feature.properties.CAPAKEY;
+                var n2 = e.target.feature.properties.OPPERVL.toString();
+                var data = '<div id="key"><b>' + n1 + '</b></div><div>Oppervlakte: ' + n2 + '</div>';
                 e.target.bindPopup(data).openPopup();
             //     // console.log(e.target.feature.properties);
             //     var popup = e.target.getPopup();
