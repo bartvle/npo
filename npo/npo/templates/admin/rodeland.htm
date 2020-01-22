@@ -136,7 +136,7 @@
                     mouseover: highlightFeature,
                     mouseout: resetHighlight,
             //         click: showData,
-            //     });
+                });
             }
 
             var parcels = L.geoJson(JSON.parse('{{ parcels | escapejs }}'), {onEachFeature: onEachFeature});
