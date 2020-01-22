@@ -53,6 +53,19 @@ def kadaster(request):
 
 
 @login_required
+def rodeland(request):
+    """
+    """
+    context = {}
+
+    with open(os.path.join(os.path.dirname(__file__), '.', 'data', 'rodeland.geojson')) as f:
+        parcels = json.load(f)
+    context['parcels'] = json.dumps(parcels)
+
+    return render(request, 'admin/rodeland.htm', context=context)
+
+
+@login_required
 def emails(request):
     """
     """
