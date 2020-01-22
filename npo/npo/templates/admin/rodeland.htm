@@ -121,24 +121,10 @@
             function showData(e) {
                 var n1 = e.target.feature.properties.CAPAKEY;
                 var n2 = e.target.feature.properties.OPPERVL.toString();
-                var data = '<div id="key"><b>' + n1 + '</b></div><div>Oppervlakte: ' + n2 + '</div>';
+                var n3 = e.target.feature.properties.Eigenaar;
+                var n4 = e.target.feature.properties.Beheerder
+                var data = '<div id="key"><b>' + n1 + '</b></div><div>Oppervlakte: ' + n2 + '</div><div>Eigenaar: ' + n3 + '</div><div>Beheerder: ' + n4 + '</div>';
                 e.target.bindPopup(data).openPopup();
-            //     // console.log(e.target.feature.properties);
-            //     var popup = e.target.getPopup();
-            //     var str = e.target.feature.properties.CAPAKEY;
-            //     var res = str.replace("/", "-");
-            //     var url = "/admin/perceel/" + res;
-            //     $.get(url, function(data) {
-
-            //         var data = data.replace('<div id="key"></div>', s);
-
-            //         
-            //         var s = '<div id="size">Oppervlakte: ' + n + '</div>'
-            //         var data = data.replace('<div id="size"></div>', s);
-            //         // console.log(data);
-            //         popup.setContent(data);
-            //         popup.update();
-            //     });
             }
 
             function onEachFeature(feature, layer) {
