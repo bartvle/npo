@@ -34,23 +34,23 @@
                 'Satelliet': baselayer2
                 };
 
-            // style_npo = {
-            //     "weight": 3,
-            //     "color": '#1f78b4',
-            //     "fillOpacity": 0.5,
-            // };
+            style_npo = {
+                "weight": 3,
+                "color": '#1f78b4',
+                "fillOpacity": 0.5,
+            };
 
-            // style_anb = {
-            //     "weight": 3,
-            //     "color": '#33a02c',
-            //     "fillOpacity": 0.5,
-            // };
+            style_anb = {
+                "weight": 3,
+                "color": '#33a02c',
+                "fillOpacity": 0.5,
+            };
 
-            // style_ilvo = {
-            //     "weight": 3,
-            //     "color": '#ff7f00',
-            //     "fillOpacity": 0.5,
-            // };
+            style_ilvo = {
+                "weight": 3,
+                "color": '#ff7f00',
+                "fillOpacity": 0.5,
+            };
 
             // style_go = {
             //     "weight": 3,
@@ -70,33 +70,33 @@
             //     "fillOpacity": 0.,
             // };
 
-            // function highlightFeature(e) {
-            //     var layer = e.target;
+            function highlightFeature(e) {
+                var layer = e.target;
 
-            //     layer.setStyle({
-            //         "weight": 3,
-            //         "color": 'red',
-            //         "fillOpacity": 0.5,
-            //     });
+                layer.setStyle({
+                    "weight": 3,
+                    "color": 'red',
+                    "fillOpacity": 0.5,
+                });
 
-            //     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-            //         layer.bringToFront();
-            //     }
-            // }
+                if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                    layer.bringToFront();
+                }
+            }
 
-            // function resetHighlight(e) {
-            //     if (e.target.feature.properties.Eigenaar == 'NPO') {
-            //         e.target.setStyle(style_npo);
-            //     } else if (e.target.feature.properties.Eigenaar == 'ANB') {
-            //         e.target.setStyle(style_anb);
-            //     } else if (e.target.feature.properties.Eigenaar == 'ILVO') {
-            //         e.target.setStyle(style_ilvo);
+            function resetHighlight(e) {
+                if (e.target.feature.properties.Beheerder == 'NPO') {
+                    e.target.setStyle(style_npo);
+                } else if (e.target.feature.properties.Beheerder == 'ANB') {
+                    e.target.setStyle(style_anb);
+                } else if (e.target.feature.properties.Beheerder == 'ILVO') {
+                    e.target.setStyle(style_ilvo);
             //     } else if (e.target.feature.properties.Eigenaar == 'GO!') {
             //         e.target.setStyle(style_go);
             //     } else {
             //         e.target.setStyle(style_gondebeek);
-            //     };
-            // }
+                };
+            }
 
             // function showData(e) {
             //     e.target.bindPopup("Loading...").openPopup();
@@ -121,27 +121,27 @@
             // }
 
             function onEachFeature(feature, layer) {
-            //     if (feature.properties.Eigenaar == 'NPO') {
-            //         layer.setStyle(style_npo);
-            //     } else if (feature.properties.Eigenaar == 'ANB') {
-            //         layer.setStyle(style_anb);
-            //     } else if (feature.properties.Eigenaar == 'ILVO') {
-            //         layer.setStyle(style_ilvo);
+                if (feature.properties.Beheerder == 'NPO') {
+                    layer.setStyle(style_npo);
+                } else if (feature.properties.Beheerder == 'ANB') {
+                    layer.setStyle(style_anb);
+                } else if (feature.properties.Beheerder == 'ILVO') {
+                    layer.setStyle(style_ilvo);
             //     } else if (feature.properties.Eigenaar == 'GO!') {
             //         layer.setStyle(style_go);
             //     } else {
             //         layer.setStyle(style_gondebeek);
-            //     };
-            //     layer.on({
-            //         mouseover: highlightFeature,
-            //         mouseout: resetHighlight,
+                };
+                layer.on({
+                    mouseover: highlightFeature,
+                    mouseout: resetHighlight,
             //         click: showData,
             //     });
             }
 
             var parcels = L.geoJson(JSON.parse('{{ parcels | escapejs }}'), {onEachFeature: onEachFeature});
 
-            var map = L.map('map', {layers: [baselayer1]}).setView([50.97, 3.785], 15);
+            var map = L.map('map', {layers: [baselayer1]}).setView([50.963, 3.756], 12);
             map.addLayer(parcels);
 
             var overlays = {};
