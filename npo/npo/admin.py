@@ -101,6 +101,7 @@ class MyAdminSite(AdminSite):
             path('kadaster/', kadaster),
             path('emails/', emails),
             path('overzet/', overzet),
+            path('rodeland/', rodeland),
             ]
         return super().get_urls() + urls
 
