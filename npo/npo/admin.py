@@ -37,6 +37,7 @@ def perceel(request, key):
 
 
 @login_required
+@user_passes_test(lambda user: user.groups.filter(name='WG Aankopen').exists())
 def kadaster(request):
     """
     """
@@ -53,6 +54,8 @@ def kadaster(request):
     return render(request, 'admin/kadaster.htm', context=context)
 
 
+@login_required
+@user_passes_test(lambda user: user.groups.filter(name='Rodeland').exists())
 def rodeland(request):
     """
     """
@@ -65,13 +68,12 @@ def rodeland(request):
     return render(request, 'admin/rodeland.htm', context=context)
 
 
-@login_required
-def emails(request):
-    """
-    """
-    emails = [s.email for s in Subscription.objects.all()]
-    s = '\n'.join(emails)
-    return HttpResponse(s, content_type='text/plain')
+# def emails(request):
+#     """
+#     """
+#     emails = [s.email for s in Subscription.objects.all()]
+#     s = '\n'.join(emails)
+#     return HttpResponse(s, content_type='text/plain')
 
 
 def overzet(request):
@@ -99,7 +101,7 @@ class MyAdminSite(AdminSite):
         urls = [
             path('perceel/<str:key>/', perceel),
             path('kadaster/', kadaster),
-            path('emails/', emails),
+            # path('emails/', emails),
             path('overzet/', overzet),
             path('rodeland/', rodeland),
             ]
