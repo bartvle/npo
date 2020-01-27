@@ -22,6 +22,7 @@ from amphi.models import Input
 
 
 @login_required
+@user_passes_test(lambda user: user.groups.filter(name='WG Aankopen').exists())
 def perceel(request, key):
     """
     """
