@@ -58,7 +58,7 @@
                 "fillOpacity": 0.5,
             };
 
-            style_proefhoeve = {
+            style_proefhoeve_b = {
                 "weight": 3,
                 "color": '#fdbf6f',
                 "fillOpacity": 0.5,
@@ -88,6 +88,12 @@
                 "fillOpacity": 0.5,
             };
 
+            style_proefhoeve_m = {
+                "weight": 3,
+                "color": '#d5b43c',
+                "fillOpacity": 0.5,
+            };
+
             function highlightFeature(e) {
                 var layer = e.target;
 
@@ -111,8 +117,8 @@
                     e.target.setStyle(style_ilvo);
                 } else if (e.target.feature.properties.Beheerder == 'Provincie') {
                     e.target.setStyle(style_provincie);
-                } else if (e.target.feature.properties.Beheerder == 'Proefhoeve') {
-                    e.target.setStyle(style_proefhoeve);
+                } else if (e.target.feature.properties.Beheerder == 'Proefhoeve Bottelare') {
+                    e.target.setStyle(style_proefhoeve_b);
                 } else if (e.target.feature.properties.Beheerder == 'FORNALAB') {
                     e.target.setStyle(style_fornalab);
                 } else if (e.target.feature.properties.Beheerder == 'Vlaamse Maatschappij voor Sociaal Wonen') {
@@ -121,6 +127,8 @@
                     e.target.setStyle(style_awv);
                 } else if (e.target.feature.properties.Beheerder == 'BOS+') {
                     e.target.setStyle(style_bosplus);
+                } else if (e.target.feature.properties.Beheerder == 'Proefhoeve Melle') {
+                    e.target.setStyle(style_proefhoeve_m);
                 };
             }
 
@@ -142,8 +150,8 @@
                     layer.setStyle(style_ilvo);
                 } else if (feature.properties.Beheerder == 'Provincie') {
                     layer.setStyle(style_provincie);
-                } else if (feature.properties.Beheerder == 'Proefhoeve') {
-                    layer.setStyle(style_proefhoeve);
+                } else if (feature.properties.Beheerder == 'Proefhoeve Bottelare') {
+                    layer.setStyle(style_proefhoeve_b);
                 } else if (feature.properties.Beheerder == 'FORNALAB') {
                     layer.setStyle(style_fornalab);
                 } else if (feature.properties.Beheerder == 'Vlaamse Maatschappij voor Sociaal Wonen') {
@@ -152,6 +160,8 @@
                     layer.setStyle(style_awv);
                 } else if (feature.properties.Beheerder == 'BOS+') {
                     layer.setStyle(style_bosplus);
+                } else if (feature.properties.Beheerder == 'Proefhoeve Melle') {
+                    layer.setStyle(style_proefhoeve_m);
                 };
                 layer.on({
                     mouseover: highlightFeature,
