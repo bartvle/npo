@@ -7,7 +7,7 @@
     <div>
         Eigenaar(s):
         {% for owner in parcel.owners.all %}
-        <div>{{ owner }} (owner.address)</div>
+        <div>{{ owner }} ({{ owner.address }})</div>
         {% endfor %}
     </div>
     {% else %}
