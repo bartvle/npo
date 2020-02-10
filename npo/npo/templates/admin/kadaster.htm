@@ -101,7 +101,7 @@
             }
 
             function showData(e) {
-                e.target.bindPopup("Loading...").openPopup();
+                e.target.bindPopup("Loading...", {maxWidth: 560}).openPopup();
                 // console.log(e.target.feature.properties);
                 var popup = e.target.getPopup();
                 var str = e.target.feature.properties.CAPAKEY;
