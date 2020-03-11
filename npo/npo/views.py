@@ -6,7 +6,7 @@ import datetime
 import json
 import os
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.db.models import Sum
 
 from news.models import Article
@@ -164,3 +164,9 @@ def memorandum_groen(request):
     """
     """
     return render(request, 'memorandum_groen.htm')
+
+
+def improvisatie(request):
+    """
+    """
+    return redirect('/activiteiten/2020-05-16-het-is-onze-tweede-natuur')
