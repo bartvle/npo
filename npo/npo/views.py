@@ -14,21 +14,21 @@ from activities.models import Activity, NeighboringActivity
 from magazine.models import Volume
 from amphi.models import Input
 
-from newsletter.models import Subscription
-from newsletter.forms import NewsletterForm
+# from newsletter.models import Subscription
+# from newsletter.forms import NewsletterForm
 
 
 def start(request):
     """
     """
-    newsletter_message = None
-    if request.method == 'POST':
-        form = NewsletterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            newsletter_message = 'Bedankt, je bent ingeschreven!'
-    else:
-        form = NewsletterForm()
+    # newsletter_message = None
+    # if request.method == 'POST':
+    #     form = NewsletterForm(request.POST)
+    #     if form.is_valid():
+    #         form.save()
+    #         newsletter_message = 'Bedankt, je bent ingeschreven!'
+    # else:
+    #     form = NewsletterForm()
 
     activities = Activity.objects.all().filter(date__gte=datetime.date.today(), published=True)[:3]
     articles =  Article.objects.all().filter(published=True)[:3]
@@ -40,8 +40,8 @@ def start(request):
         'activities': activities,
         'articles': articles,
 #        'transfer': transfer,
-        'form': form,
-        'newsletter_message': newsletter_message,
+        # 'form': form,
+        # 'newsletter_message': newsletter_message,
         }
 
     return render(request, 'start.htm', context=context)
