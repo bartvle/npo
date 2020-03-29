@@ -1,6 +1,6 @@
 # Natuurpunt Oosterzele
 
-Runs on Python 3.5 and Django 2.0!
+Runs on Python 3.8 and Django 2.2!
 
 
 ## Installation
@@ -8,7 +8,7 @@ Runs on Python 3.5 and Django 2.0!
 With conda
 
 ```
-conda install -c conda-forge gunicorn django psycopg2 bokeh
+conda create -n < name > python=3.8 django=2.2 gunicorn psycopg2
 ```
 
 With pip
