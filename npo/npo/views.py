@@ -39,7 +39,7 @@ def start(request):
     context = {
         'activities': activities,
         'articles': articles,
-        'transfer': transfer,
+#        'transfer': transfer,
         'form': form,
         'newsletter_message': newsletter_message,
         }
