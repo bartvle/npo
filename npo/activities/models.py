@@ -21,7 +21,7 @@ class Activity(models.Model):
     class Meta:
         verbose_name = _('activity')
         verbose_name_plural = _('activities')
-        ordering = ['-date']
+        ordering = ['date']
 
     def __str__(self):
         """
