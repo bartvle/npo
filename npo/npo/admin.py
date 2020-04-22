@@ -2,6 +2,7 @@
 """
 
 
+import csv
 import json
 import os
 
@@ -15,10 +16,34 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.db.models.functions import TruncYear
 
-
 from register.models import Parcel
 from newsletter.models import Subscription
 from amphi.models import Input
+
+
+@login_required
+@user_passes_test(lambda user: user.groups.filter(name='Dashboard').exists())
+def dashboard(request, key):
+    """
+    """
+    context = {}
+
+    return render(request, 'admin/dashboard.htm', context=context)
+
+
+def overzet_resultaten(request):
+    """
+    """
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="overzet2020.csv"'
+    writer = csv.writer(response)
+    writer.writerow(['location', 'date', 'toad', 'frogs', 'salamanders', 'toad_death', 'frogs_death', 'salamanders_death'])
+
+    items = Input.objects.filter(year=TruncYear('date')).values('location', 'date', 'toad', 'frogs', 'salamanders', 'toad_death', 'frogs_death', 'salamanders_death')
+    for item in items:
+        writer.writerow(item)
+
+    return response
 
 
 @login_required
@@ -99,6 +124,8 @@ class MyAdminSite(AdminSite):
         """
         """
         urls = [
+            path('dashboard/', dashboard),
+            path('overzet/resultaten', overzet_resultaten),
             path('perceel/<str:key>/', perceel),
             path('kadaster/', kadaster),
             # path('emails/', emails),
