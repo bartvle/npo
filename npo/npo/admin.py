@@ -37,7 +37,7 @@ def overzet_resultaten(request):
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="overzet2020.csv"'
     writer = csv.writer(response)
-    writer.writerow(['location', 'date', 'toad', 'frogs', 'salamanders', 'toad_death', 'frogs_death', 'salamanders_death'])
+    writer.writerow(['location', 'date', 'toads', 'frogs', 'salamanders', 'toads_death', 'frogs_death', 'salamanders_death'])
 
     items = Input.objects.filter(date__year=2020).values('location', 'date', 'toad', 'frogs', 'salamanders', 'toad_death', 'frogs_death', 'salamanders_death')
     for item in items:
