@@ -31,21 +31,6 @@ def dashboard(request, key):
     return render(request, 'admin/dashboard.htm', context=context)
 
 
-def overzet_resultaten(request):
-    """
-    """
-    response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = 'attachment; filename="overzet2020.csv"'
-    writer = csv.writer(response)
-    writer.writerow(['location', 'date', 'toads', 'frogs', 'salamanders', 'toads_death', 'frogs_death', 'salamanders_death'])
-
-    items = Input.objects.filter(date__year=2020).values_list('location', 'date', 'toads', 'frogs', 'salamanders', 'toads_death', 'frogs_death', 'salamanders_death')
-    for item in items:
-        writer.writerow(item)
-
-    return response
-
-
 @login_required
 @user_passes_test(lambda user: user.groups.filter(name='WG Aankopen').exists())
 def perceel(request, key):
@@ -113,6 +98,22 @@ def overzet(request):
     return render(request, 'admin/overzet.htm', context={'data': data, 'locations': data_locations})
 
 
+def overzet_download(request, location, year):
+    """
+    """
+    location_name = {'1': 'Lembergestraat', '2': 'Hoek ter Hulst'}[str(location)]
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="overzet_%s_%s.csv"' % (location_name, year)
+    writer = csv.writer(response)
+    writer.writerow(['date', 'toads', 'frogs', 'salamanders', 'toads_death', 'frogs_death', 'salamanders_death'])
+
+    items = Input.objects.filter(location=location, date__year=year).values_list('date', 'toads', 'frogs', 'salamanders', 'toads_death', 'frogs_death', 'salamanders_death')
+    for item in items:
+        writer.writerow(item)
+
+    return response
+
+
 class MyAdminSite(AdminSite):
     """
     """
@@ -125,7 +126,7 @@ class MyAdminSite(AdminSite):
         """
         urls = [
             path('dashboard/', dashboard),
-            path('overzet/resultaten', overzet_resultaten),
+            path('overzet/download/<int:location>/<int:year>/', overzet_download),
             path('perceel/<str:key>/', perceel),
             path('kadaster/', kadaster),
             # path('emails/', emails),
