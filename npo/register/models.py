@@ -30,6 +30,7 @@ class Parcel(models.Model):
 
     key = models.CharField(verbose_name=_('capakey'), max_length=20, validators=[MinLengthValidator(17), MaxLengthValidator(17)])
     owners = models.ManyToManyField(Owner, through='Ownership')
+    info = models.TextField(verbose_name=_('information'), blank=True)
 
     class Meta:
         verbose_name = _('parcel')

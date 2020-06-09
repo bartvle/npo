@@ -9,6 +9,9 @@
         {% for owner in parcel.owners.all %}
         <div>{{ owner }} ({{ owner.address }})</div>
         {% endfor %}
+        <div>
+            {{ info }}
+        </div>
     </div>
     {% else %}
     Geen informatie!
