@@ -8,9 +8,14 @@
         Eigenaar(s):
         {% for owner in parcel.owners.all %}
         <div>{{ owner }} ({{ owner.address }})</div>
+        {% empty %}
+         niet gekend
         {% endfor %}
         <div>
-            {{ parcel.information }}
+            {{ parcel.info | safe }}
+        </div>
+        <div>
+            <a href="/admin/register/parcel/{{ parcel.id }}/change/" target="_blank">Aanpassen</a>
         </div>
     </div>
     {% else %}

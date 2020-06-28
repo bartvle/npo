@@ -53,11 +53,11 @@ def kadaster(request):
     """
     context = {}
 
-    with open(os.path.join(os.path.dirname(__file__), '.', 'data', 'gondebeek_parcels.geojson')) as f:
+    with open(os.path.join(os.path.dirname(__file__), 'data', 'gondebeek_parcels.geojson')) as f:
         gondebeek_parcels = json.load(f)
     context['gondebeek_parcels'] = json.dumps(gondebeek_parcels)
 
-    with open(os.path.join(os.path.dirname(__file__), '.', 'data', 'gondebeek_perimeter.geojson')) as f:
+    with open(os.path.join(os.path.dirname(__file__), 'data', 'gondebeek_perimeter.geojson')) as f:
         gondebeek_perimeter = json.load(f)
     context['gondebeek_perimeter'] = json.dumps(gondebeek_perimeter)
 
@@ -71,7 +71,7 @@ def rodeland(request):
     """
     context = {}
 
-    with open(os.path.join(os.path.dirname(__file__), '.', 'data', 'rodeland.geojson')) as f:
+    with open(os.path.join(os.path.dirname(__file__), 'data', 'rodeland.geojson')) as f:
         parcels = json.load(f)
     context['parcels'] = json.dumps(parcels)
 

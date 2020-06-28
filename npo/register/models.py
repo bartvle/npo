@@ -6,6 +6,8 @@ from django.utils.translation import ugettext_lazy as _
 from django.db import models
 from django.core.validators import MinLengthValidator, MaxLengthValidator
 
+from djrichtextfield.models import RichTextField
+
 
 class Owner(models.Model):
     """
@@ -30,7 +32,7 @@ class Parcel(models.Model):
 
     key = models.CharField(verbose_name=_('capakey'), max_length=20, validators=[MinLengthValidator(17), MaxLengthValidator(17)])
     owners = models.ManyToManyField(Owner, through='Ownership')
-    info = models.TextField(verbose_name=_('information'), blank=True)
+    info = RichTextField(verbose_name=_('information'), blank=True)
 
     class Meta:
         verbose_name = _('parcel')

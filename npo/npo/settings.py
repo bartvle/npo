@@ -141,12 +141,12 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 
 
 DJRICHTEXTFIELD_CONFIG = {
-    'js': ['//cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js'],
+    'js': ['https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.3.2/tinymce.min.js'],
     'init_template': 'djrichtextfield/init/tinymce.js',
     'settings': {
         'menubar': False,
-        'plugins': 'link image',
-        'toolbar': 'bold italic | link image | removeformat',
+        'plugins': 'link',
+        'toolbar': 'bold italic | link | removeformat',
         'width': 700
     }
 }
