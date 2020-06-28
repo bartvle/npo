@@ -5,6 +5,8 @@
 from django.utils.translation import ugettext_lazy as _
 from django.db import models
 
+from djrichtextfield.models import RichTextField
+
 
 class Activity(models.Model):
     """
@@ -14,7 +16,7 @@ class Activity(models.Model):
     date = models.DateField(verbose_name=_('date'))
     slug = models.SlugField(verbose_name=_('slug'))
     short = models.TextField(verbose_name=_('short'), max_length=150)
-    intro = models.TextField(verbose_name=_('intro'))
+    intro = RichTextField(verbose_name=_('intro'))
     practical = models.TextField(verbose_name=_('practical'))
     published = models.BooleanField(verbose_name=_('published'), default=False)
 

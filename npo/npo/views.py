@@ -88,12 +88,12 @@ def activiteit(request, year, month, day, slug):
     return render(request, 'activiteit.htm', context={'activity': activity, 'recent_activities': recent_activities})
 
 
-def artikels(request):
+def nieuws(request):
     """
     """
     articles = Article.objects.all().order_by('-date')
     context = {'articles': articles}
-    return render(request, 'articles.htm', context=context)
+    return render(request, 'nieuws.htm', context=context)
 
 
 def artikel(request, year, month, day, slug):
@@ -101,15 +101,15 @@ def artikel(request, year, month, day, slug):
     """
     date = datetime.date(int(year), int(month), int(day))
     article = Article.objects.get(date=date, slug=slug)
-    return render(request, 'article.htm', context={'article': article})
+    return render(request, 'artikel.htm', context={'article': article})
 
 
-def magazine(request):
+def nieuwsbrief(request):
     """
     """
     volumes = Volume.objects.all()
     context = {'volumes': volumes}
-    return render(request, 'magazine.htm', context=context)
+    return render(request, 'nieuwsbrief.htm', context=context)
 
 
 def lid_worden(request):
