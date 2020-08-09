@@ -91,7 +91,7 @@ def activiteit(request, year, month, day, slug):
 def nieuws(request):
     """
     """
-    articles = Article.objects.all().order_by('-date')
+    articles = Article.objects.all().filter(published=True).order_by('-date')
     context = {'articles': articles}
     return render(request, 'nieuws.htm', context=context)
 
