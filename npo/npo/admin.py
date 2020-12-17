@@ -16,7 +16,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.db.models.functions import TruncYear
 
-from register.models import Parcel
+from register.models import Parcel, Ownership
 from newsletter.models import Subscription
 from amphi.models import Input
 
