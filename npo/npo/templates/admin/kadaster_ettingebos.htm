@@ -24,12 +24,17 @@
             <div id="map" class="h-100"></div>
         </div>
 
-        <script src="/static/admin/kadaster_ettingebos.js"></script>
+        <script src="/static/admin/kadaster.js"></script>
         <script>
-            var ettingebos_parcels = L.geoJson(JSON.parse('{{ ettingebos_parcels | escapejs }}'));
+            var ettingebos_parcels = L.geoJson(JSON.parse('{{ ettingebos_parcels | escapejs }}'), {onEachFeature: onEachFeature});
 
             var map = L.map('map', {layers: [baselayer1]}).setView([50.935947946491716, 3.8066584080819594], 15);
             map.addLayer(ettingebos_parcels);
+
+            var overlays = {'Percelen': gondebeek_parcels, 'Perimeter': gondebeek_perimeter};
+
+            layer_control = L.control.layers(baselayers, overlays, {collapsed: false});
+            layer_control.addTo(map);
         </script>
 
         <!-- Do not use slim version of jquery! -->

@@ -24,7 +24,7 @@
             <div id="map" class="h-100"></div>
         </div>
 
-        <script src="/static/admin/kadaster_gondebeekvallei.js"></script>
+        <script src="/static/admin/kadaster.js"></script>
         <script>
             var gondebeek_parcels = L.geoJson(JSON.parse('{{ gondebeek_parcels | escapejs }}'), {onEachFeature: onEachFeature});
             var gondebeek_perimeter = L.geoJson(JSON.parse('{{ gondebeek_perimeter | escapejs }}'), {style: style_gondebeek_perimeter});
@@ -32,7 +32,7 @@
             var map = L.map('map', {layers: [baselayer1]}).setView([50.97, 3.785], 15);
             map.addLayer(gondebeek_parcels);
 
-            var overlays = {'Percelen': gondebeek_parcels, 'Perimeter': gondebeek_perimeter};
+            var overlays = {'Percelen': gondebeek_parcels};
 
             layer_control = L.control.layers(baselayers, overlays, {collapsed: false});
             layer_control.addTo(map);
