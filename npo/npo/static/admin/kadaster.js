@@ -93,7 +93,8 @@ function showData(e) {
 }
 
 function onEachFeature(feature, layer) {
-    if (feature.properties.Eigenaar == 'NPO') {
+    // if (feature.properties.Eigenaar == 'NPO') {
+    if (npo_parcels.includes(feature.properties.CAPAKEY)) {
         layer.setStyle(style_npo);
     } else if (feature.properties.Eigenaar == 'ANB') {
         layer.setStyle(style_anb);
