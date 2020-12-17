@@ -30,7 +30,7 @@
 
         <script src="/static/admin/kadaster.js"></script>
         <script>
-            $.get("/admin/perceel/49", function(data) {
+            $.get("/admin/eigenaar/49", function(data) {
                 console.log(data);
             })
             var ettingebos_parcels = L.geoJson(JSON.parse('{{ ettingebos_parcels | escapejs }}'), {onEachFeature: onEachFeature});
@@ -38,7 +38,7 @@
             var map = L.map('map', {layers: [baselayer1]}).setView([50.935947946491716, 3.8066584080819594], 15);
             map.addLayer(ettingebos_parcels);
 
-            var overlays = {'Percelen': gondebeek_parcels, 'Perimeter': gondebeek_perimeter};
+            var overlays = {'Percelen': ettingebos_parcels};
 
             layer_control = L.control.layers(baselayers, overlays, {collapsed: false});
             layer_control.addTo(map);
