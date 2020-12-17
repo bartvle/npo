@@ -13,7 +13,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.urls import path
 from django.db.models import Sum
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonRespone
 from django.db.models.functions import TruncYear
 
 from register.models import Parcel, Ownership
@@ -51,11 +51,11 @@ def perceel(request, key):
 def eigenaar(request, id):
     """
     """
-    parcels = [o.parcel for o in Ownership.objects.filter(owner__id=id)]
+    keys = [o.parcel.key for o in Ownership.objects.filter(owner__id=id)]
 
-    print(parcels)
+    print(keys)
 
-    # return capakeys
+    return JsonRespone(keys, safe=False)
 
 
 @login_required
