@@ -13,7 +13,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.urls import path
 from django.db.models import Sum
 from django.shortcuts import render
-from django.http import HttpResponse, JsonRespone
+from django.http import HttpResponse, JsonResponse
 from django.db.models.functions import TruncYear
 
 from register.models import Parcel, Ownership
@@ -55,7 +55,7 @@ def eigenaar(request, id):
 
     print(keys)
 
-    return JsonRespone(keys, safe=False)
+    return JsonResponse(keys, safe=False)
 
 
 @login_required
