@@ -31,28 +31,8 @@
         <script src="/static/admin/kadaster.js"></script>
         <script>
             $.get("/admin/eigenaar/49", function(data) {
-                var npo_parcels = data;
+                window.npo_parcels = data;
             })
-
-            function onEachFeature(feature, layer) {
-                // if (feature.properties.Eigenaar == 'NPO') {
-                if (npo_parcels.includes(feature.properties.CAPAKEY)) {
-                    layer.setStyle(style_npo);
-                } else if (feature.properties.Eigenaar == 'ANB') {
-                    layer.setStyle(style_anb);
-                } else if (feature.properties.Eigenaar == 'ILVO') {
-                    layer.setStyle(style_ilvo);
-                } else if (feature.properties.Eigenaar == 'GO!') {
-                    layer.setStyle(style_go);
-                } else {
-                    layer.setStyle(style_gondebeek);
-                };
-                layer.on({
-                    mouseover: highlightFeature,
-                    mouseout: resetHighlight,
-                    click: showData,
-                });
-            }
 
             var ettingebos_parcels = L.geoJson(JSON.parse('{{ ettingebos_parcels | escapejs }}'), {onEachFeature: onEachFeature});
 

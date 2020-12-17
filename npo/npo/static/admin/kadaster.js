@@ -91,3 +91,23 @@ function showData(e) {
         popup.update();
     });
 }
+
+function onEachFeature(feature, layer) {
+    // if (feature.properties.Eigenaar == 'NPO') {
+    if (npo_parcels.includes(feature.properties.CAPAKEY)) {
+        layer.setStyle(style_npo);
+    } else if (feature.properties.Eigenaar == 'ANB') {
+        layer.setStyle(style_anb);
+    } else if (feature.properties.Eigenaar == 'ILVO') {
+        layer.setStyle(style_ilvo);
+    } else if (feature.properties.Eigenaar == 'GO!') {
+        layer.setStyle(style_go);
+    } else {
+        layer.setStyle(style_gondebeek);
+    };
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        click: showData,
+    });
+}
