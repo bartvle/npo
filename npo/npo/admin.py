@@ -53,8 +53,6 @@ def eigenaar(request, id):
     """
     keys = [o.parcel.key for o in Ownership.objects.filter(owner__id=id)]
 
-    print(keys)
-
     return JsonResponse(keys, safe=False)
 
 
