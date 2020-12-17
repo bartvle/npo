@@ -51,9 +51,9 @@ def perceel(request, key):
 def eigenaar(request, id):
     """
     """
-    query = Ownership.objects.filter(owner__id=id)
+    parcels = [o.parcel for o in Ownership.objects.filter(owner__id=id)]
 
-    print(query)
+    print(parcels)
 
     # return capakeys
 
