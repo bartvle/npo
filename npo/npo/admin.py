@@ -48,6 +48,18 @@ def perceel(request, key):
 
 @login_required
 @user_passes_test(lambda user: user.groups.filter(name='WG Aankopen').exists())
+def eigenaar(request, id):
+    """
+    """
+    query = Ownership.objects.filter(owner__id=id)
+
+    print(query)
+
+    # return capakeys
+
+
+@login_required
+@user_passes_test(lambda user: user.groups.filter(name='WG Aankopen').exists())
 def kadaster_gondebeekvallei(request):
     """
     """
@@ -146,6 +158,7 @@ class MyAdminSite(AdminSite):
             path('dashboard/', dashboard),
             path('overzet/download/<int:location>/<int:year>/', overzet_download),
             path('perceel/<str:key>/', perceel),
+            path('eigenaar/<int:id>/', eigenaar),
             path('kadaster/', kadaster_gondebeekvallei),
             path('kadaster/gondebeekvallei', kadaster_gondebeekvallei),
             path('kadaster/ettingebos', kadaster_ettingebos),
