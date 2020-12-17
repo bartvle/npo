@@ -61,7 +61,7 @@ def kadaster(request):
         gondebeek_perimeter = json.load(f)
     context['gondebeek_perimeter'] = json.dumps(gondebeek_perimeter)
 
-    return render(request, 'admin/kadaster.htm', context=context)
+    return render(request, 'admin/kadaster_gondebeekvallei.htm', context=context)
 
 
 @login_required
