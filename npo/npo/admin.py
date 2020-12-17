@@ -48,7 +48,7 @@ def perceel(request, key):
 
 @login_required
 @user_passes_test(lambda user: user.groups.filter(name='WG Aankopen').exists())
-def kadaster(request):
+def kadaster_gondebeekvallei(request):
     """
     """
     context = {}
@@ -62,6 +62,24 @@ def kadaster(request):
     context['gondebeek_perimeter'] = json.dumps(gondebeek_perimeter)
 
     return render(request, 'admin/kadaster_gondebeekvallei.htm', context=context)
+
+
+@login_required
+@user_passes_test(lambda user: user.groups.filter(name='WG Aankopen').exists())
+def kadaster_ettingebos(request):
+    """
+    """
+    context = {}
+
+    with open(os.path.join(os.path.dirname(__file__), 'data', 'ettingebos_parcels.geojson')) as f:
+        ettingebos_parcels = json.load(f)
+    context['ettingebos_parcels'] = json.dumps(ettingebos_parcels)
+
+    # with open(os.path.join(os.path.dirname(__file__), 'data', 'gondebeek_perimeter.geojson')) as f:
+    #     gondebeek_perimeter = json.load(f)
+    # context['gondebeek_perimeter'] = json.dumps(gondebeek_perimeter)
+
+    return render(request, 'admin/kadaster_ettingebos.htm', context=context)
 
 
 @login_required
@@ -128,7 +146,9 @@ class MyAdminSite(AdminSite):
             path('dashboard/', dashboard),
             path('overzet/download/<int:location>/<int:year>/', overzet_download),
             path('perceel/<str:key>/', perceel),
-            path('kadaster/', kadaster),
+            path('kadaster/', kadaster_gondebeekvallei),
+            path('kadaster/gondebeekvallei', kadaster_gondebeekvallei),
+            path('kadaster/ettingebos', kadaster_ettingebos),
             # path('emails/', emails),
             path('overzet/', overzet),
             path('rodeland/', rodeland),
