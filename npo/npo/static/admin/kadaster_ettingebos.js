@@ -5,8 +5,3 @@ var baselayers = {
     'Kaart': baselayer1,
     'Satelliet': baselayer2
     };
-
-var ettingebos_parcels = L.geoJson(JSON.parse('{{ ettingebos_parcels | escapejs }}'));
-
-var map = L.map('map', {layers: [baselayer1]}).setView([50.935947946491716, 3.8066584080819594], 15);
-map.addLayer(ettingebos_parcels);

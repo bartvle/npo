@@ -25,6 +25,18 @@
         </div>
 
         <script src="/static/admin/kadaster_gondebeekvallei.js"></script>
+        <script>
+            var gondebeek_parcels = L.geoJson(JSON.parse('{{ gondebeek_parcels | escapejs }}'), {onEachFeature: onEachFeature});
+            var gondebeek_perimeter = L.geoJson(JSON.parse('{{ gondebeek_perimeter | escapejs }}'), {style: style_gondebeek_perimeter});
+
+            var map = L.map('map', {layers: [baselayer1]}).setView([50.97, 3.785], 15);
+            map.addLayer(gondebeek_parcels);
+
+            var overlays = {'Percelen': gondebeek_parcels, 'Perimeter': gondebeek_perimeter};
+
+            layer_control = L.control.layers(baselayers, overlays, {collapsed: false});
+            layer_control.addTo(map);
+        </script>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
