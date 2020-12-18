@@ -56,6 +56,14 @@ function highlightFeature(e) {
     }
 }
 
+function loadSpecialOwnerships() {
+    $.get("/admin/eigenaar/49", function(data) {
+        window.npo_parcels = data;
+        console.log(window.npo_parcels);
+        console.log(window.npo_parcels.includes("test"));
+    })
+}
+
 function resetHighlight(e) {
     if (e.target.feature.properties.Eigenaar == 'NPO') {
         e.target.setStyle(style_npo);
