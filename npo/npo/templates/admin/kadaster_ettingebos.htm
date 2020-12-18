@@ -30,9 +30,10 @@
 
         <script src="/static/admin/kadaster.js"></script>
         <script>
-            loadSpecialOwnerships();
-
-            var ettingebos_parcels = L.geoJson(JSON.parse('{{ ettingebos_parcels | escapejs }}'), {onEachFeature: onEachFeature});
+            jqxhr = loadSpecialOwnerships();
+            jqxhr.done(function() {
+                var ettingebos_parcels = L.geoJson(JSON.parse('{{ ettingebos_parcels | escapejs }}'), {onEachFeature: onEachFeature});
+            });
 
             var map = L.map('map', {layers: [baselayer1]}).setView([50.935947946491716, 3.8066584080819594], 15);
             map.addLayer(ettingebos_parcels);

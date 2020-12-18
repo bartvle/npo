@@ -57,11 +57,13 @@ function highlightFeature(e) {
 }
 
 function loadSpecialOwnerships() {
-    $.get("/admin/eigenaar/49", function(data) {
+    var jqxhr = $.get("/admin/eigenaar/49", function(data) {
         window.npo_parcels = data;
         console.log(window.npo_parcels);
         console.log(window.npo_parcels.includes("test"));
-    })
+    });
+
+    return jqxhr
 }
 
 function resetHighlight(e) {
