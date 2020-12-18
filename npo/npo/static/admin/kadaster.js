@@ -43,9 +43,18 @@ style_gondebeek_perimeter = {
 };
 
 function loadSpecialOwnerships() {
-    var jqxhr = $.get("/admin/eigenaar/49", function(data) {
+    var jqxhr_npo = $.get("/admin/eigenaar/49", function(data) {
         window.npo_parcels = data;
     });
+    var jqxhr_anb = $.get("/admin/eigenaar/51", function(data) {
+        window.anb_parcels = data;
+    });
+    var jqxhr_ilvo = $.get("/admin/eigenaar/8", function(data) {
+        window.ilvo_parcels = data;
+    });
+
+    var jqxhr = $.when(jqxhr_npo, jqxhr_anb, jqxhr_ilvo)
+
     return jqxhr
 }
 
@@ -66,9 +75,9 @@ function highlightFeature(e) {
 function resetHighlight(e) {
     if (window.npo_parcels.includes(e.target.feature.properties.CAPAKEY)) {
         e.target.setStyle(style_npo);
-    } else if (e.target.feature.properties.Eigenaar == 'ANB') {
+    } else if (window.anb_parcels.includes(e.target.feature.properties.CAPAKEY)) {
         e.target.setStyle(style_anb);
-    } else if (e.target.feature.properties.Eigenaar == 'ILVO') {
+    } else if (window.ilvo_parcels.includes(e.target.feature.properties.CAPAKEY)) {
         e.target.setStyle(style_ilvo);
     } else if (e.target.feature.properties.Eigenaar == 'GO!') {
         e.target.setStyle(style_go);
@@ -102,9 +111,9 @@ function showData(e) {
 function onEachFeature(feature, layer) {
     if (window.npo_parcels.includes(feature.properties.CAPAKEY)) {
         layer.setStyle(style_npo);
-    } else if (feature.properties.Eigenaar == 'ANB') {
+    } else if (window.anb_parcels.includes(feature.properties.CAPAKEY)) {
         layer.setStyle(style_anb);
-    } else if (feature.properties.Eigenaar == 'ILVO') {
+    } else if (window.ilvo_parcels.includes(feature.properties.CAPAKEY)) {
         layer.setStyle(style_ilvo);
     } else if (feature.properties.Eigenaar == 'GO!') {
         layer.setStyle(style_go);
