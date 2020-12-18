@@ -59,15 +59,12 @@ function highlightFeature(e) {
 function loadSpecialOwnerships() {
     var jqxhr = $.get("/admin/eigenaar/49", function(data) {
         window.npo_parcels = data;
-        console.log(window.npo_parcels);
-        console.log(window.npo_parcels.includes("test"));
     });
-
     return jqxhr
 }
 
 function resetHighlight(e) {
-    if (e.target.feature.properties.Eigenaar == 'NPO') {
+    if (window.npo_parcels.includes(feature.properties.CAPAKEY)) {
         e.target.setStyle(style_npo);
     } else if (e.target.feature.properties.Eigenaar == 'ANB') {
         e.target.setStyle(style_anb);
@@ -103,7 +100,6 @@ function showData(e) {
 }
 
 function onEachFeature(feature, layer) {
-    // if (feature.properties.Eigenaar == 'NPO') {
     if (window.npo_parcels.includes(feature.properties.CAPAKEY)) {
         layer.setStyle(style_npo);
     } else if (feature.properties.Eigenaar == 'ANB') {
