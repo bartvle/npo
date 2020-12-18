@@ -42,6 +42,13 @@ style_gondebeek_perimeter = {
     "fillOpacity": 0.,
 };
 
+function loadSpecialOwnerships() {
+    var jqxhr = $.get("/admin/eigenaar/49", function(data) {
+        window.npo_parcels = data;
+    });
+    return jqxhr
+}
+
 function highlightFeature(e) {
     var layer = e.target;
 
@@ -56,15 +63,8 @@ function highlightFeature(e) {
     }
 }
 
-function loadSpecialOwnerships() {
-    var jqxhr = $.get("/admin/eigenaar/49", function(data) {
-        window.npo_parcels = data;
-    });
-    return jqxhr
-}
-
 function resetHighlight(e) {
-    if (window.npo_parcels.includes(feature.properties.CAPAKEY)) {
+    if (window.npo_parcels.includes(e.target.feature.properties.CAPAKEY)) {
         e.target.setStyle(style_npo);
     } else if (e.target.feature.properties.Eigenaar == 'ANB') {
         e.target.setStyle(style_anb);
