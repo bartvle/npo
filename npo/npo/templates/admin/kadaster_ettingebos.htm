@@ -32,6 +32,8 @@
         <script>
             $.get("/admin/eigenaar/49", function(data) {
                 window.npo_parcels = data;
+                console.log(window.npo_parcels);
+                console.log(window.npo_parcels.includes("test"));
             })
 
             var ettingebos_parcels = L.geoJson(JSON.parse('{{ ettingebos_parcels | escapejs }}'), {onEachFeature: onEachFeature});
