@@ -77,6 +77,11 @@ a:hover {
 }
 
 .np-btn {
+  background-color: #97C00E;
+  border-color: #97C00E;
+}
+
+.np-btn:hover {
   background-color: #198134;
   border-color: #198134;
 }
