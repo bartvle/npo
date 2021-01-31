@@ -9,7 +9,7 @@ html, body {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.00rem;
 }
 
 h2 {
@@ -17,7 +17,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.50rem;
 }
 
 h4 {
@@ -76,6 +76,11 @@ a:hover {
   padding: 1rem;
 }
 
+.np-btn {
+  background-color: #198134;
+  border-color: #198134;
+}
+
 /* ------------------------------------------------------------------------- */
 h1.page_title {
   margin-top: 1rem;
@@ -92,7 +97,8 @@ h4.page_date {
 }
 
 a.color4:link, a.color4:focus, a.color4:visited, a.color4:active {
-  text-decoration: None;
+  -webkit-text-decoration: None;
+          text-decoration: None;
   color: #808080;
 }
 
@@ -102,7 +108,8 @@ a.color4:hover {
 }
 
 a.color5:link, a.color5:focus, a.color5:visited, a.color5:active {
-  text-decoration: None;
+  -webkit-text-decoration: None;
+          text-decoration: None;
   color: #FFFFFF;
 }
 
@@ -112,7 +119,8 @@ a.color5:hover {
 }
 
 a.nothing:hover {
-  text-decoration: None;
+  -webkit-text-decoration: None;
+          text-decoration: None;
 }
 
 /* ------------------------------------------------------------------------- */
@@ -124,19 +132,24 @@ a.nothing:hover {
   color: #808080;
   font-size: 0.95rem;
 }
+
 #header #header2 {
   font-size: 1.05rem;
   font-weight: bold;
 }
+
 #header #header2 a {
   color: #FFFFFF;
 }
+
 #header #header2 a:hover {
   background: #198134;
 }
+
 #header #header2 .my-icon {
   border-color: #FFFFFF;
 }
+
 #header #header2 .my-icon-data {
   background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>");
 }
@@ -150,15 +163,18 @@ a.nothing:hover {
   color: #FFFFFF;
   font-weight: bold;
 }
+
 #embody #start .small_date {
   font-size: 12px;
 }
+
 #embody #start #newsletter .button {
   width: 100%;
   background-color: #E8F2D9;
   color: #97C00E;
   font-size: 15px;
 }
+
 #embody #start #newsletter #id_email {
   width: 100%;
   padding: 5px;
@@ -166,33 +182,42 @@ a.nothing:hover {
   color: #808080;
   background-color: #f3f2eb;
 }
+
 #embody #activity_page img {
   margin-top: 25px;
   margin-bottom: 25px;
 }
+
 #embody #activity_page .other {
   margin-top: 25px;
 }
+
 #embody #article_page img {
   margin-top: 25px;
   margin-bottom: 25px;
 }
+
 #embody #article_page .other {
   margin-top: 25px;
 }
+
 #embody #gluren_bij_de_buren_page .intro {
   margin-bottom: 25px;
 }
+
 #embody #gluren_bij_de_buren_page .activity .date {
   margin: 10px 0px;
   font-weight: bold;
 }
+
 #embody #gluren_bij_de_buren_page .activity .text {
   margin-bottom: 5px;
 }
+
 #embody #gluren_bij_de_buren_page .activity .link {
   font-style: italic;
 }
+
 #embody #gluren_bij_de_buren_page .activity + .activity {
   margin-top: 25px;
 }
@@ -201,9 +226,11 @@ a.nothing:hover {
 #footer {
   font-size: 0.95rem;
 }
+
 #footer #footer1 {
   color: #808080;
 }
+
 #footer #footer1 .icon {
   display: block;
   width: 40px;
@@ -216,12 +243,15 @@ a.nothing:hover {
   line-height: 40px;
   margin-left: 10px;
 }
+
 #footer #footer1 .icon:first-of-type {
   margin-left: 0px;
 }
+
 #footer #footer1 .icon:hover {
   background: #97C00E;
 }
+
 #footer #footer1 #gototop {
   padding-top: 5px;
   float: right;
@@ -233,6 +263,8 @@ a.nothing:hover {
   color: #FFFFFF;
   cursor: pointer;
 }
+
 #footer #footer1 #gototop:hover {
   background: #97C00E;
 }
+/*# sourceMappingURL=style.css.map */
