@@ -6,6 +6,9 @@ from django.conf import settings
 from django.urls import path, re_path, include
 from django.conf.urls.static import static
 from django.contrib import admin
+from wagtail.admin import urls as wagtailadmin_urls
+from wagtail.core import urls as wagtail_urls
+
 
 from . import views
 from npo.admin import admin_site
@@ -31,13 +34,12 @@ urlpatterns = [
     path('beleid/memorandum/', views.memorandum),
     path('beleid/memorandum/n-va/', views.memorandum_nva),
     path('beleid/memorandum/groen/', views.memorandum_groen),
-    
-    path('djrichtextfield/', include('djrichtextfield.urls')),
-    
-    ## Temp
-    path('improvisatie', views.improvisatie),
+
+    path('admin/cms/', include(wagtailadmin_urls)),
+    path('', include(wagtail_urls)),
 
     ## Legacy
+    path('improvisatie', views.improvisatie),
     # path('1Y3QgU7vcHqFNizeVjfFWg9U0V7Jb5eOXjjzBPldxXnhctUBdYRKvylsdioY85YU/', views.rodeland_app), ## from 2018-07-04
 ]
 
