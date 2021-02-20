@@ -13,7 +13,9 @@ class Input(models.Model):
 
     LOCATIONS = (
         (1, 'Lembergestraat'),
-        (2, 'Hoek ter Hulst'))
+        (2, 'Hoek ter Hulst'),
+        (3, 'Turkenhoek'),
+    )
 
     date = models.DateField(verbose_name=_('date'))
     by = models.ForeignKey(User, verbose_name=_('by'), related_name='+', on_delete=models.CASCADE, blank=True, null=True)
