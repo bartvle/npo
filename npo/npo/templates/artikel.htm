@@ -8,19 +8,6 @@
                 <h1 class="page_title">{{ article.title }}</h1>
                 <h4 class="page_date">{{ article.date | date:'l j F Y' | capfirst }}</h4>
                 <div>{{ article.content | safe }}</div>
-                        <!-- <img ng-if="item.image_big != ''" ng-src="[[item.image_big]] class="img-fluid" style="width:100%; margin-bottom: 10px;"> -->
-                        <!-- <div style="text-align: justify;" ng-bind-html="item.content"></div> -->
-                        
-                        <!-- <div class="box"> -->
-                            <!-- <div class="box-title">Recent nieuws</div> -->
-                            <!-- <div ng-repeat="other_news_item in other_news_items | limitTo: n" style="margin-top: 10px;"> -->
-                                <!-- <a ng-href="/nieuws/[[other_news_item.date | date: 'yyyyMMdd' ]]-[[other_news_item.link]]" class="color4"> -->
-                                    <!-- <span>[[ other_news_item.date | date:'d' ]] [[ other_news_item.date | date:'MMM' | limitTo:3 ]]</span> -->
-                                    <!-- <span> - </span> -->
-                                    <!-- <span>[[ other_news_item.title ]]</span> -->
-                                <!-- </a> -->
-                            <!-- </div> -->
-                        <!-- </div> -->
             </div>
         </div>
     </div>
