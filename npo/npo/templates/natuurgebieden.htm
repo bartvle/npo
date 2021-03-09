@@ -9,12 +9,22 @@
             <p class="text-justify">
             Ons eerste en tevens kleinste natuurgebied, gelegen naast het centrum van Balegem langs de Molenbeek ter hoogte van Broek. Dit stukje bronbos is net geen halve hectare groot, maar sluit mooi aan met een aantal stukken beekbegeleidend bos in privébezit. De boomlaag wordt gekenmerkt door vooral Es en Els. Het heeft een mooie voorjaarsflora van Speenkruid, Bosanemoon, Slanke sleutelbloem, ... Beheer bestaat vooral uit het onderhoud van de boszoom en hakhout.
             </p>
-            <h2 class="sub_title">Gondebeek</h2>
+            <h2 class="sub_title">Gondebeekvallei</h2>
             <p class="text-justify">
-                Tussen de gemeenten Gontrode, Lemberge, Moortsele en Landskouter werken we aan een groter natuurgebied. Het natuurgebied, Gondebeek genaamd, naar de beek die doorheen het gebied stroomt, is een meersengebied dat hoofdzakelijk bestaat uit vochtige hooilanden, natte ruigtes, knotboomrijen en kleinere bosjes. Momenteel zijn zo’n 6 ha eigendom van Natuurpunt Oosterzele . Het visiegebied is echter ruim 10 maal groter. Het grootste deel is aangeduid als “valleigebied”. Een deel van het visiegebied is aangeduid als habitatrichtlijngebied en/of VEN. Een groot deel van het visiegebied bestaat bovendien uit biologisch waardevolle percelen. Via gerichte aankopen willen we de komende jaren het natuurgebied gestaag laten groeien binnen dit visiegebied.
+                Tussen de gemeenten Gontrode, Lemberge, Moortsele en Landskouter werken we aan een groter natuurgebied. De Gondebeekvallei, naar de beek die doorheen het gebied stroomt, is een meersengebied dat hoofdzakelijk bestaat uit vochtige hooilanden, natte ruigtes, knotboomrijen en kleinere bosjes. Momenteel zijn zo’n 8 ha eigendom van Natuurpunt Oosterzele . Het visiegebied is echter ruim 10 maal groter. Het grootste deel is aangeduid als “valleigebied”. Een deel van het visiegebied is aangeduid als habitatrichtlijngebied en/of VEN. Een groot deel van het visiegebied bestaat bovendien uit biologisch waardevolle percelen. Via gerichte aankopen willen we de komende jaren het natuurgebied gestaag laten groeien binnen dit visiegebied.
             </p>
             <p class="text-justify">
-                Natuurgebied Gondebeek sluit in het noordoosten aan bij het boscomplex Aelmoeseneie dat in beheer is door het Agentschap voor Natuur en Bos en het Labo voor Bosbouw van de Universiteit Gent. Op deze manier wordt een groter natuurcomplex met grote natuur(belevings)waarde gevormd. Recent werd overleg gepleegd door de verschillende beheerders met o.a. de bedoeling om het gebied beter open te stellen voor recreatie.
+                De Gondebeekvallei sluit in het noordoosten aan bij het boscomplex Aelmoeseneie dat in beheer is door het Agentschap voor Natuur en Bos en het Labo voor Bosbouw van de Universiteit Gent. Op deze manier wordt een groter natuurcomplex met grote natuur(belevings)waarde gevormd. Recent werd overleg gepleegd door de verschillende beheerders met o.a. de bedoeling om het gebied beter open te stellen voor recreatie.
+            </p>
+            <h2 class="sub_title">Ettingebos</h2>
+            <p class="text-justify">
+            Begin 2020 slaagden we er in om 12 hectare van het Ettingebos aan te kopen. Zo kunnen we ervoor zorgen dat dit prachtig stukje natuur bewaard blijft en opgewaardeerd kan worden. Omdat iedereen het verdient om dicht bij huis van de natuur te kunnen genieten, zal een deel van het bos toegankelijk gemaakt worden.
+            </p>
+            <p class="text-justify">
+                Ettingebos is een oud bos. Typisch hiervoor zijn de vele voorjaarsbloemen zoals bosanemoon, speenkruid en slanke sleutelbloem. Er zijn droge en natte stukken omdat de Kleine en Grote Ettingebeek door het bos stromen. In een deel van het bos zijn ook zogenaamde rabatten aangelegd. Dit zijn langwerpige ophogingen die gelegen zijn tussen greppels. De grond uit de greppels wordt gebruikt om het rabat mee op te hogen. De bomen werden op de ophogingen geplant. Ook hierdoor krijg je een mooie afwisseling tussen natte en droge habitats.
+            </p>
+            <p class="text-justify">
+                Bij de fauna laat de eekhoorn zich regelmatig zien. Een koppeltje buizerds broedt al jarenlang in de boomtoppen en ook de Havik wordt hier gespot. Sedert enige tijd worden ook regelmatig reeën waargenomen. Het Ettingebos is ook gekend voor zijn zeldzame vlinders zoals de Sleedoornpage, Iepenpage, en Kleine ijsvogelvlinder.
             </p>
             <h2 class="sub_title">Heidebos</h2>
             <p class="text-justify">
@@ -39,9 +49,10 @@
     map = L.map('natuurgebieden_kaart').setView([50.937494, 3.798325], 11);
 
     L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 18, attribution: '<a href="https://www.openstreetmap.org" target="_blank">OpenStreetMap</a>'}).addTo(map);
-
+    
     L.marker([50.910762, 3.807238]).addTo(map).bindPopup("Vosbroeken");
     L.marker([50.976058, 3.790630]).addTo(map).bindPopup("Gondebeek");
+    L.marker([50.935566554793944, 3.80729653059709]).addTo(map).bindPopup("Ettingebos");
     L.marker([50.912186, 3.817297]).addTo(map).bindPopup("Heidebos");
 
 </script>
