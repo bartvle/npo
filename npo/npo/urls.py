@@ -6,8 +6,6 @@ from django.conf import settings
 from django.urls import path, re_path, include
 from django.conf.urls.static import static
 from django.contrib import admin
-from wagtail.admin import urls as wagtailadmin_urls
-from wagtail.core import urls as wagtail_urls
 
 
 from . import views
@@ -34,9 +32,6 @@ urlpatterns = [
     path('beleid/memorandum/', views.memorandum),
     path('beleid/memorandum/n-va/', views.memorandum_nva),
     path('beleid/memorandum/groen/', views.memorandum_groen),
-
-    path('admin/cms/', include(wagtailadmin_urls)),
-    path('', include(wagtail_urls)),
 
     ## Legacy
     path('improvisatie', views.improvisatie),

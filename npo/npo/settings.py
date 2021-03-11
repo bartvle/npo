@@ -24,21 +24,6 @@ INSTALLED_APPS = [
 
     'analytical',
 
-    ## Everything for Wagtail
-    'wagtail.contrib.forms',
-    'wagtail.contrib.redirects',
-    'wagtail.embeds',
-    'wagtail.sites',
-    'wagtail.users',
-    'wagtail.snippets',
-    'wagtail.documents',
-    'wagtail.images',
-    'wagtail.search',
-    'wagtail.admin',
-    'wagtail.core',
-    'modelcluster',
-    'taggit',
-
     ## Own content
     'news.apps.NewsConfig',
     'activities.apps.ActivitiesConfig',
@@ -56,7 +41,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
 ROOT_URLCONF = 'npo.urls'
@@ -136,10 +120,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Django-analytical
 
 GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-90933793-1'
-
-
-# Wagtail
-WAGTAIL_SITE_NAME = 'NPO CMS'
 
 
 # Other
