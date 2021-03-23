@@ -85,9 +85,6 @@ def kadaster_ettingebos(request):
         ettingebos_parcels = json.load(f)
     context['ettingebos_parcels'] = json.dumps(ettingebos_parcels)
 
-    # with open(os.path.join(os.path.dirname(__file__), 'data', 'gondebeek_perimeter.geojson')) as f:
-    #     gondebeek_perimeter = json.load(f)
-    # context['gondebeek_perimeter'] = json.dumps(gondebeek_perimeter)
 
     return render(request, 'admin/kadaster_ettingebos.htm', context=context)
 
@@ -106,14 +103,6 @@ def rodeland(request):
     return render(request, 'admin/rodeland.htm', context=context)
 
 
-# def emails(request):
-#     """
-#     """
-#     emails = [s.email for s in Subscription.objects.all()]
-#     s = '\n'.join(emails)
-#     return HttpResponse(s, content_type='text/plain')
-
-
 def overzet(request):
     """
     """
@@ -123,6 +112,7 @@ def overzet(request):
     for location in locations:
         qs = Input.objects.filter(location=location['location']).annotate(year=TruncYear('date')).order_by().values('year').annotate(toads=Sum('toads'), frogs=Sum('frogs'), salamanders=Sum('salamanders')).order_by('-year')
         data_locations[Input.LOCATIONS[location['location']-1]] = qs
+
     return render(request, 'admin/overzet.htm', context={'data': data, 'locations': data_locations})
 
 
@@ -160,7 +150,6 @@ class MyAdminSite(AdminSite):
             path('kadaster/', kadaster_gondebeekvallei),
             path('kadaster/gondebeekvallei', kadaster_gondebeekvallei),
             path('kadaster/ettingebos', kadaster_ettingebos),
-            # path('emails/', emails),
             path('overzet/', overzet),
             path('rodeland/', rodeland),
             ]
