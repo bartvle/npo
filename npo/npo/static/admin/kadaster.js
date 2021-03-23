@@ -43,13 +43,13 @@ style_gondebeek_perimeter = {
 };
 
 function loadSpecialOwnerships() {
-    var jqxhr_npo = $.get("/admin/eigenaar/49", function(data) {
+    var jqxhr_npo = $.get("/admin/eigenaar/1", function(data) {
         window.npo_parcels = data;
     });
-    var jqxhr_anb = $.get("/admin/eigenaar/51", function(data) {
+    var jqxhr_anb = $.get("/admin/eigenaar/2", function(data) {
         window.anb_parcels = data;
     });
-    var jqxhr_ilvo = $.get("/admin/eigenaar/8", function(data) {
+    var jqxhr_ilvo = $.get("/admin/eigenaar/3", function(data) {
         window.ilvo_parcels = data;
     });
 
