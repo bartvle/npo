@@ -1,6 +1,6 @@
 # Natuurpunt Oosterzele
 
-Runs on Python 3.8 and Django 2.2!
+Runs on Python 3.8 and Django 3.1!
 
 
 ## Installation
@@ -8,7 +8,9 @@ Runs on Python 3.8 and Django 2.2!
 With conda
 
 ```
-conda create -n < name > python=3.8 django=2.2 gunicorn psycopg2
+conda create -n npo python=3.8
+conda activate npo
+conda install django gunicorn
 ```
 
 With pip
