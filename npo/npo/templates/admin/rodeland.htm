@@ -100,6 +100,12 @@
                 "fillOpacity": 0.5,
             };
 
+            style_default = {
+                "weight": 3,
+                "color": '#9fdf7c',
+                "fillOpacity": 0.5,
+            };
+
             function highlightFeature(e) {
                 var layer = e.target;
 
@@ -137,6 +143,8 @@
                     e.target.setStyle(style_proefhoeve_m);
                 } else if (e.target.feature.properties.Beheerder == 'Merelbeke') {
                     e.target.setStyle(style_merelbeke);
+                } else {
+                    e.target.setStyle(style_default);
                 };
             }
 
@@ -172,6 +180,8 @@
                     layer.setStyle(style_proefhoeve_m);
                 } else if (feature.properties.Beheerder == 'Merelbeke') {
                     layer.setStyle(style_merelbeke);
+                } else {
+                    layer.setStyle(style_default);
                 };
                 layer.on({
                     mouseover: highlightFeature,
