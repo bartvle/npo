@@ -2,7 +2,7 @@
 """
 
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.contrib.admin import ModelAdmin, TabularInline
 
 from npo.admin import admin_site
