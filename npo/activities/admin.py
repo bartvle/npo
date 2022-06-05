@@ -12,6 +12,8 @@ from .models import Activity, NeighboringActivity
 class ActivityAdmin(ModelAdmin):
     list_display = ('date', 'name')
     list_display_links = ('name',)
+    date_hierarchy = 'date'
+    ordering = ('-date',)
 
 
 class NeighboringActivityAdmin(ModelAdmin):
