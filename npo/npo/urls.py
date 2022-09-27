@@ -32,6 +32,7 @@ urlpatterns = [
     path('beleid/memorandum/', views.memorandum),
     path('beleid/memorandum/n-va/', views.memorandum_nva),
     path('beleid/memorandum/groen/', views.memorandum_groen),
+    path('formulieren/nieuwsbrief/', views.form_nieuwsbrief),
 
     ## Legacy
     path('improvisatie', views.improvisatie),

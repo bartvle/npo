@@ -173,3 +173,9 @@ def improvisatie(request):
     """
     """
     return redirect('/activiteiten/2020-05-16-het-is-onze-tweede-natuur')
+
+
+def form_nieuwsbrief(request):
+    """
+    """
+    return redirect('https://docs.google.com/forms/d/e/1FAIpQLScdCuXkYngEpTKqoIHm7gl3-IW05ogich8lq7IHMI1UfBDqgw/viewform')
