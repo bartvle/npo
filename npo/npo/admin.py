@@ -153,7 +153,13 @@ class MyAdminSite(AdminSite):
             path('overzet/', overzet),
             path('rodeland/', rodeland),
             ]
-        return super().get_urls() + urls
+
+        ## Our custom urls must come before the ones of the AdminSite because
+        ## Django 3.2 introduced "a final catch-all view that redirects
+        ## unauthenticated users to the login page, regardless of whether the
+        ## URL is otherwise valid. This protects against a potential model
+        ## enumeration privacy issue."
+        return urls + super().get_urls()
 
 
 admin_site = MyAdminSite()

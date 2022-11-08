@@ -25,12 +25,12 @@ INSTALLED_APPS = [
     'analytical',
 
     ## Own content
-    'news.apps.NewsConfig',
-    'activities.apps.ActivitiesConfig',
-    'newsletter.apps.NewsletterConfig',
-    'magazine.apps.MagazineConfig',
-    'amphi.apps.AmphiConfig',
-    'register.apps.RegisterConfig',
+    'news',
+    'activities',
+    'newsletter',
+    'magazine',
+    'amphi',
+    'register',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +127,8 @@ GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-90933793-1'
 LOGIN_URL = '/admin/login/'
 
 FILE_UPLOAD_PERMISSIONS = 0o644
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+
