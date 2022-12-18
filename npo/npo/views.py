@@ -104,12 +104,12 @@ def artikel(request, year, month, day, slug):
     return render(request, 'artikel.htm', context={'article': article})
 
 
-def nieuwsbrief(request):
+def archief(request):
     """
     """
     volumes = Volume.objects.all()
     context = {'volumes': volumes}
-    return render(request, 'nieuwsbrief.htm', context=context)
+    return render(request, 'archief.htm', context=context)
 
 
 def lid_worden(request):
