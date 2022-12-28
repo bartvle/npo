@@ -62,6 +62,10 @@ a:hover {
     color: $color5;
 }
 
+.bg-color1 {
+    background: $color1;
+}
+
 .bg-color2 {
     background: $color2;
 }
@@ -130,6 +134,11 @@ a.color5:hover {
     text-decoration: underline;
     color: $color5;
 }
+
+a.nothing {
+    text-decoration: None;
+}
+
 
 a.nothing:hover {
     text-decoration: None;
@@ -219,7 +228,6 @@ a.nothing:hover {
     #activity_page {
 
         img {
-            margin-top: 25px;
             margin-bottom: 25px;
         }
 
@@ -229,18 +237,6 @@ a.nothing:hover {
 
     }
 
-    #article_page {
-
-        img {
-            margin-top: 25px;
-            margin-bottom: 25px;
-        }
-
-        .other {
-            margin-top: 25px;
-        }
-
-    }
     #gluren_bij_de_buren_page {
 
         .intro {

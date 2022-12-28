@@ -30,7 +30,7 @@ def start(request):
     # else:
     #     form = NewsletterForm()
 
-    activities = Activity.objects.all().filter(date__gte=datetime.date.today(), published=True)[:3]
+    activities = Activity.objects.all().filter(date__gte=datetime.date.today(), published=True)[:4]
     articles =  Article.objects.all().filter(published=True)[:3]
     # transfer = {}
     # transfer['toads'] = Input.objects.filter(date__year=2017).aggregate(Sum('toads'))['toads__sum']
@@ -122,6 +122,12 @@ def steun_ons(request):
     """
     """
     return render(request, 'steun_ons.htm')
+
+
+def doe_mee(request):
+    """
+    """
+    return render(request, 'doe_mee.htm')
 
 
 def gluren_bij_de_buren(request):

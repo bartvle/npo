@@ -25,6 +25,7 @@ urlpatterns = [
     path('nieuws/<int:year>-<int:month>-<int:day>-<slug:slug>/', views.artikel),
     path('lid-worden/', views.lid_worden),
     path('steun-ons/', views.steun_ons),
+    path('doe-mee/', views.doe_mee),
     path('archief/', views.archief),
     path('gluren-bij-de-buren/', views.gluren_bij_de_buren),
     path('rodeland/', views.rodeland),

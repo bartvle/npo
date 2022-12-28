@@ -6,10 +6,13 @@
         <h1 class="page_title">Nieuws</h1>
         <div class="row">
             {% for article in articles %}
-                <div class="col-sm-12 col-md-6 col-lg-4 all {% if forloop.counter0 > 0 %}not-first-row-sm{% endif %} {% if forloop.counter0 > 1 %}not-first-row-md{% endif %} {% if forloop.counter0 > 2 %}not-first-row-lg{% endif %}">
-                    <a href="/nieuws/{{article.date | date:'Y-m-d'}}-{{article.slug}}" class="nothing"><h3 class="color2">{{article.title}}</h3></a>
-                    <p>{{ article.date }}</p>
-                    <a class="btn btn-default" href="/nieuws/{{article.date | date:'Y-m-d'}}-{{article.slug}}" role="button">Lees</a>
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                    <a class="nothing" href="/nieuws/{{article.date | date:'Y-m-d'}}-{{article.slug}}">
+                        <div class="bg-light p-2 h-100">
+                            <h3 class="color2">{{article.title}}</h3>
+                            <p>{{ article.date }}</p>
+                        </div>
+                    </a>
                 </div>
             {% endfor %}
         </div>

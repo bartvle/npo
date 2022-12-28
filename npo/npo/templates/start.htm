@@ -6,45 +6,54 @@
     <!-- News -->
     <div id="news" class="container mb-5">
         <div class="row">
-            <div class="col-lg-8 pr-lg-2">
+            <div class="col-md-8 mb-3 mb-mb-0">
                 <a href="/nieuws/{{articles.0.date | date:'Y-m-d'}}-{{articles.0.slug}}" class="nothing">
-                    <img src="/static/images/articles/2021-06-07-monitoring-amfibieen-oosterzeelse-poelen/kleine_watersalamander_man_-_hugo_willocx.jpg" class="img-fluid">
-                    <div class="over_image">
-                        <h1>{{ articles.0.title }}</h1>
-                        <div>{{ articles.0.date }}</div>
+                    <div class="position-relative">
+                        <img src="/static/images/articles/2022-12-28-soort-in-de-kijker-hermelijn/hermelijn.jpg" class="img-fluid">
+                        <div class="position-absolute bottom-0 start-0 color5 p-3">
+                            <h1 class="fw-bold">{{ articles.0.title }}</h1>
+                            <div>{{ articles.0.date }}</div>
+                        </div>
                     </div>
                 </a>
             </div>
-            <div class="col-lg-4">
-                <div class="row h-100">
-                    <div class="col-12 align-self-start mt-3 mt-lg-0">
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-12 mb-3">
                         <a href="/nieuws/{{articles.1.date | date:'Y-m-d'}}-{{articles.1.slug}}" class="nothing">
-                            <img src="/static/images/articles/expeditie2021.jpg" class="img-fluid">
-                            <div class="over_image">
-                                <h5>{{ articles.1.title }}</h5>
-                                <div class="small_date">{{ articles.1.date }}</div>
+                            <div class="position-relative">
+                                <img src="/static/images/articles/2021-06-07-monitoring-amfibieen-oosterzeelse-poelen/kleine_watersalamander_man_-_hugo_willocx.jpg" class="img-fluid">
+                                <div class="position-absolute bottom-0 start-0 color5 p-3">
+                                    <h5 class="fw-bold">{{ articles.1.title }}</h5>
+                                    <div class="small_date">{{ articles.1.date }}</div>
+                                </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-12 align-self-end mt-3 mt-lg-0">
+                    <div class="col-12">
                         <a href="/nieuws/{{articles.2.date | date:'Y-m-d'}}-{{articles.2.slug}}" class="nothing">
-                            <img src="/static/images/articles/ettingebos.jpg" class="img-fluid">
-                            <div class="over_image">
-                                <h5>{{ articles.2.title }}</h5>
-                                <div class="small_date">{{ articles.2.date }}</div>
+                            <div class="position-relative">
+                                <img src="/static/images/articles/expeditie2021.jpg" class="img-fluid">
+                                <div class="position-absolute bottom-0 start-0 color5 p-3">
+                                    <h5 class="fw-bold">{{ articles.2.title }}</h5>
+                                    <div class="small_date">{{ articles.2.date }}</div>
+                                </div>
                             </div>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- <div class="mt-3">
+            <a href="/nieuws">Meer nieuws >>></a>
+        </div> -->
     </div>
 
     <!-- Activities -->
     <div id="activities" class="container mb-5">
         <div class="row">
             {% for activity in activities %}
-            <div class="col-sm-12 col-md-4">
+            <div class="col-sm-12 col-md-3 mb-3 mb-md-0">
                 <a href="/activiteiten/{{activity.date | date:'Y-m-d'}}-{{activity.slug}}" class="nothing color4">
                     <div class="activity">
                         <h4 class="color1">{{ activity.name }}</h4>
@@ -55,49 +64,78 @@
             </div>
             {% endfor %}
         </div>
+        <!-- <div class="mt-3">
+            <a href="/activiteiten">Meer activiteiten >>></a>
+        </div> -->
     </div>
 
     <!-- Newsletter -->
     <div id="newsletter" class="mb-5 bg-color3">
-        <div id="newsletter_in" class="container bg-color2 py-5">
+        <div class="container">
             <div class="row">
-                <div class="col-12 text-center pb-3">
-                    <h2 class="color5">Schrijf je in op onze e-nieuwsbrief en blijf op de hoogte van alle nieuwtjes!</h2>
-                </div>
-            </div>
-            <div class="row text-center">
-                <!-- Begin Mailchimp Signup Form -->
-                <style type="text/css">
-                    #mc_embed_signup{clear:left; width:100%;}
-                    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block. */
-                </style>
-                <div id="mc_embed_signup">
-                    <form action="https://natuurpuntoosterzele.us14.list-manage.com/subscribe/post?u=d8087734f00e350cc098de774&amp;id=8959dd777f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                        <div id="mc_embed_signup_scroll">
-                        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Vul hier je e-mailadres in" required>
-                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d8087734f00e350cc098de774_8959dd777f" tabindex="-1" value=""></div>
-                        <div class="clear"><input type="submit" value="Schrijf nu in" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                <div class="col-12">
+                    <div class="bg-color2 py-5 text-center h-100 px-2 px-md-0">
+                        <h2 class="color5 fw-bold">Schrijf je in op onze e-nieuwsbrief en blijf op de hoogte van alle activiteiten en nieuwtjes!</h2>
+                        <!-- Begin Mailchimp Signup Form -->
+                        <style type="text/css">
+                            #mc_embed_signup{clear:left; width:100%;}
+                            /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block. */
+                        </style>
+                        <div id="mc_embed_signup">
+                            <form action="https://natuurpuntoosterzele.us14.list-manage.com/subscribe/post?u=d8087734f00e350cc098de774&amp;id=8959dd777f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                <div id="mc_embed_signup_scroll">
+                                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Vul hier je e-mailadres in" required>
+                                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d8087734f00e350cc098de774_8959dd777f" tabindex="-1" value=""></div>
+                                <div class="clear"><input type="submit" value="Schrijf nu in" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                                </div>
+                            </form>
                         </div>
-                    </form>
+                        <!--End mc_embed_signup-->
+                    </div>
                 </div>
-                <!--End mc_embed_signup-->
             </div>
         </div>
     </div>
 
     <!-- Picture + Wildcam -->
-    <div class="container text-center">
+    <!-- <div class="container text-center">
         <div class="row">
-            <!-- Picture -->
             <div class="col-sm-12 col-md-6">
                 <h1 class="color1">Sent-a-picture</h1>
                 <p class="m-0">We zetten de Oosterzeelse natuur die we beschermen graag in de kijker. Stuur ons daarom jouw mooiste en leukste foto's door van dieren, planten, landschappen en favoriete plekjes in en rond Oosterzele. Wie weet komt jouw foto dan op onze website terecht! Stuur je foto door naar <a href="mailto:info@natuurpuntoosterzele.be">info@natuurpuntoosterzele.be</a> met vermelding van je naam en waar de foto genomen is.</p>
             </div>
-            <!-- Wildcam -->
             <div class="col-sm-12 col-md-6">
                 <h1 class="color1">Rent-a-wildcam</h1>
                 <p class="m-0">Word je in je tuin geconfronteerd met een raar fenomeen en wil je weten welk dier hier achter zit? Heb je gestommel en gerommel onder je dak en vermoed je de aanwezigheid van bepaalde dieren? Neem dan contact met ons op en wij komen een wildcam bij jou thuis plaatsen! Zo'n wildcam begint automatisch op te nemen bij beweging en dat zowel overdag als 's nachts. Na een aantal dagen komen we de wildcam terug ophalen en bekijken we samen de beelden. Contacteer ons via <a href="mailto:info@natuurpuntoosterzele.be">info@natuurpuntoosterzele.be</a>.</p>
+            </div>
+        </div>
+    </div> -->
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-md-4 mb-3 mb-md-0">
+                <a class="nothing" href="/lid-worden">
+                    <div class="bg-color1 color5 p-4 text-center h-100">
+                        <h3>Word lid</h3>
+                        <div class="fs-6">Help mee onze schaarse natuur te beschermen en wordt lid van Natuurpunt. Samen met meer dan 133.000 gezinnen maak je wel degelijk het verschil.</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-3 mb-md-0">
+                <a class="nothing" href="/steun-ons">
+                    <div class="bg-color1 color5 p-4 text-center h-100">
+                        <h3>Steun ons</h3>
+                        <div class="fs-6">Natuurpunt Oosterzele kan best wel wat steun gebruiken. Er kruipt heel wat tijd in het realiseren van natuur en ook het kostenplaatje is niet min.</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a class="nothing" href="/doe-mee">
+                    <div class="bg-color1 color5 p-4 text-center h-100">
+                        <h3>Doe mee</h3>
+                        <div class="fs-6">Hoe meer we willen realiseren, hoe meer helpende handen we kunnen gebruiken. Deel uitmaken van Natuurpunt hoeft echt niet veel van je tijd te vragen.</div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
