@@ -119,7 +119,11 @@ def overzet(request):
 def overzet_download(request, location, year):
     """
     """
-    location_name = {'1': 'Lembergestraat', '2': 'Hoek ter Hulst'}[str(location)]
+    location_name = {
+        '1': 'Lembergestraat',
+        '2': 'Hoek ter Hulst',
+        '3': 'Turkenhoek',
+        }[str(location)]
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="overzet_%s_%s.csv"' % (location_name, year)
     writer = csv.writer(response)
