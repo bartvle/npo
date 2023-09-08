@@ -3,10 +3,8 @@
 
 
 from django.conf import settings
-from django.urls import path, re_path, include
+from django.urls import path
 from django.conf.urls.static import static
-from django.contrib import admin
-
 
 from . import views
 from npo.admin import admin_site
@@ -27,7 +25,6 @@ urlpatterns = [
     path('steun-ons/', views.steun_ons),
     path('doe-mee/', views.doe_mee),
     path('archief/', views.archief),
-    path('gluren-bij-de-buren/', views.gluren_bij_de_buren),
     path('rodeland/', views.rodeland),
     path('rodeland/app/', views.rodeland_app),
     path('beleid/memorandum/', views.memorandum),
@@ -35,9 +32,6 @@ urlpatterns = [
     path('beleid/memorandum/groen/', views.memorandum_groen),
     path('formulieren/nieuwsbrief/', views.form_nieuwsbrief),
 
-    ## Legacy
-    path('improvisatie', views.improvisatie),
-    # path('1Y3QgU7vcHqFNizeVjfFWg9U0V7Jb5eOXjjzBPldxXnhctUBdYRKvylsdioY85YU/', views.rodeland_app), ## from 2018-07-04
 ]
 
 if settings.DEBUG is True:
