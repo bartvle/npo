@@ -12,6 +12,12 @@ style_npo = {
     "fillOpacity": 0.5,
 };
 
+style_npo_renter = {
+    "weight": 3,
+    "color": '#258ed5',
+    "fillOpacity": 0.5,
+};
+
 style_anb = {
     "weight": 3,
     "color": '#33a02c',
@@ -52,8 +58,11 @@ function loadSpecialOwnerships() {
     var jqxhr_ilvo = $.get("/admin/eigenaar/3", function(data) {
         window.ilvo_parcels = data;
     });
+    var jqxhr_npo_renter = $.get("/admin/huurder/1", function(data) {
+        window.npo_renter_parcels = data;
+    });
 
-    var jqxhr = $.when(jqxhr_npo, jqxhr_anb, jqxhr_ilvo)
+    var jqxhr = $.when(jqxhr_npo, jqxhr_anb, jqxhr_ilvo, jqxhr_npo_renter)
 
     return jqxhr
 }
@@ -75,6 +84,8 @@ function highlightFeature(e) {
 function resetHighlight(e) {
     if (window.npo_parcels.includes(e.target.feature.properties.CAPAKEY)) {
         e.target.setStyle(style_npo);
+    } else if (window.npo_renter_parcels.includes(e.target.feature.properties.CAPAKEY)) {
+        e.target.setStyle(style_npo_renter);
     } else if (window.anb_parcels.includes(e.target.feature.properties.CAPAKEY)) {
         e.target.setStyle(style_anb);
     } else if (window.ilvo_parcels.includes(e.target.feature.properties.CAPAKEY)) {
@@ -111,6 +122,8 @@ function showData(e) {
 function onEachFeature(feature, layer) {
     if (window.npo_parcels.includes(feature.properties.CAPAKEY)) {
         layer.setStyle(style_npo);
+    } else if (window.npo_renter_parcels.includes(feature.properties.CAPAKEY)) {
+        layer.setStyle(style_npo_renter);
     } else if (window.anb_parcels.includes(feature.properties.CAPAKEY)) {
         layer.setStyle(style_anb);
     } else if (window.ilvo_parcels.includes(feature.properties.CAPAKEY)) {

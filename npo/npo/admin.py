@@ -16,7 +16,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.db.models.functions import TruncYear
 
-from register.models import Parcel, Ownership
+from register.models import Parcel, Owner, Ownership
 from newsletter.models import Subscription
 from amphi.models import Input
 
@@ -52,6 +52,16 @@ def eigenaar(request, id):
     """
     """
     keys = [o.parcel.key for o in Ownership.objects.filter(owner__id=id)]
+
+    return JsonResponse(keys, safe=False)
+
+
+@login_required
+@user_passes_test(lambda user: user.groups.filter(name='WG Aankopen').exists())
+def renter(request, id):
+    """
+    """
+    keys = [p.key for p in Owner.objects.get(pk=id)]
 
     return JsonResponse(keys, safe=False)
 
@@ -151,6 +161,7 @@ class MyAdminSite(AdminSite):
             path('overzet/download/<int:location>/<int:year>/', overzet_download),
             path('perceel/<str:key>/', perceel),
             path('eigenaar/<int:id>/', eigenaar),
+            path('huurder/<int:id>/', renter),
             path('kadaster/', kadaster_gondebeekvallei),
             path('kadaster/gondebeekvallei', kadaster_gondebeekvallei),
             path('kadaster/ettingebos', kadaster_ettingebos),
