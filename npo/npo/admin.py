@@ -56,14 +56,14 @@ def eigenaar(request, id):
     return JsonResponse(keys, safe=False)
 
 
-@login_required
-@user_passes_test(lambda user: user.groups.filter(name='WG Aankopen').exists())
-def renter(request, id):
-    """
-    """
-    keys = [p.key for p in Owner.objects.get(pk=id)]
+# @login_required
+# @user_passes_test(lambda user: user.groups.filter(name='WG Aankopen').exists())
+# def renter(request, id):
+#     """
+#     """
+#     keys = [p.key for p in Owner.objects.get(pk=id)]
 
-    return JsonResponse(keys, safe=False)
+#     return JsonResponse(keys, safe=False)
 
 
 @login_required
@@ -161,7 +161,7 @@ class MyAdminSite(AdminSite):
             path('overzet/download/<int:location>/<int:year>/', overzet_download),
             path('perceel/<str:key>/', perceel),
             path('eigenaar/<int:id>/', eigenaar),
-            path('huurder/<int:id>/', renter),
+            # path('huurder/<int:id>/', renter),
             path('kadaster/', kadaster_gondebeekvallei),
             path('kadaster/gondebeekvallei', kadaster_gondebeekvallei),
             path('kadaster/ettingebos', kadaster_ettingebos),
