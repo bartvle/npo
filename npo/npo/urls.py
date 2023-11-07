@@ -3,7 +3,7 @@
 
 
 from django.conf import settings
-from django.urls import path
+from django.urls import path, re_path
 from django.conf.urls.static import static
 
 from . import views
@@ -31,7 +31,7 @@ urlpatterns = [
     path('beleid/memorandum/n-va/', views.memorandum_nva),
     path('beleid/memorandum/groen/', views.memorandum_groen),
     path('formulieren/nieuwsbrief/', views.form_nieuwsbrief),
-
+    re_path('^.*/$', views.start),
 ]
 
 if settings.DEBUG is True:
