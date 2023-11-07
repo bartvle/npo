@@ -116,7 +116,7 @@ def artikel(request, year, month, day, slug):
     try:
         article = Article.objects.get(date=date, slug=slug)
     except Article.DoesNotExist:
-        redirect('/')
+        return redirect('/')
     return render(request, 'artikel.htm', context={'article': article})
 
 
