@@ -10,7 +10,7 @@ from django.shortcuts import render, redirect
 from django.db.models import Sum
 
 from news.models import Article
-from activities.models import Activity, NeighboringActivity
+from activities.models import Activity
 from magazine.models import Volume
 from amphi.models import Input
 
@@ -36,9 +36,17 @@ def start(request):
     # transfer['toads'] = Input.objects.filter(date__year=2017).aggregate(Sum('toads'))['toads__sum']
     # transfer['frogs'] = Input.objects.filter(date__year=2017).aggregate(Sum('frogs'))['frogs__sum']
     # transfer['salamanders'] = Input.objects.filter(date__year=2017).aggregate(Sum('salamanders'))['salamanders__sum']
+
+    news = [{
+        'time': datetime.datetime(2023, 9, 8, 14, 45, 0),
+        'text': 'Aanstaande zaterdag beheermoment in Ettingebos! Op de agenda: opruimen van het sluikstort dat we recent ontdekten en verder afzetten van de jonge populierenscheuten.',
+        'image': '/static/images/news/373713734_691285133043237_3203966118604969872_n.jpg',
+    }]
+
     context = {
         'activities': activities,
         'articles': articles,
+        'news': news,
 #        'transfer': transfer,
         # 'form': form,
         # 'newsletter_message': newsletter_message,
@@ -105,7 +113,10 @@ def artikel(request, year, month, day, slug):
     """
     """
     date = datetime.date(int(year), int(month), int(day))
-    article = Article.objects.get(date=date, slug=slug)
+    try:
+        article = Article.objects.get(date=date, slug=slug)
+    except Article.DoesNotExist:
+        redirect('/')
     return render(request, 'artikel.htm', context={'article': article})
 
 
@@ -133,14 +144,6 @@ def doe_mee(request):
     """
     """
     return render(request, 'doe_mee.htm')
-
-
-def gluren_bij_de_buren(request):
-    """
-    """
-    activities = NeighboringActivity.objects.all().filter(date__gte=datetime.date.today()).order_by('date')
-    our_activities = Activity.objects.all().filter(date__gte=datetime.date.today()).order_by('date')[:3]
-    return render(request, 'gluren_bij_de_buren.htm', context={'activities': activities, 'our_activities': our_activities})
 
 
 def rodeland(request):
