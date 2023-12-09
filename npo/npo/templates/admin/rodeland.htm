@@ -102,7 +102,7 @@
 
             style_default = {
                 "weight": 3,
-                "color": '#9fdf7c',
+                "color": '#525252',
                 "fillOpacity": 0.5,
             };
 
@@ -142,6 +142,10 @@
                 } else if (e.target.feature.properties.Beheerder == 'Proefhoeve Melle') {
                     e.target.setStyle(style_proefhoeve_m);
                 } else if (e.target.feature.properties.Beheerder == 'Merelbeke') {
+                    e.target.setStyle(style_merelbeke);
+                } else if (e.target.feature.properties.Beheerder == 'Melle') {
+                    e.target.setStyle(style_merelbeke);
+                } else if (e.target.feature.properties.Beheerder == 'Oosterzele') {
                     e.target.setStyle(style_merelbeke);
                 } else {
                     e.target.setStyle(style_default);
