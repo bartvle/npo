@@ -16,6 +16,7 @@ urlpatterns = [
 	path('over-ons/', views.over_ons),
 	path('beleid/', views.beleid),
     path('natuurgebieden/', views.natuurgebieden),
+    path('natuurgebieden/gondebeekvallei/toegankelijkheid', views.natuurgebieden_gondebeekvallei_toegankelijkheid),
     path('soortbescherming/', views.soortbescherming),
     path('activiteiten/', views.activiteiten),
     path('activiteiten/<int:year>-<int:month>-<int:day>-<slug:slug>/', views.activiteit),

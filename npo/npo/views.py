@@ -72,6 +72,10 @@ def natuurgebieden(request):
     """
     return render(request, 'natuurgebieden.htm')
 
+def natuurgebieden_gondebeekvallei_toegankelijkheid(request):
+    """
+    """
+    return render(request, 'natuurgebieden_gondebeekvallei_toegankelijkheid.htm')
 
 def soortbescherming(request):
     """
