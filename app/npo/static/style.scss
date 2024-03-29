@@ -1,0 +1,318 @@
+
+$color1: #198134;
+$color2: #97C00E;
+$color3: #E8F2D9;
+$color4: #808080;
+$color5: #FFFFFF;
+
+/* ------------------------------------------------------------------------- */
+
+html {
+    overflow-y: scroll;
+    /* always show scrollbar */
+}
+
+html, body {
+    height: 100%;
+}
+
+h1 {
+    font-size: 2.00rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.50rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+a:link, a:focus, a:visited, a:active {
+    color: $color2;
+}
+
+a:hover {
+    color: $color2;
+}
+
+/* ------------------------------------------------------------------------- */
+
+.color1 {
+    color: $color1;
+  }
+
+.color2 {
+    color: $color2;
+}
+
+.color3 {
+    color: $color3;
+}
+
+.color4 {
+    color: $color4;
+}
+
+.color5 {
+    color: $color5;
+}
+
+.bg-color1 {
+    background: $color1;
+}
+
+.bg-color2 {
+    background: $color2;
+}
+
+.bg-color3 {
+    background: $color3;
+}
+
+.box {
+    background-color: $color3;
+}
+
+.box-heading {
+    padding: 0.5rem;
+    font-weight: bold;
+    color: $color5;
+    background: $color2;
+}
+
+.box-content {
+    padding: 1rem;
+}
+
+.np-btn {
+    background-color:#97C00E;
+    border-color:#97C00E;
+}
+
+.np-btn:hover {
+    background-color:#198134;
+    border-color:#198134;
+}
+
+/* ------------------------------------------------------------------------- */
+
+h1.page_title {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: $color1;
+}
+
+h2.sub_title {
+    color: $color2;
+}
+
+h4.page_date {
+    color: $color2;
+}
+
+a.color4:link, a.color4:focus, a.color4:visited, a.color4:active {
+    text-decoration: None;
+    color: $color4;
+  }
+
+a.color4:hover {
+    text-decoration: underline;
+    color: $color4;
+}
+
+a.color5:link, a.color5:focus, a.color5:visited, a.color5:active {
+    text-decoration: None;
+    color: $color5;
+}
+
+a.color5:hover {
+    text-decoration: underline;
+    color: $color5;
+}
+
+a.nothing {
+    text-decoration: None;
+}
+
+
+a.nothing:hover {
+    text-decoration: None;
+}
+
+/* ------------------------------------------------------------------------- */
+
+#wrap {
+    height: 100%;
+}
+
+#header {
+
+    #header1 {
+
+        a {
+            color: $color4;
+            font-size: 0.95rem;
+        }
+
+    }
+
+    #header2 {
+        font-size: 1.05rem;
+        font-weight: bold;
+
+        a {
+            color: $color5;
+        }
+
+        a:hover {
+            background: $color1;
+        }
+
+        .my-icon {
+            border-color: $color5;
+        }
+
+        .my-icon-data {
+            background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+        }
+
+    }
+
+}
+
+/* ------------------------------------------------------------------------- */
+
+#embody {
+
+    #start {
+
+        .over_image {
+            position: absolute;
+            bottom: 10px;
+            left: 25px;
+            right: 25px;
+            color: $color5;
+            font-weight: bold;
+        }
+
+        .small_date {
+            font-size: 12px;
+        }
+
+        #newsletter {
+
+            .button {
+                width: 100%;
+                background-color: $color3;
+                color: $color2;
+                font-size: 15px;
+            }
+
+            #id_email {
+                width: 100%;
+                padding: 5px;
+                border: 1px solid #e5e5dc;
+                color: $color4;
+                background-color: #f3f2eb;
+            }
+
+        }
+
+    }
+
+    #activity_page {
+
+        img {
+            margin-bottom: 25px;
+        }
+
+        .other {
+            margin-top: 25px;
+        }
+
+    }
+
+    #gluren_bij_de_buren_page {
+
+        .intro {
+            margin-bottom: 25px;
+        }
+
+        .activity {
+
+            .date {
+                margin: 10px 0px;
+                font-weight: bold;
+            }
+
+            .text {
+                margin-bottom: 5px;
+            }
+
+            .link {
+                font-style: italic;
+            }
+
+        }
+
+        .activity + .activity {
+            margin-top: 25px;
+        }
+
+    }
+
+}
+
+/* -- footer --------------------------------------------------------------- */
+
+#footer {
+    font-size: 0.95rem;
+
+    #footer1 {
+        color: $color4;
+
+        .icon {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            background: $color4;
+            float: left;
+            text-align: center;
+            color: $color5;
+            line-height: 40px;
+            margin-left: 10px;
+        }
+
+        .icon:first-of-type {
+            margin-left: 0px;
+        }
+
+        .icon:hover {
+            background: $color2;
+        }
+
+        #gototop {
+            padding-top: 5px;
+            float: right;
+            width: 40px;
+            height: 40px;
+            background: $color4;
+            border-radius: 5px;
+            text-align: center;
+            color: $color5;
+            cursor: pointer;
+        }
+
+        #gototop:hover {
+            background: $color2;
+        }
+
+    }
+
+}

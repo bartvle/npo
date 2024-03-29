@@ -3,15 +3,15 @@ venv
 
 .vscode/
 
-npo/db.sqlite3
-npo/npo/deploy.py
+app/db.sqlite3
+app/npo/deploy.py
 
-npo/static
-npo/media
+app/static
+app/media
 
-npo/npo/static/data
-npo/npo/static/images
-npo/npo/static/pictures
-npo/npo/static/magazine
-npo/npo/static/dependencies
-npo/npo/static/leaflet-1.1.0
+app/npo/static/data
+app/npo/static/images
+app/npo/static/pictures
+app/npo/static/magazine
+app/npo/static/dependencies
+app/npo/static/leaflet-1.1.0
