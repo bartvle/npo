@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'magazine',
     'amphi',
     'register',
+    'frontend',
 ]
 
 MIDDLEWARE = [
