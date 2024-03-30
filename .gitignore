@@ -4,14 +4,14 @@ venv
 .vscode/
 
 app/db.sqlite3
-app/npo/deploy.py
+app/config/deploy.py
 
 app/static
 app/media
 
-app/npo/static/data
-app/npo/static/images
-app/npo/static/pictures
-app/npo/static/magazine
-app/npo/static/dependencies
-app/npo/static/leaflet-1.1.0
+app/frontend/static/data
+app/frontend/static/images
+app/frontend/static/pictures
+app/frontend/static/magazine
+app/frontend/static/dependencies
+app/frontend/static/leaflet-1.1.0

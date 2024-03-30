@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 from django.contrib.admin import ModelAdmin
 from django import forms
 
-from npo.admin import admin_site
+from frontend.admin import admin_site
 
 from .models import Input
 

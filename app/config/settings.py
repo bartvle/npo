@@ -22,6 +22,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail',  
+    'modelcluster',
+    'taggit',
+
     'analytical',
 
     ## Own content
@@ -41,14 +55,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
-ROOT_URLCONF = 'npo.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'npo', 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'frontend', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -61,14 +76,14 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'npo.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES['default'] = {
     'ENGINE': 'django.db.backends.sqlite3',
     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 }
 
-DATABASE_ROUTERS = ['npo.routers.DatabaseRouter']
+DATABASE_ROUTERS = ['config.routers.DatabaseRouter']
 
 
 # Password validation
@@ -101,7 +116,7 @@ USE_L10N = False
 
 USE_TZ = True
 
-LOCALE_PATHS = [os.path.join(BASE_DIR, 'npo', 'locale')]
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'frontend', 'locale')]
 
 
 # Static files (CSS, JavaScript, Images)
@@ -110,7 +125,7 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'npo', 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend', 'static')]
 
 MEDIA_URL = '/media/'
 
@@ -132,3 +147,5 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 
+WAGTAIL_SITE_NAME = 'Natuurpunt Oosterzele'
+WAGTAILADMIN_BASE_URL = 'https://www.natuurpuntoosterzele.be'

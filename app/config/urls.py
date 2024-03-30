@@ -3,11 +3,15 @@
 
 
 from django.conf import settings
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 from django.conf.urls.static import static
 
-from . import views
-from npo.admin import admin_site
+from wagtail.admin import urls as wagtailadmin_urls
+from wagtail import urls as wagtail_urls
+from wagtail.documents import urls as wagtaildocs_urls
+
+from frontend import views
+from frontend.admin import admin_site
 
 
 urlpatterns = [
@@ -32,6 +36,11 @@ urlpatterns = [
     path('beleid/memorandum/n-va/', views.memorandum_nva),
     path('beleid/memorandum/groen/', views.memorandum_groen),
     path('formulieren/nieuwsbrief/', views.form_nieuwsbrief),
+
+    path('cms/', include(wagtailadmin_urls)),
+    path('documents/', include(wagtaildocs_urls)),
+    path('pages/', include(wagtail_urls)),
+
     re_path('^.*/$', views.start),
 ]
 

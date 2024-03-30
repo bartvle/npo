@@ -4,7 +4,7 @@
 
 from django.contrib.admin import ModelAdmin
 
-from npo.admin import admin_site
+from frontend.admin import admin_site
 
 from .models import Subscription
 

@@ -5,7 +5,7 @@
 from django.utils.translation import gettext_lazy as _
 from django.contrib.admin import ModelAdmin, TabularInline
 
-from npo.admin import admin_site
+from frontend.admin import admin_site
 
 from .models import Parcel, Owner, Ownership
 
