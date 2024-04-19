@@ -4,7 +4,7 @@ Django settings for npo project.
 
 import os
 
-from .deploy import DEBUG, SECRET_KEY, ALLOWED_HOSTS, DATABASES
+from .deploy import DEBUG, SECRET_KEY, ALLOWED_HOSTS, DATABASES, GOOGLE_ANALYTICS_PROPERTY_ID
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -131,11 +131,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend', 'static')]
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
-# Django-analytical
-
-GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-90933793-1'
 
 
 # Other
