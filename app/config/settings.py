@@ -4,7 +4,7 @@ Django settings for npo project.
 
 import os
 
-from .deploy import DEBUG, SECRET_KEY, ALLOWED_HOSTS, DATABASES, GOOGLE_ANALYTICS_GTAG_PROPERTY_ID
+from .deploy import DEBUG, SECRET_KEY, ALLOWED_HOSTS, CSRF_TRUSTED_ORIGINS, DATABASES, GOOGLE_ANALYTICS_GTAG_PROPERTY_ID
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
