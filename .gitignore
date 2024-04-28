@@ -9,6 +9,8 @@ app/config/deploy.py
 app/static
 app/media
 
+app/frontend/vendor
+
 app/frontend/static/data
 app/frontend/static/images
 app/frontend/static/pictures
