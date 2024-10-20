@@ -1,4 +1,5 @@
 {% extends "index.htm" %}
+{% load static %}
 
 {% block embody %}
 <div class="container">
@@ -12,7 +13,7 @@
             <p class="text-justify">
                 Voor duizenden andere levende wezens rondom ons zoals planten, dieren en zwammen is die natuur hun leefplek, hun thuis. Veel soorten hebben bovendien nood aan een leefgebied waar ze ongestoord door mens en huisdier kunnen gedijen. Daarom wil Natuurpunt samen met het Agentschap Natuur en Bos een deeltje van de Gondebeekvallei en het Aelmoeseneiebos als rust- en broedgebied reserveren voor de soorten die zonder de nodige rust dreigen te verdwijnen.
             </p>
-            <img src="/static/images/natuurgebieden/natuurgebieden_gondebeekvallei_toegankelijkheid.jpg" class="img-fluid mb-3" alt="">
+            <img src="{% static 'images/natuurgebieden/natuurgebieden_gondebeekvallei_toegankelijkheid.jpg' %}" class="img-fluid mb-3" alt="">
             <p>Bedankt om het rood gekleurde gebied niet te betreden en de levende natuur te respecteren.</p>
             <p>Als alles volgens planning verloopt zal er een nieuwe wandelverbinding tussen het natuurgebied Gondebeekvallei en het dorp van Landskouter gerealiseerd worden in het najaar van 2024.</p>
         </div>

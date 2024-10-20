@@ -1,4 +1,5 @@
 {% extends "index.htm" %}
+{% load static %}
 
 {% block embody %}
 <div id="start">
@@ -22,7 +23,7 @@
             <div class="col-md-8 mb-3 mb-mb-0">
                 <a href="/nieuws/{{articles.0.date | date:'Y-m-d'}}-{{articles.0.slug}}" class="nothing">
                     <div class="position-relative">
-                                <img src="/static/images/articles/2024-02-10-soort-in-de-kijker-dwergmuis/start.jpg" class="img-fluid">
+                                <img src="{% static 'images/articles/2024-02-10-soort-in-de-kijker-dwergmuis/start.jpg' %}" class="img-fluid">
                         <div class="position-absolute bottom-0 start-0 color5 p-3">
                             <h1 class="fw-bold">{{ articles.0.title }}</h1>
                             <div>{{ articles.0.date }}</div>
@@ -35,7 +36,7 @@
                     <div class="col-12 mb-3">
                         <a href="/nieuws/{{articles.1.date | date:'Y-m-d'}}-{{articles.1.slug}}" class="nothing">
                             <div class="position-relative">
-                                <img src="/static/images/articles/2023-10-25-aankoop-gondebeekvallei/start.jpg" class="img-fluid">
+                                <img src="{% static 'images/articles/2023-10-25-aankoop-gondebeekvallei/start.jpg' %}" class="img-fluid">
                                 <div class="position-absolute bottom-0 start-0 color5 p-3">
                                     <h5 class="fw-bold">{{ articles.1.title }}</h5>
                                     <div class="small_date">{{ articles.1.date }}</div>
@@ -46,7 +47,7 @@
                     <div class="col-12">
                         <a href="/nieuws/{{articles.2.date | date:'Y-m-d'}}-{{articles.2.slug}}" class="nothing">
                             <div class="position-relative">
-                                <img src="/static/images/articles/2023-07-01-soort-in-de-kijker-penseelkever/start.jpg" class="img-fluid">
+                                <img src="{% static 'images/articles/2023-07-01-soort-in-de-kijker-penseelkever/start.jpg %}" class="img-fluid">
                                 <div class="position-absolute bottom-0 start-0 color5 p-3">
                                     <h5 class="fw-bold">{{ articles.2.title }}</h5>
                                     <div class="small_date">{{ articles.2.date }}</div>
