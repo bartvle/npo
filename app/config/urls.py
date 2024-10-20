@@ -29,7 +29,6 @@ urlpatterns = [
     path('lid-worden/', views.lid_worden),
     path('steun-ons/', views.steun_ons),
     path('doe-mee/', views.doe_mee),
-    path('archief/', views.archief),
     path('rodeland/', views.rodeland),
     path('rodeland/app/', views.rodeland_app),
     path('beleid/memorandum/', views.memorandum),
