@@ -2,14 +2,15 @@
 Django settings for npo project.
 """
 
+
 import os
+from pathlib import Path
 
 from .deploy import DEBUG, SECRET_KEY, ALLOWED_HOSTS, CSRF_TRUSTED_ORIGINS, DATABASES, GOOGLE_ANALYTICS_GTAG_PROPERTY_ID
 
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Application definition
@@ -134,11 +135,9 @@ LOCALE_PATHS = [os.path.join(BASE_DIR, 'frontend', 'locale')]
 
 # Static files (CSS, JavaScript, Images)
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend', 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 
