@@ -105,6 +105,18 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    # Stores the file names it handles by appending the MD5 hash of the file’s
+    # content to the filename.
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage",
+    },
+}
+
+
 # Internationalization
 
 LANGUAGE_CODE = 'nl-BE'
